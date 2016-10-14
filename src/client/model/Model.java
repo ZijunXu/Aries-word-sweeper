@@ -16,7 +16,7 @@ public class Model {
 		return mainModel;
 	}
 	
-	private Model(){
+	public Model(){
 		String[][] letters = new String[4][4];
 		String str = "";
 		for (int i = 0; i < 4; i++) {

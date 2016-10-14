@@ -17,31 +17,24 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import client_src.ServerAccess;
+import client.controller.CreateGameController;
+import client.controller.JoinGameController;
+import client.model.Model;
+
 public class GameModePanel extends JFrame {
 
 	protected JPanel contentPane;
 	protected JButton btnPractice;
-
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					
-//					
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	
+	public final Model model;
+	ServerAccess serverAccess;
 
 	/**
 	 * Create the frame.
 	 */
-	public GameModePanel() {
+	public GameModePanel(Model model) {
+		this.model = model;
 		setTitle("WordSweeper");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 508, 355);
@@ -53,6 +46,20 @@ public class GameModePanel extends JFrame {
 		JButton btnJoinAGame = new JButton("Join a game");
 		btnJoinAGame.setBounds(351, 266, 117, 29);
 		getContentPane().add(btnJoinAGame);
+		btnJoinAGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new JoinGameController(GameModePanel.this, model).process();
+			}
+		});
+		
+		JButton btnLogIn = new JButton("Create a game");
+		btnLogIn.setBounds(138, 109, 111, 38);
+		getContentPane().add(btnLogIn);
+		btnLogIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new CreateGameController(GameModePanel.this, model).process();
+			}
+		});
 
 		JLabel lblNewLabel = new JLabel("Word Sweeper");
 		lblNewLabel.setForeground(new Color(0, 0, 0));
@@ -123,15 +130,13 @@ public class GameModePanel extends JFrame {
 			    }
 		    }
 		});
-
-		JButton btnLogIn = new JButton("Create a game");
-		btnLogIn.setBounds(138, 109, 111, 38);
-		getContentPane().add(btnLogIn);
-		btnLogIn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
 	}
-
+	
+	public void setServerAccess(ServerAccess access) {
+		this.serverAccess = access;
+	}
+	
+	public ServerAccess getServerAccess() {
+		return serverAccess;
+	}
 }
