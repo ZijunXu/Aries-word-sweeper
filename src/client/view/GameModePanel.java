@@ -26,12 +26,9 @@ public class GameModePanel extends JFrame {
 
 	protected JPanel contentPane;
 	protected JButton btnPractice;
-<<<<<<< HEAD
-=======
 	
 	public final Model model;
 	ServerAccess serverAccess;
->>>>>>> origin/master
 
 	/**
 	 * Create the frame.

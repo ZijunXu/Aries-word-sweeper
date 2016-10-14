@@ -17,17 +17,12 @@ public class Model {
 		}
 		return mainModel;
 	}
-<<<<<<< HEAD
 	private static final String[] LETTER_SET={"A",
             "B","C","D","E","F","G","H","I","J","K",
             "L","M","N","O","P","Q","R","S","T","U",
             "V","W","X","Y","Z","Qu"};
 	 Random random = new Random();
-	private Model(){
-=======
-	
 	public Model(){
->>>>>>> origin/master
 		String[][] letters = new String[4][4];
 		String str = "";
 		for (int i = 0; i < 4; i++) {
