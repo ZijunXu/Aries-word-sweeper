@@ -3,16 +3,15 @@ package client.controller;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JPanel;
+
 import client.model.*;
-import client.view.Grid;
-import client.view.storyBoard_Practice;
+//import client.view.storyBoard_Practice;
 
 public class PickWordController extends MouseAdapter{
-	private Grid panel;
-	private storyBoard_Practice test;
-	public PickWordController(Grid p, storyBoard_Practice test){
+	private JPanel panel;
+	public PickWordController(JPanel p){
 		this.panel = p;
-		this.test = test;
 	} 
 	
 	public void mousePressed(MouseEvent me){
@@ -28,21 +27,27 @@ public class PickWordController extends MouseAdapter{
 	}
 	
 	private void mouseGen(MouseEvent e, boolean select) {
-		int X = e.getX() / 40 ;
-		int Y = e.getY() / 40 ;
+		int x = e.getX() / 55 ;
+		int y = e.getY() / 55 ;
+		if(x > 4){
+			x = 3;
+		}
+		if(y > 4){
+			y = 3;
+		}
 		System.out.println(e.getX());
 		System.out.println(e.getY());
+		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);
 		if (select) 
-			Model.getModel().getBoard().cells[X][Y].selectCell();
+			Model.getModel().getBoard().cells[x][y].selectCell();
 		else 
 			for (int i = 0; i < 4; i++) {
 				for (int j = 0; j < 4; j++) {
-					Model.getModel().getBoard().cells[X][Y].diselectCell();
+//					Model.getModel().getBoard().cells[x][y].diselectCell();
 				}
-			}
-			
+			}			
 		panel.repaint();
-		test.repaint();
+		
 	}
 }	
 

@@ -1,11 +1,12 @@
 package client.model;
 
 import client.model.*;
+import client.view.storyBoard_Practice;
 
 public class Model {
 	public Board board;
 	private static Model mainModel;
-	
+//	private static storyBoard_Practice frame;
 	public static Model getModel() {
 		if (mainModel == null) {
 			mainModel = new Model();
@@ -32,5 +33,12 @@ public class Model {
 		this.board = board;
 	}
 	
+	/*public void setFrame(storyBoard_Practice newFrame){
+		this.frame = newFrame;
+	}
 	
+	public void refresh(){
+		frame.repaint();
+	}
+	*/
 }
