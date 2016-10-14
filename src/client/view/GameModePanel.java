@@ -17,12 +17,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import client.model.Model;
+public class GameModePanel extends JFrame {
 
-public class storyBoard0 extends JFrame {
-
-	public JPanel contentPane;
-	public JButton btnPractice;
+	protected JPanel contentPane;
+	protected JButton btnPractice;
 
 //	/**
 //	 * Launch the application.
@@ -43,7 +41,7 @@ public class storyBoard0 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public storyBoard0() {
+	public GameModePanel() {
 		setTitle("WordSweeper");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 508, 355);
@@ -69,7 +67,7 @@ public class storyBoard0 extends JFrame {
 				if(e.getSource()==btnPractice){
 					setVisible(false);
 					//Model model = Model.getModel();
-					storyBoard_Practice frame1= new storyBoard_Practice();
+					PlayingPanel frame1= new PlayingPanel();
 					frame1.setVisible(true);
 					
 				}
@@ -123,10 +121,8 @@ public class storyBoard0 extends JFrame {
 				    panel.revalidate();
 				    panel.repaint();
 			    }
-
-			    }
-
-		    });
+		    }
+		});
 
 		JButton btnLogIn = new JButton("Create a game");
 		btnLogIn.setBounds(138, 109, 111, 38);

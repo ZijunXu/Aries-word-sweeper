@@ -1,22 +1,24 @@
 package client.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import client.controller.*;
+import client.model.Model;
 
-public class storyBoard_Practice extends JFrame {
+public class PlayingPanel extends JFrame {
 
 	private JPanel contentPane;
 		
@@ -39,7 +41,10 @@ public class storyBoard_Practice extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public storyBoard_Practice(Grid grid) {
+	public PlayingPanel() {
+		this.go();
+	}
+	public void go(){
 		setTitle("WordSweeper");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 514, 379);
@@ -48,18 +53,39 @@ public class storyBoard_Practice extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-//		JPanel panel = new JPanel();
-//		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-//		panel.setBounds(90, 138, 160, 160);
-//		getContentPane().add(panel);
-		grid.setBounds(90, 138, 160, 160);
-		this.add(grid);
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBounds(60, 80, 220, 220);
+		getContentPane().add(panel);
+		int gridSize = 55;
+		panel.setLayout(null);
+		JLabel[][] grid = new JLabel[4][4];
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 4; j++){
+				Color color = Color.white;
+				JLabel label = new JLabel();
+				label.setHorizontalAlignment(SwingConstants.CENTER);
+				label.setSize(gridSize, gridSize);
+				label.setLocation(i * gridSize, j * gridSize);
+				boolean isSellected = Model.getModel().getBoard().cells[i][j].isSelected;
+				if(isSellected)
+					color = Color.blue;
+				label.setOpaque(true);
+				label.setBackground(color);
+				label.setText(Model.getModel().getBoard().cells[i][j].getLetter());
+				label.setFont(new Font("Arial", Font.BOLD, 17));
+				label.setBorder(BorderFactory.createLineBorder(Color.black));
+				panel.add(label);
+				getContentPane().add(panel, BorderLayout.CENTER);
+				grid[i][j] = label;
+			}
+		}
+		Model.getModel().setGrid(grid);
 		
-		PickWordController control = new PickWordController(grid, this);
-		grid.addMouseListener(control);
-		grid.addMouseMotionListener(control);
+		PickWordController control = new PickWordController(panel);
+		panel.addMouseListener(control);
+		panel.addMouseMotionListener(control);
 		
-		System.out.println(grid);
 		JLabel label = new JLabel("Word Sweeper");
 		label.setForeground(Color.BLACK);
 		label.setFont(new Font("Lucida Bright", Font.BOLD | Font.ITALIC, 40));
@@ -80,8 +106,9 @@ public class storyBoard_Practice extends JFrame {
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.setBounds(334, 186, 117, 29);
-		getContentPane().add(btnExit);
-		
+		getContentPane().add(btnExit);	
 	}
-	
+	public void refresh(){
+		contentPane.repaint();
+	}
 }

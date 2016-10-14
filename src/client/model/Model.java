@@ -3,13 +3,12 @@ package client.model;
 import javax.swing.JLabel;
 
 import client.model.*;
-import client.view.storyBoard_Practice;
+import client.view.PlayingPanel;
 
 public class Model {
-	public Board board;
+	protected Board board;
 	private static Model mainModel;
 	private JLabel[][] grid;
-//	private static storyBoard_Practice frame;
 	public static Model getModel() {
 		if (mainModel == null) {
 			mainModel = new Model();
@@ -44,14 +43,4 @@ public class Model {
 		this.grid = grid;
 	}
 	
-	
-	
-	/*public void setFrame(storyBoard_Practice newFrame){
-		this.frame = newFrame;
-	}
-	
-	public void refresh(){
-		frame.repaint();
-	}
-	*/
 }

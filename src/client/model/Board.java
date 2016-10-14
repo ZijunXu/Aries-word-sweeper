@@ -2,8 +2,8 @@ package client.model;
 
 public class Board {
 	
-	public int colNum = 4;
-	public int rowNum = 4;
+	protected int colNum = 4;
+	protected int rowNum = 4;
 	
 	public Cell[][] cells = new Cell[colNum][rowNum];
 	// The cells in the board

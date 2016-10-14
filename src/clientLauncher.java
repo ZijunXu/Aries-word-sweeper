@@ -1,8 +1,8 @@
-import client.view.storyBoard0;
+import client.view.GameModePanel;
 
 public class ClientLauncher {
 	public static void main(String [] args){
-		storyBoard0 frame = new storyBoard0();
+		GameModePanel frame = new GameModePanel();
 		frame.setVisible(true);
 	}	
 }

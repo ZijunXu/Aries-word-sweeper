@@ -3,11 +3,11 @@ package client.model;
 import java.awt.Color;
 
 public class Cell {
-	public int row;
-	public int column;
+	protected int row;
+	protected int column;
 	// the position of the cell in the board
-    public String letter;
-    public int bonus;
+    protected String letter;
+    protected int bonus;
     // number of times overlapped
     public boolean isSelected;
     
@@ -28,6 +28,10 @@ public class Cell {
     public void diselectCell(){
     	this.isSelected = false;
     	Model.getModel().getGrid()[column][row].setBackground(Color.white);
+    }
+    
+    public String getLetter(){
+    	return this.letter;
     }
     
 }
