@@ -29,12 +29,10 @@ public class PickWordController extends MouseAdapter{
 	private void mouseGen(MouseEvent e, boolean select) {
 		int x = e.getX() / 55 ;
 		int y = e.getY() / 55 ;
-		if(x > 4){
-			x = 3;
+		if(x > 3 || x < 0 || y > 3 || y < 0){
+			select = false;
 		}
-		if(y > 4){
-			y = 3;
-		}
+		
 //		System.out.println(e.getX());
 //		System.out.println(e.getY());
 //		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);

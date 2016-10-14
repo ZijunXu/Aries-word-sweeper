@@ -25,18 +25,6 @@ public class PlayingPanel extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					storyBoard_Practice frame = new storyBoard_Practice();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -55,7 +43,7 @@ public class PlayingPanel extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel.setBounds(60, 80, 220, 220);
+		panel.setBounds(65, 94, 220, 220);
 		getContentPane().add(panel);
 		int gridSize = 55;
 		panel.setLayout(null);
@@ -92,21 +80,26 @@ public class PlayingPanel extends JFrame {
 		label.setBounds(6, 6, 362, 85);
 		getContentPane().add(label);
 		
-		JButton btnClear = new JButton("Clear");
-		btnClear.setBounds(139, 308, 76, 29);
-		getContentPane().add(btnClear);
-		
-		JButton button = new JButton("Reset");
-		button.addActionListener(new ActionListener() {
+		JButton btnMoveLeft = new JButton("Move Left");
+		btnMoveLeft.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setBounds(334, 138, 117, 29);
-		getContentPane().add(button);
+		btnMoveLeft.setBounds(324, 127, 117, 29);
+		getContentPane().add(btnMoveLeft);
 		
-		JButton btnExit = new JButton("Exit");
-		btnExit.setBounds(334, 186, 117, 29);
-		getContentPane().add(btnExit);	
+		JButton btnMoveRight = new JButton("Move Right");
+		btnMoveRight.setBounds(324, 170, 117, 29);
+		contentPane.add(btnMoveRight);
+		
+		JButton btnMoveUp = new JButton("Move Up");
+		btnMoveUp.setBounds(324, 211, 117, 29);
+		contentPane.add(btnMoveUp);
+		
+		JButton btnMoveDown = new JButton("Move Down");
+		btnMoveDown.setBounds(324, 252, 117, 29);
+		contentPane.add(btnMoveDown);
+		
 	}
 	public void refresh(){
 		contentPane.repaint();

@@ -44,7 +44,7 @@ public class GameModePanel extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnJoinAGame = new JButton("Join a game");
-		btnJoinAGame.setBounds(351, 266, 117, 29);
+		btnJoinAGame.setBounds(48, 179, 117, 29);
 		getContentPane().add(btnJoinAGame);
 		btnJoinAGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -53,7 +53,7 @@ public class GameModePanel extends JFrame {
 		});
 		
 		JButton btnLogIn = new JButton("Create a game");
-		btnLogIn.setBounds(138, 109, 111, 38);
+		btnLogIn.setBounds(48, 115, 111, 38);
 		getContentPane().add(btnLogIn);
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -80,13 +80,13 @@ public class GameModePanel extends JFrame {
 				}
 			}
 		});
-		btnPractice.setBounds(17, 278, 117, 29);
+		btnPractice.setBounds(48, 237, 117, 29);
 		getContentPane().add(btnPractice);
 
 		ButtonGroup passwordButtonGroup = new ButtonGroup();
 
 		JPanel panel = new JPanel();
-		panel.setBounds(261, 109, 241, 116);
+		panel.setBounds(232, 130, 241, 116);
 		getContentPane().add(panel);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
