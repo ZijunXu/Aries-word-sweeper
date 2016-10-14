@@ -68,7 +68,7 @@ public class storyBoard0 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnPractice){
 					setVisible(false);
-					Model model = Model.getModel();
+					//Model model = Model.getModel();
 					storyBoard_Practice frame1= new storyBoard_Practice();
 					frame1.setVisible(true);
 					

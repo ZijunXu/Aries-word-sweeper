@@ -35,19 +35,17 @@ public class PickWordController extends MouseAdapter{
 		if(y > 4){
 			y = 3;
 		}
-		System.out.println(e.getX());
-		System.out.println(e.getY());
-		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);
+//		System.out.println(e.getX());
+//		System.out.println(e.getY());
+//		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);
 		if (select) 
 			Model.getModel().getBoard().cells[x][y].selectCell();
 		else 
 			for (int i = 0; i < 4; i++) {
 				for (int j = 0; j < 4; j++) {
-//					Model.getModel().getBoard().cells[x][y].diselectCell();
+					Model.getModel().getBoard().cells[i][j].diselectCell();
 				}
-			}			
-		panel.repaint();
-		
+			}					
 	}
 }	
 

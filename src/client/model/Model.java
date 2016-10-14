@@ -1,11 +1,14 @@
 package client.model;
 
+import javax.swing.JLabel;
+
 import client.model.*;
 import client.view.storyBoard_Practice;
 
 public class Model {
 	public Board board;
 	private static Model mainModel;
+	private JLabel[][] grid;
 //	private static storyBoard_Practice frame;
 	public static Model getModel() {
 		if (mainModel == null) {
@@ -32,6 +35,16 @@ public class Model {
 	public void setBoard(Board board) {
 		this.board = board;
 	}
+
+	public JLabel[][] getGrid() {
+		return grid;
+	}
+
+	public void setGrid(JLabel[][] grid) {
+		this.grid = grid;
+	}
+	
+	
 	
 	/*public void setFrame(storyBoard_Practice newFrame){
 		this.frame = newFrame;
