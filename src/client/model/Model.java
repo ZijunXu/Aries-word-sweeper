@@ -6,9 +6,14 @@ import javax.swing.JLabel;
 
 import client.model.*;
 import client.view.PlayingPanel;
+import client.model.Player;
+import com.sun.org.apache.xml.internal.security.keys.keyresolver.implementations.PrivateKeyResolver;
 
 public class Model {
-	protected Board board;
+    private Game game;
+	private Board board;
+    private Player player;
+    private Word word;
 	private static Model mainModel;
 	private JLabel[][] grid;
 	public static Model getModel() {
@@ -21,7 +26,7 @@ public class Model {
             "B","C","D","E","F","G","H","I","J","K",
             "L","M","N","O","P","Q","R","S","T","U",
             "V","W","X","Y","Z","Qu"};
-	 Random random = new Random();
+    Random random = new Random();
 	public Model(){
 		String[][] letters = new String[4][4];
 		String str = "";
@@ -31,12 +36,27 @@ public class Model {
 				letters[i][j] = LETTER_SET[random.nextInt(26)+1];
 			}	
 		}
+		this.game = new Game();
 		this.board = new Board(letters);
+        this.player = new Player();
+        this.word = new Word();
 	}
+
+	public Game getGame(Game game){
+        return game;
+    }
+
+    public void setGame(Game game){
+        this.game = game;
+    }
 
 	public Board getBoard() {
 		return board;
 	}
+
+	public Word getWord(){
+        return word;
+    }
 
 	public void setBoard(Board board) {
 		this.board = board;

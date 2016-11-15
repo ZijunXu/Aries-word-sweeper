@@ -25,13 +25,22 @@ public class Cell {
     	Model.getModel().getGrid()[column][row].setBackground(Color.blue);
     }
     
-    public void diselectCell(){
+    public void disselectCell(){
     	this.isSelected = false;
     	Model.getModel().getGrid()[column][row].setBackground(Color.white);
     }
-    
+
+    public boolean isSelected(){
+        return isSelected;
+    }
+
     public String getLetter(){
     	return this.letter;
+    }
+
+    public int[] getPosition(){
+        int position[] = {this.column, this.row};
+        return position;
     }
     
 }

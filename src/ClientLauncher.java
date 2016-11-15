@@ -29,6 +29,8 @@ public class ClientLauncher {
 		Model model = new Model();
 		GameModePanel app = new GameModePanel(model);
 
+//		SampleClientMessageHandler handler = new SampleClientMessageHandler(GameModePanel)
+
 		// try to connect to the server. Once connected, messages are going to be processed by 
 		// SampleClientMessageHandler. For now we just continue on with the initialization because
 		// no message is actually sent by the connect method.
