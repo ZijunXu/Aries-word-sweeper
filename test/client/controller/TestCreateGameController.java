@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import client.MockServerAccess;
 import client.model.Model;
-import client.view.Application;
+import client.view.GameModePanel;
 import xml.Message;
 import junit.framework.TestCase;
 
@@ -22,7 +22,7 @@ public class TestCreateGameController extends TestCase {
 	MockServerAccess mockServer;
 	
 	// client to connect
-	Application client;
+	GameModePanel client;
 	
 	// model being maintained by client.
 	Model model;
@@ -35,7 +35,7 @@ public class TestCreateGameController extends TestCase {
 		
 		// prepare client and connect to server.
 		model = new Model();
-		client = new Application (model);
+		client = new GameModePanel (model);
 		client.setVisible(true);
 		
 		// Create mockServer to simulate server, and install 'obvious' handler

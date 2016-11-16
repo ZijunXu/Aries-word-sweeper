@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 import xml.Message;
-import client.IController;
-import client.IMessageHandler;
-import client.ServerAccess;
+import client_src.IController;
+import client_src.IMessageHandler;
+import client_src.ServerAccess;
 
 /**
  * Mock Server Access replaces the entire functionality of the ServerAccess
