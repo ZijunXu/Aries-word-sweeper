@@ -7,7 +7,6 @@ import javax.swing.JLabel;
 import client.model.*;
 import client.view.PlayingPanel;
 import client.model.Player;
-import com.sun.org.apache.xml.internal.security.keys.keyresolver.implementations.PrivateKeyResolver;
 
 public class Model {
     private Game game;
