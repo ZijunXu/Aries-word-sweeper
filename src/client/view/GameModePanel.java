@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
@@ -29,6 +30,9 @@ public class GameModePanel extends JFrame {
 	
 	public final Model model;
 	ServerAccess serverAccess;
+	
+	JTextArea requestArea;
+	JTextArea responseArea;
 
 	/**
 	 * Create the frame.
@@ -138,5 +142,15 @@ public class GameModePanel extends JFrame {
 	
 	public ServerAccess getServerAccess() {
 		return serverAccess;
+	}
+	
+	/** Navigation access to actionable elements in the GUI. */
+	public JTextArea getRequestArea() {
+		return requestArea;
+	}
+	
+	/** Navigation access to actionable elements in the GUI. */
+	public JTextArea getResponseArea() {
+		return responseArea;
 	}
 }

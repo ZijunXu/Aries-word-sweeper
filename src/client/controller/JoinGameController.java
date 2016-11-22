@@ -22,6 +22,8 @@ public class JoinGameController {
 		Message m = new Message (xmlString);
 
 		// Request the lock (this might not succeed).
+		app.getRequestArea().append(m.toString());
+		app.getRequestArea().append("\n");
 		app.getServerAccess().sendRequest(m);
 	}
 }
