@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a93d02c6-16cd-4806-9333-39de0bee9034" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ClientLauncher.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/BoardResponseController.java" afterPath="$PROJECT_DIR$/src/client/controller/BoardResponseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/PickWordController.java" afterPath="$PROJECT_DIR$/src/client/controller/PickWordController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Cell.java" afterPath="$PROJECT_DIR$/src/client/model/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Game.java" afterPath="$PROJECT_DIR$/src/client/model/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Model.java" afterPath="$PROJECT_DIR$/src/client/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Player.java" afterPath="$PROJECT_DIR$/src/client/model/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/view/GameModePanel.java" afterPath="$PROJECT_DIR$/src/client/view/GameModePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/view/PlayingPanel.java" afterPath="$PROJECT_DIR$/src/client/view/PlayingPanel.java" />
     </list>
     <ignored path="Word_Sweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,8 +109,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/model/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="72">
+              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -919,7 +909,7 @@
       <workItem from="1480626886195" duration="13186000" />
       <workItem from="1480650749213" duration="4427000" />
       <workItem from="1480691028672" duration="11378000" />
-      <workItem from="1480710439457" duration="6707000" />
+      <workItem from="1480710439457" duration="6885000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore">
       <created>1479271174302</created>
@@ -928,11 +918,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479271174302</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add controller chain and modify some of the entity classes">
+      <created>1480719441550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480719441550</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118680000" />
+    <option name="totallyTimeSpent" value="118858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="474" y="0" width="1446" height="1080" extended-state="0" />
@@ -1005,7 +1002,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore" />
+    <MESSAGE value="Add controller chain and modify some of the entity classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add controller chain and modify some of the entity classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1384,8 +1382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/model/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="72">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
