@@ -6,26 +6,26 @@ import javax.swing.JLabel;
 
 import client.model.*;
 import client.view.PlayingPanel;
-import client.model.Player;
 
 public class Model {
     private Game game;
 	private Board board;
     private Player player;
     private Word word;
-	private static Model mainModel;
+	//	private static Model mainModel;
 	private JLabel[][] grid;
-	public static Model getModel() {
-		if (mainModel == null) {
-			mainModel = new Model();
-		}
-		return mainModel;
-	}
+	public boolean existedGame;
+	//	public static Model getModel() {
+//		if (mainModel == null) {
+//			mainModel = new Model();
+//		}
+//		return mainModel;
+//	}
 	private static final String[] LETTER_SET={"A",
             "B","C","D","E","F","G","H","I","J","K",
             "L","M","N","O","P","Q","R","S","T","U",
             "V","W","X","Y","Z","Qu"};
-    Random random = new Random();
+	Random random = new Random();
 	public Model(){
 		String[][] letters = new String[4][4];
 		String str = "";

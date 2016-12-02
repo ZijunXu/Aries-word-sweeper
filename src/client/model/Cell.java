@@ -1,7 +1,5 @@
 package client.model;
 
-import java.awt.Color;
-
 public class Cell {
 	protected int row;
 	protected int column;
@@ -22,12 +20,13 @@ public class Cell {
     
     public void selectCell(){
     	this.isSelected = true;
-    	Model.getModel().getGrid()[column][row].setBackground(Color.blue);
+
+//    	Model.getModel().getGrid()[column][row].setBackground(Color.blue);
     }
     
     public void disselectCell(){
     	this.isSelected = false;
-    	Model.getModel().getGrid()[column][row].setBackground(Color.white);
+//    	Model.getModel().getGrid()[column][row].setBackground(Color.white);
     }
 
     public boolean isSelected(){

@@ -16,6 +16,7 @@ public class BoardResponseController extends ControllerChain {
 
 	public GameModePanel app;
 	public Model model;
+
 	
 	public BoardResponseController(GameModePanel a, Model m) {
 		super();

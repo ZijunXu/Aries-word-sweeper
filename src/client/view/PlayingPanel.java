@@ -21,7 +21,7 @@ import client.model.Model;
 public class PlayingPanel extends JFrame {
 
 	private JPanel contentPane;
-		
+	Model model;
 	/**
 	 * Launch the application.
 	 */
@@ -29,7 +29,8 @@ public class PlayingPanel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PlayingPanel() {
+	public PlayingPanel(Model model) {
+		this.model = model;
 		this.go();
 	}
 	public void go(){
@@ -55,12 +56,14 @@ public class PlayingPanel extends JFrame {
 				label.setHorizontalAlignment(SwingConstants.CENTER);
 				label.setSize(gridSize, gridSize);
 				label.setLocation(i * gridSize, j * gridSize);
-				boolean isSellected = Model.getModel().getBoard().cells[i][j].isSelected;
+//				boolean isSellected = Model.getModel().getBoard().cells[i][j].isSelected;
+				boolean isSellected = model.getBoard().cells[i][j].isSelected;
 				if(isSellected)
 					color = Color.blue;
 				label.setOpaque(true);
 				label.setBackground(color);
-				label.setText(Model.getModel().getBoard().cells[i][j].getLetter());
+//				label.setText(Model.getModel().getBoard().cells[i][j].getLetter());
+				label.setText(model.getBoard().cells[i][j].getLetter());
 				label.setFont(new Font("Arial", Font.BOLD, 17));
 				label.setBorder(BorderFactory.createLineBorder(Color.black));
 				panel.add(label);
@@ -68,9 +71,11 @@ public class PlayingPanel extends JFrame {
 				grid[i][j] = label;
 			}
 		}
-		Model.getModel().setGrid(grid);
-		
-		PickWordController control = new PickWordController(panel);
+//		Model.getModel().setGrid(grid);
+		model.setGrid(grid);
+
+
+		PickWordController control = new PickWordController(model,panel);
 		panel.addMouseListener(control);
 		panel.addMouseMotionListener(control);
 		
@@ -87,7 +92,7 @@ public class PlayingPanel extends JFrame {
 		});
 		btnMoveLeft.setBounds(324, 127, 117, 29);
 		getContentPane().add(btnMoveLeft);
-		
+
 		JButton btnMoveRight = new JButton("Move Right");
 		btnMoveRight.setBounds(324, 170, 117, 29);
 		contentPane.add(btnMoveRight);

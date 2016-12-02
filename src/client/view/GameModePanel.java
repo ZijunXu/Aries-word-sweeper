@@ -78,7 +78,7 @@ public class GameModePanel extends JFrame {
 				if(e.getSource()==btnPractice){
 					setVisible(false);
 					//Model model = Model.getModel();
-					PlayingPanel frame1= new PlayingPanel();
+					PlayingPanel frame1= new PlayingPanel(model);
 					frame1.setVisible(true);
 					
 				}
