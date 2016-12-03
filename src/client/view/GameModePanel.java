@@ -33,6 +33,8 @@ public class GameModePanel extends JFrame {
 	
 	JTextArea requestArea;
 	JTextArea responseArea;
+	private JTextField userNameField;
+	private JTextField gameIDField;
 
 	/**
 	 * Create the frame.
@@ -90,7 +92,7 @@ public class GameModePanel extends JFrame {
 		ButtonGroup passwordButtonGroup = new ButtonGroup();
 
 		JPanel panel = new JPanel();
-		panel.setBounds(232, 130, 241, 116);
+		panel.setBounds(250, 144, 241, 97);
 		getContentPane().add(panel);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
@@ -104,6 +106,24 @@ public class GameModePanel extends JFrame {
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password");
 		panel.add(rdbtnNewRadioButton_1);
 		passwordButtonGroup.add(rdbtnNewRadioButton_1);
+		
+		JLabel userNameLable = new JLabel("User Name:");
+		userNameLable.setBounds(219, 111, 87, 16);
+		contentPane.add(userNameLable);
+		
+		userNameField = new JTextField();
+		userNameField.setBounds(304, 106, 130, 26);
+		contentPane.add(userNameField);
+		userNameField.setColumns(10);
+		
+		JLabel gameIDLable = new JLabel("Game ID:");
+		gameIDLable.setBounds(231, 250, 61, 16);
+		contentPane.add(gameIDLable);
+		
+		gameIDField = new JTextField();
+		gameIDField.setBounds(304, 245, 130, 26);
+		contentPane.add(gameIDField);
+		gameIDField.setColumns(10);
 
 		rdbtnNewRadioButton.addChangeListener(new ChangeListener() {
 
