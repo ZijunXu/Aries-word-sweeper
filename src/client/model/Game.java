@@ -5,6 +5,7 @@ import java.util.concurrent.locks.Lock;
 
 public class Game {
        protected boolean isLocked;
+       protected String myName;
        protected String roomID;
        protected String password;
        protected String managingUser;
@@ -12,10 +13,10 @@ public class Game {
        protected ArrayList<Player> players;
 
        public Game(){
-    	   roomID = "";
-    	   managingUser = null;
-    	   isLocked = false;
-
+    	   this.roomID = "";
+    	   this.managingUser = null;
+    	   this.isLocked = false;
+    	   this.players = new ArrayList<Player>();
        }
 
        public String getRoomID(){
@@ -38,16 +39,12 @@ public class Game {
            return isLocked;
        }
 
-       public void LockGame(){
+       public void lockGame(){
            this.isLocked = true;
        }
 
-       public void resetGame(){
-
-       }
-
-       public double computerScore(Word words,Cell[] cells){
-    	   return score;
+       public String getMyName(){
+           return myName;
        }
 
        public void updateBoard(Player[] playInfo,Board board){

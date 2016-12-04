@@ -3,12 +3,11 @@ package client.model;
 public class Cell {
 	protected int row;
 	protected int column;
-	// the position of the cell in the board
     protected String letter;
+    protected int sharedTimes;
     protected int bonus;
-    // number of times overlapped
     public boolean isSelected;
-    
+    protected int score;
     public Cell(int column, int row){
     	this.column = column;
     	this.row = row;
@@ -20,13 +19,10 @@ public class Cell {
     
     public void selectCell(){
     	this.isSelected = true;
-
-//    	Model.getModel().getGrid()[column][row].setBackground(Color.blue);
     }
     
     public void disselectCell(){
     	this.isSelected = false;
-//    	Model.getModel().getGrid()[column][row].setBackground(Color.white);
     }
 
     public boolean isSelected(){
@@ -41,5 +37,20 @@ public class Cell {
         int position[] = {this.column, this.row};
         return position;
     }
-    
+
+    public int getBonus(){
+        return this.bonus;
+    }
+
+    public void setBonus(){
+        this.bonus = 10;
+    }
+
+    public void setSharedTimes(int times){
+        this.sharedTimes = times;
+    }
+
+    public int getSharedTimes(){
+        return sharedTimes;
+    }
 }

@@ -41,25 +41,16 @@ public class PickWordController extends MouseAdapter{
 //		System.out.println(e.getY());
 //		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);
 		if (x != -2 && y != -2){
-//			if (select && !Model.getModel().getBoard().cells[x][y].isSelected && isAdjacentCells(x, y)) {
-//				Model.getModel().getBoard().cells[x][y].selectCell();
-//				Model.getModel().getWord().addCell(Model.getModel().getBoard().cells[x][y]);
 			if (select && !model.getBoard().cells[x][y].isSelected && isAdjacentCells(x, y)) {
 				model.getBoard().cells[x][y].selectCell();
-
 				model.getGrid()[x][y].setBackground(Color.blue);
-
 				model.getWord().addCell(model.getBoard().cells[x][y]);
-
 			} else if (!select){
 				System.out.println(model.getWord().selectedWord());
 				model.getWord().resetWord();
-//				System.out.println(Model.getModel().getWord().selectedWord());
-//				Model.getModel().getWord().resetWord();
 				for (int i = 0; i < 4; i++) {
 					for (int j = 0; j < 4; j++) {
 						model.getBoard().cells[i][j].disselectCell();
-//						Model.getModel().getBoard().cells[i][j].disselectCell();
 						model.getGrid()[i][j].setBackground(Color.white);
 					}
 				}
@@ -84,12 +75,9 @@ public class PickWordController extends MouseAdapter{
 	}
 
 	protected boolean isAdjacentCells(int x, int y){
-//		if (Model.getModel().getWord().isTheFirstLetter()){
 		if (model.getWord().isTheFirstLetter()){
 			return true;
 		}else {
-//			return (Math.abs(Model.getModel().getWord().lastCellPosition()[0] - x) < 2 &&
-//					Math.abs(Model.getModel().getWord().lastCellPosition()[1] - y) < 2);
 			return (Math.abs(model.getWord().lastCellPosition()[0] - x) < 2 &&
 					Math.abs(model.getWord().lastCellPosition()[1] - y) < 2);
 		}

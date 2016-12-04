@@ -12,15 +12,8 @@ public class Model {
 	private Board board;
     private Player player;
     private Word word;
-	//	private static Model mainModel;
 	private JLabel[][] grid;
 	public boolean existedGame;
-	//	public static Model getModel() {
-//		if (mainModel == null) {
-//			mainModel = new Model();
-//		}
-//		return mainModel;
-//	}
 	private static final String[] LETTER_SET={"A",
             "B","C","D","E","F","G","H","I","J","K",
             "L","M","N","O","P","Q","R","S","T","U",
@@ -41,7 +34,7 @@ public class Model {
         this.word = new Word();
 	}
 
-	public Game getGame(Game game){
+	public Game getGame(){
         return game;
     }
 

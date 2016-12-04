@@ -5,6 +5,7 @@ public class Player {
     public String name;
     public int userID;
     public int score;
+    protected int[] globalPosition;
     public  boolean isManagingUser;
     
     
@@ -37,6 +38,14 @@ public class Player {
 
     public void setAsManagingUser(){
         this.isManagingUser = true;
+    }
+
+    public void  setGlobalPosition(int[] position){
+        this.globalPosition = position;
+    }
+
+    public int[] getGlobalPosition() {
+        return this.globalPosition;
     }
 
     public void clearScore(){
