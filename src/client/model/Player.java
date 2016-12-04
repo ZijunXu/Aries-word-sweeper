@@ -2,11 +2,11 @@ package client.model;
 import client.model.Position;
 
 public class Player {
-    public String name;
-    public int userID;
-    public int score;
+    protected String name;
+    protected int userID;
+    protected long score;
     protected int[] globalPosition;
-    public  boolean isManagingUser;
+    protected   boolean isManagingUser;
     
     
     public void Player(){
@@ -24,11 +24,11 @@ public class Player {
         this.name = name;
     }
 
-    public int getScore(){
+    public long getScore(){
         return score;
     }
 
-    public void setScore(int score){
+    public void setScore(long score){
         this.score = score;
     }
 
@@ -51,4 +51,6 @@ public class Player {
     public void clearScore(){
         this.score = 0;
     }
+
+
 }

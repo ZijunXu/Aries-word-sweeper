@@ -70,5 +70,4 @@ public class Word {
 		}
 		return chosenCellsString;
 	}
-
 }

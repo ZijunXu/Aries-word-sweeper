@@ -27,6 +27,22 @@ public class Board {
     	}
     }
 
+    public void setBoard(String letters){
+        char [] stringArr = letters.toCharArray();
+        int m = 0;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if(stringArr[m] == 'q'){
+                    cells[i][j].setLetter(String.valueOf(stringArr[m]) + String.valueOf(stringArr[m+1]));
+                    m += 2;
+                }else {
+                    cells[i][j].setLetter(String.valueOf(stringArr[m]));
+                    m += 1;
+                }
+            }
+        }
+    }
+
     public int[] getGlobalPosition(){
         return this.globalPosition;
     }

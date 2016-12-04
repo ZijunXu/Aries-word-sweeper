@@ -9,7 +9,7 @@ public class Game {
        protected String roomID;
        protected String password;
        protected String managingUser;
-       protected double score;
+       protected long score;
        protected ArrayList<Player> players;
 
        public Game(){
@@ -50,5 +50,20 @@ public class Game {
        public void updateBoard(Player[] playInfo,Board board){
     	   
        }
-       
+
+       public void setScore(long score){
+           this.score = score;
+       }
+
+       public ArrayList<Player> getPlayers(){
+           return this.players;
+       }
+
+       public void clearPlayers(){
+           players.clear();
+       }
+
+       public void addPlayers(Player newPlayer){
+           this.players.add(newPlayer);
+       }
 }

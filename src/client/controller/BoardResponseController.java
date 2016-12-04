@@ -1,5 +1,6 @@
 package client.controller;
 
+import client.model.Player;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -41,8 +42,9 @@ public class BoardResponseController extends ControllerChain{
 //		app.getResponseArea().append("Board Message received for game:" + gameId + "\n");
 //		app.getResponseArea().append("Players:\n");
 		int[] bonusGlobalPosition = extractPosition(bonus);
+        this.model.getGame().clearPlayers();
 
-		NodeList list = boardResponse.getChildNodes();
+        NodeList list = boardResponse.getChildNodes();
 		for (int i = 0; i < list.getLength(); i++) {
 			Node n = list.item(i);
 			String pname = n.getAttributes().getNamedItem("name").getNodeValue();
@@ -50,19 +52,28 @@ public class BoardResponseController extends ControllerChain{
 			String pboard = n.getAttributes().getNamedItem("board").getNodeValue();
 			Long pscore = Long.valueOf(n.getAttributes().getNamedItem("score").getNodeValue());
             int[] position = extractPosition(pposition);
+
             if (pname.equals(this.model.getGame().getMyName())){
                 this.model.getBoard().setGlobalPosition(position);
+                this.model.getGame().setScore(pscore);
                 int[] bonusPosition;
                 bonusPosition = new int[2];
                 bonusPosition[0] = bonusGlobalPosition[0] - position[0];
                 bonusPosition[1] = bonusGlobalPosition[1] - position[1];
-
-                if(bonusPosition[0]<3 && bonusPosition[0] > -1 &&
-                        bonusPosition[1]<3 && bonusPosition[1] > -1){
+                model.getBoard().setBoard(pboard);
+                if(bonusPosition[0] < 3 && bonusPosition[0] > -1 &&
+                        bonusPosition[1] < 3 && bonusPosition[1] > -1){
                     this.model.getBoard().cells[bonusPosition[0]][bonusPosition[1]].setBonus();
                 }
-
-
+            }else {
+                Player a = new Player();
+                if(pname.equals(managingUser)){
+                    a.setAsManagingUser();
+                }
+                a.setName(pname);
+                a.setScore(pscore);
+                a.setGlobalPosition(position);
+                model.getGame().addPlayers(a);
             }
 
 //			app.getResponseArea().append("  " + pname  + "\n");
