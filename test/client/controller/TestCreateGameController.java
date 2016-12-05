@@ -1,9 +1,12 @@
 package client.controller;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 
 import client.MockServerAccess;
 import client.model.Model;
+import client.model.Player;
 import client.view.GameModePanel;
 import xml.Message;
 import junit.framework.TestCase;
@@ -27,6 +30,9 @@ public class TestCreateGameController extends TestCase {
 	// model being maintained by client.
 	Model model;
 	
+	// Player
+	Player player;
+	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
 		if (!Message.configure("wordsweeper.xsd")) {
@@ -37,6 +43,7 @@ public class TestCreateGameController extends TestCase {
 		model = new Model();
 		client = new GameModePanel (model);
 		client.setVisible(true);
+		player = new Player();
 		
 		// Create mockServer to simulate server, and install 'obvious' handler
 		// that simply dumps to the screen the responses.
@@ -52,21 +59,42 @@ public class TestCreateGameController extends TestCase {
 	 * sends a GrabLock request to the server.
 	 */
 	public void testCreateGameProcess() {
-		 new CreateGameController(client, model).process();
+		
+		//****with Password
+		String playerName = "player1";
+		String password = "test";
+		player.setName(playerName);
+		client.setPlayerName(playerName);
+		client.setPassword(password);
+		new CreateGameController(client, model).process();
+		
+		// validate from mockServer
+		ArrayList<Message> reqs = mockServer.getAndClearMessages();
+		assertTrue (reqs.size() == 1);
+		Message r = reqs.get(0);
+		
+		// a lock request is sent out.
+		assertEquals ("createGameRequest", r.contents.getFirstChild().getLocalName());
+		System.out.println (r.toString());
+		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
+		assertEquals(password, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
+		
+		//****without Password
+		String playerName_2 = "player2";
+		player.setName(playerName_2);
+		new CreateGameController(client, model).process();
 		 
-		 // validate from mockServer
+		// validate from mockServer
 		 
-		 ArrayList<Message> reqs = mockServer.getAndClearMessages();
-		 assertTrue (reqs.size() == 1);
-		 Message r = reqs.get(0);
+		ArrayList<Message> reqs_2 = mockServer.getAndClearMessages();
+		assertTrue (reqs_2.size() == 1);
+		Message r_2 = reqs_2.get(0);
 		 
-		 // a lock request is sent out.
-		 assertEquals ("createGameRequest", r.contents.getFirstChild().getLocalName());
-		 
-		 // make sure "grab" attribute is there, and true
-		 System.out.println (r.toString());
-		 assertEquals ("samplePlayer", r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		 
+		// a lock request is sent out.
+		assertEquals ("createGameRequest", r_2.contents.getFirstChild().getLocalName());
+		System.out.println (r_2.toString());
+		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
+
 	}
 	
 

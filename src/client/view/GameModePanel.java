@@ -35,6 +35,10 @@ public class GameModePanel extends JFrame {
 	JTextArea responseArea;
 	private JTextField userNameField;
 	private JTextField gameIDField;
+	
+	String gameID;
+	String playerName;
+	String password;
 
 	/**
 	 * Create the frame.
@@ -173,4 +177,18 @@ public class GameModePanel extends JFrame {
 	public JTextArea getResponseArea() {
 		return responseArea;
 	}
+	
+	public void setPlayerName(String name) {
+		this.playerName = name;
+	}
+	
+	public void setPassword(String pass) {
+		this.password = pass;
+	}
+	
+	public void setGameNumber(String id) {
+		this.gameID = id;
+	}
+	
+	
 }
