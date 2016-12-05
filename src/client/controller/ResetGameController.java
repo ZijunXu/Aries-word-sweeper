@@ -1,18 +1,25 @@
 package client.controller;
 
 import client.model.Model;
-import client.view.GameModePanel;
+import client.view.Application;
 import xml.Message;
 
 public class ResetGameController {
-    GameModePanel app;
-    Model model;
+    protected Application app;
+    protected Model model;
 
-    public ResetGameController(GameModePanel app, Model model){
+    public ResetGameController(Application app, Model model){
         this.app = app;
         this.model = model;
     }
 
-   // String request = Message.requestHeader() + String.format("<restGameRequest gameID='%s'/></request>", model.getGame().getRoomID());
-   // System.o
+    public void process(){
+        String xmlString = Message.requestHeader() + String.format("<restGameRequest gameID='%s'/></request>",
+                model.getGame().getRoomID());
+        Message m = new Message(xmlString);
+        app.getRequestArea().append(m.toString());
+        app.getRequestArea().append("\n");
+        app.getServerAccess().sendRequest(m);
+    }
+
 }

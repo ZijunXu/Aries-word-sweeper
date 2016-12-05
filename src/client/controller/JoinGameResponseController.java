@@ -1,17 +1,17 @@
 package client.controller;
 
+import client.view.Application;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import client.model.Model;
-import client.view.GameModePanel;
 import xml.Message;
 
 public class JoinGameResponseController extends ControllerChain{
-    public GameModePanel app;
+    public Application app;
     public Model model;
 
-    public JoinGameResponseController(GameModePanel a, Model m){
+    public JoinGameResponseController(Application a, Model m){
         super();
         this.app = a;
         this.model = m;
@@ -20,7 +20,7 @@ public class JoinGameResponseController extends ControllerChain{
     @Override
     public boolean process(Message response) {
         String type = response.contents.getFirstChild().getLocalName();
-        if (!type.equals("JoinGameResponse")){
+        if (!type.equals("joinGameResponse")){
             return next.process(response);
         }
         if (response.contents.getAttributes().getNamedItem("success").getNodeValue().equals("false")){

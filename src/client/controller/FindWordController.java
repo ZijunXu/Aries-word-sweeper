@@ -1,14 +1,14 @@
 package client.controller;
 
 import client.model.Model;
-import client.view.GameModePanel;
+import client.view.Application;
 import xml.Message;
 
 public class FindWordController {
-    GameModePanel app;
+    Application app;
     Model model;
 
-    FindWordController(GameModePanel app, Model model){
+    FindWordController(Application app, Model model){
         this.app = app;
         this.model = model;
     }

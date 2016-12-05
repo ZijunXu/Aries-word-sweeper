@@ -7,7 +7,6 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import client.model.*;
-//import client.view.storyBoard_Practice;
 
 public class PickWordController extends MouseAdapter{
 	private JPanel panel;

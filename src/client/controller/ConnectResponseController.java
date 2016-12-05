@@ -1,14 +1,14 @@
 package client.controller;
 
 import client.model.Model;
-import client.view.GameModePanel;
+import client.view.Application;
 import xml.Message;
 
 public class ConnectResponseController extends ControllerChain {
-	public GameModePanel app;
+	public Application app;
 	public Model model;
 
-	public ConnectResponseController(GameModePanel a, Model m) {
+	public ConnectResponseController(Application a, Model m) {
 		super();
 		this.app = a;
 		this.model = m;

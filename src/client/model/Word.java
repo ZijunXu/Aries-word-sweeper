@@ -2,8 +2,16 @@
 package client.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Word {
+    static String[] letters = {"E","T","A","O","I","N","S","H","R","D","L","C","U","M","W","F","G","Y","P",
+            "B","V","K","J","X","Qu","Z"};
+    static int[] letterScore = {1 , 1 , 2 , 2 , 2 , 2 , 2 , 2 , 2 , 3 , 3 , 3 , 3 , 3 , 3 , 4 , 4 , 4 , 4 ,
+            4 , 5 , 5 , 7 , 7 , 11 , 8,};
+    static Map<String, Integer> map = new HashMap<>();
+
 	protected String word;
 	protected long score;
 	protected ArrayList<Cell> ChoseCells;
@@ -11,6 +19,9 @@ public class Word {
 	public Word(){
 		this.ChoseCells = new ArrayList<Cell>();
 		this.score = 0;
+        for(int i = 0; i < 26; i++){
+            map.put(letters[i], letterScore[i]);
+        }
 	}
 	
 	public ArrayList<Cell> addCell(Cell c) {
@@ -42,15 +53,17 @@ public class Word {
 	
 	public long computeScore(){
 	    double num = 0;
-	    long sum = 0;
-	    int mutiplier = 1;
+	    int sum = 0;
+	    int multiplier = 1;
+	    int sharedTimes = 0;
 		for (Cell cell : ChoseCells){
 		    num +=1;
-//		    sum += valueOfLetters(cell)
+		    sum = map.get(cell.getLetter());
             if (cell.getBonus() == 10)
-                mutiplier *= 10;
+                multiplier *= 10;
+            sharedTimes += cell.getSharedTimes();
         }
-        score = (long)(10 * Math.pow(2, num) * mutiplier);
+        score = (long)(10 * Math.pow(2, num + sharedTimes) * multiplier * sum);
 		return score;
 	}
 

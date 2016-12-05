@@ -1,7 +1,6 @@
 package client.view;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,7 +22,7 @@ import client.controller.CreateGameController;
 import client.controller.JoinGameController;
 import client.model.Model;
 
-public class GameModePanel extends JFrame {
+public class Application extends JFrame {
 
 	protected JPanel contentPane;
 	protected JButton btnPractice;
@@ -43,7 +42,7 @@ public class GameModePanel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public GameModePanel(Model model) {
+	public Application(Model model) {
 		this.model = model;
 		setTitle("WordSweeper");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +57,7 @@ public class GameModePanel extends JFrame {
 		getContentPane().add(btnJoinAGame);
 		btnJoinAGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new JoinGameController(GameModePanel.this, model).process();
+				new JoinGameController(Application.this, model).process();
 			}
 		});
 		
@@ -67,7 +66,7 @@ public class GameModePanel extends JFrame {
 		getContentPane().add(btnLogIn);
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new CreateGameController(GameModePanel.this, model).process();
+				new CreateGameController(Application.this, model).process();
 			}
 		});
 

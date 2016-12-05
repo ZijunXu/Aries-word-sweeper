@@ -1,8 +1,6 @@
-import client.view.GameModePanel;
+import client.view.Application;
 import client_src.ServerAccess;
-import client.controller.ConnectResponseController;
 import client.controller.SampleClientMessageHandler;
-import client.controller.BoardResponseController;
 import client.model.Model;
 import xml.Message;
 
@@ -29,7 +27,7 @@ public class ClientLauncher {
 		
 		// Initialize the client application and its corresponding model
 		Model model = new Model();
-		GameModePanel app = new GameModePanel(model);
+		Application app = new Application(model);
 
 		//SampleClientMessageHandler handler = new SampleClientMessageHandler(app);
 		

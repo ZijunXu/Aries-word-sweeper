@@ -1,16 +1,15 @@
 package client.controller;
 
 
-import xml.Message;
+import client.view.Application;
 import client.model.Model;
-import client.view.GameModePanel;
 
 public class JoinGameController {
 
-	GameModePanel app;
+	Application app;
 	Model model;
 
-	public JoinGameController(GameModePanel app, Model model) {
+	public JoinGameController(Application app, Model model) {
 		this.app = app;
 		this.model = model;
 	}

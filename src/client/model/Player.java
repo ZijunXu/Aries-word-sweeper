@@ -7,8 +7,7 @@ public class Player {
     protected long score;
     protected int[] globalPosition;
     protected   boolean isManagingUser;
-    
-    
+
     public void Player(){
     	this.name = "";
     	this.userID = 0;

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import client.MockServerAccess;
 import client.model.Model;
 import client.model.Player;
-import client.view.GameModePanel;
+import client.view.Application;
 import xml.Message;
 import junit.framework.TestCase;
 

@@ -1,7 +1,7 @@
 package client.controller;
+import client.view.Application;
 import xml.Message;
 import client_src.IMessageHandler;
-import client.view.GameModePanel;
 
 /**
  * Sample implementation of a protocol handler to respond to messages received from the server.
@@ -11,12 +11,31 @@ import client.view.GameModePanel;
  */
 public class SampleClientMessageHandler implements IMessageHandler {
 
-	GameModePanel app;
-	
-	public SampleClientMessageHandler(GameModePanel app) {
+	Application app;
+
+	// by default is the empty handler...
+	ControllerChain chain = new EmptyHandler();
+
+	/**
+	 * Register new controller chain as occuring before existing chain.
+	 */
+//	public void registerHandler(ControllerChain handler) {
+//		handler.next = chain;
+//		chain = handler;
+//	}
+//
+//	public SampleClientMessageHandler(Application app) {
+//		this.app = app;
+//	}
+//
+//	@Override
+//	public void process(Message response) {
+//		chain.process(response);
+//	}
+	public SampleClientMessageHandler(Application app) {
 		this.app = app;
 	}
-	
+
 	@Override
 	public void process(Message response) {
 		String type = response.contents.getFirstChild().getLocalName();
@@ -28,10 +47,9 @@ public class SampleClientMessageHandler implements IMessageHandler {
 		} else if (type.equals ("connectResponse")) {
 			//app.getResponseArea().append(response.toString() + "\n");
 		}
-		
+
 		// only here to show messages as they are received by the client
 		// this isn't needed.
 		System.out.println(response);
 	}
-
 }

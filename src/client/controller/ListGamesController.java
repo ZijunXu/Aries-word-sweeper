@@ -1,21 +1,21 @@
 package client.controller;
 
+
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
 
-public class LockGameController{
+public class ListGamesController {
     protected Application app;
     protected Model model;
 
-    public LockGameController(Application app, Model model){
-        this.app = app;
-        this.model = model;
+    public void ListGamesController(Application a, Model m){
+        this.app = a;
+        this.model = m;
     }
 
     public void process(){
-        String xmlString = Message.requestHeader() + String.format("<lockGameRequest gameID='%s'/></request>",
-                model.getGame().getRoomID());
+        String xmlString = Message.requestHeader() + "<listGamesRequest /></request>";
         Message m = new Message(xmlString);
         app.getRequestArea().append(m.toString());
         app.getRequestArea().append("\n");

@@ -1,21 +1,22 @@
 package client.controller;
 
 import client.model.Model;
-import client.view.GameModePanel;
+import client.view.Application;
 import xml.Message;
 
 public class MoveBoardController {
-    GameModePanel app;
+    Application app;
     Model model;
 
-    public MoveBoardController(GameModePanel app, Model model){
+    public MoveBoardController(Application app, Model model){
         this.app = app;
         this.model = model;
     }
 
     public void process(){
-        String xmlString = Message.requestHeader() + String.format("<repositionBoardRequest name='%s' gameID='%s'") +
-                "'rowChange='"+
+        String xmlString = Message.requestHeader() + String.format("<repositionBoardRequest name='%s' gameID='%s'",
+                model.getGame().getMyName(), model.getGame().getRoomID())
+                + "'rowChange='"+
                 "' colChange='" +  "'/></request>";
         Message m = new Message (xmlString);
         app.getRequestArea().append(m.toString());

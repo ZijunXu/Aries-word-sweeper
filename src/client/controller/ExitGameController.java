@@ -1,14 +1,14 @@
 package client.controller;
 
 
-import client.view.GameModePanel;
+import client.view.Application;
 import client.model.Model;
 import xml.Message;
 
 public class ExitGameController {
-    GameModePanel app;
+    Application app;
     Model model;
-    public ExitGameController(GameModePanel app, Model model){
+    public ExitGameController(Application app, Model model){
         this.app = app;
         this.model = model;
     }

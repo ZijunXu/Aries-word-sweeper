@@ -1,18 +1,16 @@
 package client.controller;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
-import client.view.GameModePanel;
+import client.view.Application;
 import client.model.Model;
-import client.model.Game;
 import xml.Message;
 
+import java.awt.*;
+
 public class FindWordResponseController extends ControllerChain{
-    public GameModePanel app;
+    public Application app;
     public Model model;
 
-    public FindWordResponseController(GameModePanel a, Model m) {
+    public FindWordResponseController(Application a, Model m) {
         super();
         this.app = a;
         this.model = m;
@@ -23,22 +21,32 @@ public class FindWordResponseController extends ControllerChain{
         if (!type.equals("findWordResponse")) {
             return next.process(response);
         }
-        if (response.contents.getAttributes().getNamedItem("success").getNodeValue().equals("false"))
+        if (response.contents.getAttributes().getNamedItem("success").getNodeValue().equals("false")){
+            model.getWord().resetWord();
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    model.getBoard().cells[i][j].disselectCell();
+                    model.getGrid()[i][j].setBackground(Color.white);
+                }
+            }
             return false;
-
-        Node boardResponse = response.contents.getFirstChild();
-        NamedNodeMap map = boardResponse.getAttributes();
-
-        String gameId = map.getNamedItem("gameId").getNodeValue();
-        String score = map.getNamedItem("score").getNodeValue();
-        String pname = map.getNamedItem("name").getNodeValue();
-
-        app.getResponseArea().append("Board Message received for game:" + boardResponse.toString() + "\n");
-//        model.getGame().getPlayer().setWordscore(Integer.valueOf(score));
+        }
+//        Node boardResponse = response.contents.getFirstChild();
+//        NamedNodeMap map = boardResponse.getAttributes();
 //
-//        ((LeftBoardPanel) app.getMultiGame().getLeftBoardPanel()).refreshBoard();
-//        ((RightGameInfoBoard) app.getMultiGame().getRightGameInfoPanel()).updateGameInfoBoard();
-
+//        String gameId = map.getNamedItem("gameId").getNodeValue();
+//        String score = map.getNamedItem("score").getNodeValue();
+//        String pname = map.getNamedItem("name").getNodeValue();
+//
+//        app.getResponseArea().append("Board Message received for game:" + boardResponse.toString() + "\n");
+//        model.getGame().setScore(Integer.valueOf(score));
+        model.getWord().resetWord();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                model.getBoard().cells[i][j].disselectCell();
+                model.getGrid()[i][j].setBackground(Color.white);
+            }
+        }
         return true;
     }
 }

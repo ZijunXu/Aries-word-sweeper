@@ -1,5 +1,7 @@
 package client.model;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import javax.swing.JLabel;
@@ -14,6 +16,7 @@ public class Model {
     private Word word;
 	private JLabel[][] grid;
 	public boolean existedGame;
+    protected Map<String, Integer> gameList = new HashMap<>();
 	private static final String[] LETTER_SET={"A",
             "B","C","D","E","F","G","H","I","J","K",
             "L","M","N","O","P","Q","R","S","T","U",
@@ -61,5 +64,47 @@ public class Model {
 	public void setGrid(JLabel[][] grid) {
 		this.grid = grid;
 	}
-	
+
+	public Map<String, Integer> getGameList(){
+	    return this.gameList;
+    }
+
+    public void addGameToGameList(String gameID, int playerNumber){
+	    gameList.put(gameID, playerNumber);
+    }
+
+	public  void resetGame(){
+
+    }
+
+    public void setSharedCells(){
+	    int[][] sharedTimes;
+	    sharedTimes = new int[4][4];
+	    int[] myPosition = this.getBoard().getGlobalPosition();
+	    for (Player eachPlayer : this.getGame().getPlayers()){
+	        int[] otherPlyerPosition = eachPlayer.getGlobalPosition();
+	        if(Math.abs(otherPlyerPosition[0] - myPosition[0]) < 4 &&
+                    Math.abs(otherPlyerPosition[1] - myPosition[1]) < 4){
+	            for(int i = sharedCellIndex(otherPlyerPosition[0], myPosition[0])[0];
+                    i <= sharedCellIndex(otherPlyerPosition[0], myPosition[0])[1]; i++){
+	                for (int j = sharedCellIndex(otherPlyerPosition[1], myPosition[1])[0];
+                         j <= sharedCellIndex(otherPlyerPosition[1], myPosition[1])[1]; j++){
+	                    this.getBoard().cells[i][j].sharedTimes +=1;
+                    }
+                }
+            }
+        }
+    }
+
+    public int[] sharedCellIndex(int others, int me){
+        int[] result = new int[2];
+        if (others >= me){
+            result[0] = others - me;
+            result[1] = 3;
+        }else if (me > others){
+            result[0] = 0;
+            result[1] = others - me + 3;
+        }
+        return result;
+    }
 }
