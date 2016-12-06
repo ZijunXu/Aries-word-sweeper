@@ -35,7 +35,7 @@ public class Application extends JFrame {
 	private JTextField userNameField;
 	private JTextField gameIDField;
 	
-	String gameID;
+	String roomID;
 	String playerName;
 	String password;
 
@@ -185,8 +185,8 @@ public class Application extends JFrame {
 		this.password = pass;
 	}
 	
-	public void setGameNumber(String id) {
-		this.gameID = id;
+	public void setRoomNumber(String id) {
+		this.roomID = id;
 	}
 	
 	

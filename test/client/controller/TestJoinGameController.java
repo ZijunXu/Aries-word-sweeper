@@ -19,7 +19,7 @@ import junit.framework.TestCase;
  * 
  * @author heineman
  */
-public class TestCreateGameController extends TestCase {
+public class TestJoinGameController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -58,15 +58,18 @@ public class TestCreateGameController extends TestCase {
 	 * The real test case whose purpose is to validate that selecting the Locked button
 	 * sends a GrabLock request to the server.
 	 */
-	public void testCreateGameProcess() {
+	public void testJoinGameProcess() {
 		
 		//****with Password
+		String roomNumber = "Number1";
 		String playerName = "player1";
 		String password = "test";
+		model.getGame().setRoomID(roomNumber);
 		player.setName(playerName);
+		client.setRoomNumber(roomNumber);
 		client.setPlayerName(playerName);
 		client.setPassword(password);
-		new CreateGameController(client, model).process();
+		new JoinGameController(client, model).process();
 		
 		// validate from mockServer
 		ArrayList<Message> reqs = mockServer.getAndClearMessages();
@@ -74,14 +77,18 @@ public class TestCreateGameController extends TestCase {
 		Message r = reqs.get(0);
 		
 		// a lock request is sent out.
-		assertEquals ("createGameRequest", r.contents.getFirstChild().getLocalName());
+		assertEquals ("joinGameRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
+		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
 		assertEquals(password, r.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
 		
 		//****without Password
+		String roomNumber_2 = "Number2";
 		String playerName_2 = "player2";
+		model.getGame().setRoomID(roomNumber_2);
 		player.setName(playerName_2);
+		client.setRoomNumber(roomNumber_2);
 		client.setPlayerName(playerName_2);
 		new CreateGameController(client, model).process();
 		 
@@ -92,8 +99,9 @@ public class TestCreateGameController extends TestCase {
 		Message r_2 = reqs_2.get(0);
 		 
 		// a lock request is sent out.
-		assertEquals ("createGameRequest", r_2.contents.getFirstChild().getLocalName());
+		assertEquals ("joinGameRequest", r_2.contents.getFirstChild().getLocalName());
 		System.out.println (r_2.toString());
+		assertEquals(roomNumber_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
 		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
 
 	}
