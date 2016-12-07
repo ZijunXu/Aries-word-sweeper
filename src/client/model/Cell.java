@@ -1,6 +1,9 @@
 package client.model;
 
 public class Cell {
+    /**
+     *@Zijun Xu
+     */
 	protected int row;
 	protected int column;
     protected String letter;

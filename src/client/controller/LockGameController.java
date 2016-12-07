@@ -3,8 +3,11 @@ package client.controller;
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
-
+/**
+ *@author Zijun Xu
+ */
 public class LockGameController{
+
     protected Application app;
     protected Model model;
 

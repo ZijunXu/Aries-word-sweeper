@@ -4,7 +4,11 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 
+/**
+ *@author Zijun Xu
+ */
 public class ResetGameResponseController extends ControllerChain{
+
     protected Application app;
     protected Model model;
 

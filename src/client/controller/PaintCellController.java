@@ -1,0 +1,31 @@
+package client.controller;
+
+import client.model.Model;
+import client.view.Application;
+
+import javax.swing.*;
+import java.awt.Color;
+
+/**
+ * @author Zijun Xu
+ */
+public class PaintCellController {
+    Model model;
+    JPanel panel;
+    public PaintCellController(Model m, JPanel a){
+        this.panel = a;
+        this.model = m;
+    }
+    public void repaint(){
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (model.getBoard().cells[i][j].isSelected){
+                    model.getGrid()[i][j].setBackground(Color.blue);
+                }else {
+                    model.getGrid()[i][j].setBackground(Color.white);
+                }
+            }
+        }
+    }
+}
+

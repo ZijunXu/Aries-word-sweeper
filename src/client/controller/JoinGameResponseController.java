@@ -8,6 +8,9 @@ import client.model.Model;
 import xml.Message;
 
 public class JoinGameResponseController extends ControllerChain{
+    /**
+     *@Zijun Xu
+     */
     public Application app;
     public Model model;
 

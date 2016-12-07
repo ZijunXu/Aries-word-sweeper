@@ -1,8 +1,11 @@
 package client.model;
 
 import java.util.ArrayList;
-
+/**
+ *@author Zijun Xu
+ */
 public class Board {
+
     protected int[] globalPosition;
 	protected int colNum = 4;
 	protected int rowNum = 4;

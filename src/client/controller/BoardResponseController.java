@@ -51,15 +51,15 @@ public class BoardResponseController extends ControllerChain{
             String pposition = n.getAttributes().getNamedItem("position").getNodeValue();
 			String pboard = n.getAttributes().getNamedItem("board").getNodeValue();
 			Long pscore = Long.valueOf(n.getAttributes().getNamedItem("score").getNodeValue());
-            int[] position = extractPosition(pposition);
+            int[] globalPosition = extractPosition(pposition);
 
             if (pname.equals(this.model.getGame().getMyName())){
-                this.model.getBoard().setGlobalPosition(position);
+                this.model.getBoard().setGlobalPosition(globalPosition);
                 this.model.getGame().setScore(pscore);
                 int[] bonusPosition;
                 bonusPosition = new int[2];
-                bonusPosition[0] = bonusGlobalPosition[0] - position[0];
-                bonusPosition[1] = bonusGlobalPosition[1] - position[1];
+                bonusPosition[0] = bonusGlobalPosition[0] - globalPosition[0];
+                bonusPosition[1] = bonusGlobalPosition[1] - globalPosition[1];
                 model.getBoard().setBoard(pboard);
                 if(bonusPosition[0] < 3 && bonusPosition[0] > -1 &&
                         bonusPosition[1] < 3 && bonusPosition[1] > -1){
@@ -72,18 +72,17 @@ public class BoardResponseController extends ControllerChain{
                 }
                 a.setName(pname);
                 a.setScore(pscore);
-                a.setGlobalPosition(position);
+                a.setGlobalPosition(globalPosition);
                 model.getGame().addPlayers(a);
             }
 
-//			app.getResponseArea().append("  " + pname  + "\n");
 		}
         model.getGame().setManagingUser(managingUser);
 		model.getGame().setRoomID(gameId);
 
 		// at this point, you would normally start processing this...
-		app.getResponseArea().append(response.toString());
-		app.getResponseArea().append("\n");
+//		app.getResponseArea().append(response.toString());
+//		app.getResponseArea().append("\n");
 		return true;
 	}
 

@@ -5,6 +5,9 @@ import client.view.Application;
 import xml.Message;
 
 public class FindWordController {
+    /**
+     *@Zijun Xu
+     */
     Application app;
     Model model;
 

@@ -4,11 +4,14 @@ package client.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ *@author Zijun Xu
+ */
 public class Word {
-    static String[] letters = {"E","T","A","O","I","N","S","H","R","D","L","C","U","M","W","F","G","Y","P",
+
+    private static String[] letters = {"E","T","A","O","I","N","S","H","R","D","L","C","U","M","W","F","G","Y","P",
             "B","V","K","J","X","Qu","Z"};
-    static int[] letterScore = {1 , 1 , 2 , 2 , 2 , 2 , 2 , 2 , 2 , 3 , 3 , 3 , 3 , 3 , 3 , 4 , 4 , 4 , 4 ,
+    private static int[] letterScore = {1 , 1 , 2 , 2 , 2 , 2 , 2 , 2 , 2 , 3 , 3 , 3 , 3 , 3 , 3 , 4 , 4 , 4 , 4 ,
             4 , 5 , 5 , 7 , 7 , 11 , 8,};
     static Map<String, Integer> map = new HashMap<>();
 

@@ -8,8 +8,11 @@ import javax.swing.JLabel;
 
 import client.model.*;
 import client.view.PlayingPanel;
-
+/**
+ *@author Zijun Xu
+ */
 public class Model {
+
     private Game game;
 	private Board board;
     private Player player;
@@ -19,8 +22,8 @@ public class Model {
     protected Map<String, Integer> gameList = new HashMap<>();
 	private static final String[] LETTER_SET={"A",
             "B","C","D","E","F","G","H","I","J","K",
-            "L","M","N","O","P","Q","R","S","T","U",
-            "V","W","X","Y","Z","Qu"};
+            "L","M","N","O","P","Qu","R","S","T","U",
+            "V","W","X","Y","Z"};
 	Random random = new Random();
 	public Model(){
 		String[][] letters = new String[4][4];
@@ -28,7 +31,7 @@ public class Model {
 		for (int i = 0; i < 4; i++) {
 			for(int j = 0; j < 4; j++){
 //				letters[i][j] = str + (char)(Math.random() * 26 + 'A');	
-				letters[i][j] = LETTER_SET[random.nextInt(26)+1];
+				letters[i][j] = LETTER_SET[random.nextInt(26)];
 			}	
 		}
 		this.game = new Game();
@@ -96,7 +99,7 @@ public class Model {
         }
     }
 
-    public int[] sharedCellIndex(int others, int me){
+    protected int[] sharedCellIndex(int others, int me){
         int[] result = new int[2];
         if (others >= me){
             result[0] = others - me;

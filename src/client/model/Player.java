@@ -1,7 +1,10 @@
 package client.model;
 import client.model.Position;
-
+/**
+ *@author Zijun Xu
+ */
 public class Player {
+
     protected String name;
     protected int userID;
     protected long score;

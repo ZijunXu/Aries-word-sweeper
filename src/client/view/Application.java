@@ -27,7 +27,7 @@ public class Application extends JFrame {
 	protected JPanel contentPane;
 	protected JButton btnPractice;
 	
-	public final Model model;
+	public Model model;
 	ServerAccess serverAccess;
 	
 	JTextArea requestArea;
@@ -57,7 +57,7 @@ public class Application extends JFrame {
 		getContentPane().add(btnJoinAGame);
 		btnJoinAGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new JoinGameController(Application.this, model).process();
+//				new JoinGameController(Application.this, model).process();
 			}
 		});
 		
@@ -66,7 +66,7 @@ public class Application extends JFrame {
 		getContentPane().add(btnLogIn);
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new CreateGameController(Application.this, model).process();
+//				new CreateGameController(Application.this, model).process();
 			}
 		});
 

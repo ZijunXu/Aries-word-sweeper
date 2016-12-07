@@ -20,9 +20,6 @@ public class ConnectResponseController extends ControllerChain {
 		if (!type.equals("connectResponse")) {
 			return next.process(response);
 		}
-
-		app.getResponseArea().append(response.toString() + "\n");
 		return true;
 	}
-
 }

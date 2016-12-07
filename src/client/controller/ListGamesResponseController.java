@@ -5,8 +5,11 @@ import client.view.Application;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import xml.Message;
-
+/**
+ *@author Zijun Xu
+ */
 public class ListGamesResponseController extends ControllerChain{
+
     public Application app;
     public Model model;
 

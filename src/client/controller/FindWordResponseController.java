@@ -5,8 +5,11 @@ import client.model.Model;
 import xml.Message;
 
 import java.awt.*;
-
+/**
+ *@author Zijun Xu
+ */
 public class FindWordResponseController extends ControllerChain{
+
     public Application app;
     public Model model;
 

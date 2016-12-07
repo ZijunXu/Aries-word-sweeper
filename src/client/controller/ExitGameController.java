@@ -4,8 +4,11 @@ package client.controller;
 import client.view.Application;
 import client.model.Model;
 import xml.Message;
-
+/**
+ *@author Zijun Xu
+ */
 public class ExitGameController {
+
     Application app;
     Model model;
     public ExitGameController(Application app, Model model){
