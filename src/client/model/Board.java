@@ -35,7 +35,7 @@ public class Board {
         int m = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if(stringArr[m] == 'q'){
+                if(stringArr[m] == 'Q'){
                     cells[i][j].setLetter(String.valueOf(stringArr[m]) + String.valueOf(stringArr[m+1]));
                     m += 2;
                 }else {

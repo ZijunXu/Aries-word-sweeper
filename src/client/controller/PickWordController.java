@@ -37,17 +37,14 @@ public class PickWordController extends MouseAdapter{
 		if(x == -1 || y == -1){
 			select = false;
 		}
-//		System.out.println(e.getX());
-//		System.out.println(e.getY());
-//		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);
         if (!select && !model.getWord().selectedWord().equals("")){
+            System.out.println(model.getWord().selectedWord());
             model.getWord().resetWord();
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     model.getBoard().cells[i][j].disselectCell();
                 }
             }
-            System.out.println(model.getWord().selectedWord());
             PaintCellController paint = new PaintCellController(model, panel);
             paint.repaint();
         }
