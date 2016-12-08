@@ -83,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/controller/CreateGameController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1100,7 +1100,7 @@
       <workItem from="1481160432582" duration="3336000" />
       <workItem from="1481166861675" duration="2702000" />
       <workItem from="1481170227317" duration="12074000" />
-      <workItem from="1481232914158" duration="4220000" />
+      <workItem from="1481232914158" duration="4258000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore">
       <created>1479271174302</created>
@@ -1158,11 +1158,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481238558860</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="finish the start game GUI; can successfully connect to the server; get board response and show the letters on the playing panel">
+      <created>1481238708858</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1481238708858</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229131000" />
+    <option name="totallyTimeSpent" value="229169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1656,7 +1663,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/controller/CreateGameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
