@@ -125,14 +125,14 @@ public class Application extends JFrame {
         btnJoinAGame = new JButton("Join a game");
         btnJoinAGame.setBounds(35, 163, 130, 38);
         getContentPane().add(btnJoinAGame);
-//        btnJoinAGame.addActionListener(myReaction
+        btnJoinAGame.addActionListener(myReaction
 //		        new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
 //				new JoinGameController(Application.this, model).process();
 //			}
 //		}
-//		);
-		btnJoinAGame.addActionListener(new ActionListener() {
+		);
+/*		btnJoinAGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				roomID = gameIDField.getText();
 				playerName = playerNameField.getText();
@@ -156,11 +156,12 @@ public class Application extends JFrame {
 				}
 			}
 		});
+*/
 
         btnCreateAGame = new JButton("Create a game");
         btnCreateAGame.setBounds(35, 105, 130, 38);
         getContentPane().add(btnCreateAGame);
-//        btnCreateAGame.addActionListener(myReaction
+        btnCreateAGame.addActionListener(myReaction
 //		        new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
 //			    playerName = playerNameField.getText();
@@ -176,8 +177,8 @@ public class Application extends JFrame {
 //                }
 //			}
 //		}
-//		);
-		btnCreateAGame.addActionListener(new ActionListener() {
+		);
+/*		btnCreateAGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				playerName = playerNameField.getText();
 				if (playerName.length() == 0) {
@@ -196,6 +197,7 @@ public class Application extends JFrame {
 				}
 			}
 		});
+*/
 
         JLabel lblNewLabel = new JLabel("Word Sweeper");
         lblNewLabel.setForeground(new Color(0, 0, 0));
