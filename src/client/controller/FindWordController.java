@@ -29,8 +29,8 @@ public class FindWordController {
         System.out.println(xmlString);
 
         Message m = new Message (xmlString);
-        app.getRequestArea().append(m.toString());
-        app.getRequestArea().append("\n");
+        //app.getRequestArea().append(m.toString());
+        //app.getRequestArea().append("\n");
         app.getServerAccess().sendRequest(m);
     }
 }

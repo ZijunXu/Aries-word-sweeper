@@ -20,8 +20,8 @@ public class LockGameController{
         String xmlString = Message.requestHeader() + String.format("<lockGameRequest gameID='%s'/></request>",
                 model.getGame().getRoomID());
         Message m = new Message(xmlString);
-        app.getRequestArea().append(m.toString());
-        app.getRequestArea().append("\n");
+        //app.getRequestArea().append(m.toString());
+        //app.getRequestArea().append("\n");
         app.getServerAccess().sendRequest(m);
     }
 }

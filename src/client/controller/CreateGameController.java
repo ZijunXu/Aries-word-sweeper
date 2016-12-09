@@ -18,11 +18,19 @@ public class CreateGameController {
 	/** Make the request on the server and wait for response. */
 	public void process() {
 		// send the request to create the game.
-		String xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s'/></request>");
+		String xmlString;
+		if (this.app.getPassword() != null){
+			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s' password='%s'/></request>", this.app.getPlayerName(), this.app.getPassword());
+		}
+		else {
+			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s'/></request>", this.app.getPlayerName());
+		}
 		Message m = new Message (xmlString);
+		
+		
 		// Request the lock (this might not succeed).
-		app.getRequestArea().append(m.toString());
-		app.getRequestArea().append("\n");
+		//app.getRequestArea().append(m.toString());
+		//app.getRequestArea().append("\n");
 		app.getServerAccess().sendRequest(m);
 	}
 }

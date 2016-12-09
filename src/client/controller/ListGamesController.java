@@ -20,8 +20,8 @@ public class ListGamesController {
     public void process(){
         String xmlString = Message.requestHeader() + "<listGamesRequest /></request>";
         Message m = new Message(xmlString);
-        app.getRequestArea().append(m.toString());
-        app.getRequestArea().append("\n");
+        //app.getRequestArea().append(m.toString());
+        //app.getRequestArea().append("\n");
         app.getServerAccess().sendRequest(m);
     }
 }

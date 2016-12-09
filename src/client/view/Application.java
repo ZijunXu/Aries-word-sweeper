@@ -9,6 +9,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
@@ -21,6 +22,7 @@ import client_src.ServerAccess;
 import client.controller.CreateGameController;
 import client.controller.JoinGameController;
 import client.model.Model;
+import client.model.Player;
 
 public class Application extends JFrame {
 
@@ -28,6 +30,7 @@ public class Application extends JFrame {
 	protected JButton btnPractice;
 	
 	public Model model;
+	public Player player;
 	ServerAccess serverAccess;
 	
 	JTextArea requestArea;
@@ -38,6 +41,7 @@ public class Application extends JFrame {
 	String roomID;
 	String playerName;
 	String password;
+	private JTextField passwordField;
 
 	/**
 	 * Create the frame.
@@ -57,7 +61,26 @@ public class Application extends JFrame {
 		getContentPane().add(btnJoinAGame);
 		btnJoinAGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				new JoinGameController(Application.this, model).process();
+				roomID = gameIDField.getText();
+				playerName = userNameField.getText();
+				if (playerName.length() == 0) {
+					JOptionPane.showMessageDialog(Application.this, "You should enter a user name!", "Warning",
+							JOptionPane.WARNING_MESSAGE);
+				}
+				else if (roomID.length() == 0) {
+					JOptionPane.showMessageDialog(Application.this, "You should enter a Game ID!", "Warning",
+							JOptionPane.WARNING_MESSAGE);
+				}
+				else {
+					player.setName(playerName);
+					if (password.length() == 0) {
+						password = passwordField.getText();
+						new JoinGameController(Application.this, model).process();
+					}
+					else {
+						new JoinGameController(Application.this, model).process();
+					}
+				}
 			}
 		});
 		
@@ -66,7 +89,21 @@ public class Application extends JFrame {
 		getContentPane().add(btnLogIn);
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				new CreateGameController(Application.this, model).process();
+				playerName = userNameField.getText();
+				if (playerName.length() == 0) {
+					JOptionPane.showMessageDialog(Application.this, "You should enter a user name!", "Warning",
+							JOptionPane.WARNING_MESSAGE);
+				}
+				else {
+					player.setName(playerName);
+					if (password.length() == 0) {
+						password = passwordField.getText();
+						new CreateGameController(Application.this, model).process();
+					}
+					else {
+						new CreateGameController(Application.this, model).process();
+					}
+				}
 			}
 		});
 
@@ -101,10 +138,10 @@ public class Application extends JFrame {
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
 		panel.add(rdbtnNewRadioButton);
 		passwordButtonGroup.add(rdbtnNewRadioButton);
-
-		JTextField textField = new JTextField();
-		panel.add(textField);
-		textField.setColumns(10);
+		
+		passwordField = new JTextField();
+		panel.add(passwordField);
+		passwordField.setColumns(10);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password");
 		panel.add(rdbtnNewRadioButton_1);
@@ -132,13 +169,13 @@ public class Application extends JFrame {
 
 		    public void stateChanged(ChangeEvent arg0) {
 			    if (rdbtnNewRadioButton.isSelected()) {
-				    textField.setVisible(true);
-				    textField.setEditable(true);
+				    passwordField.setVisible(true);
+				    passwordField.setEditable(true);
 				    panel.revalidate();
 				    panel.repaint();
 			    } else {
-				    textField.setVisible(false);
-				    textField.setEditable(false);
+				    passwordField.setVisible(false);
+				    passwordField.setEditable(false);
 				    panel.revalidate();
 				    panel.repaint();
 				   }
@@ -150,8 +187,8 @@ public class Application extends JFrame {
 
 		    public void stateChanged(ChangeEvent arg0) {
 			    if (rdbtnNewRadioButton_1.isSelected()) {
-				    textField.setVisible(false);
-				    textField.setEditable(false);
+				    passwordField.setVisible(false);
+				    passwordField.setEditable(false);
 				    panel.revalidate();
 				    panel.repaint();
 			    }
@@ -168,13 +205,25 @@ public class Application extends JFrame {
 	}
 	
 	/** Navigation access to actionable elements in the GUI. */
-	public JTextArea getRequestArea() {
+	/*public JTextArea getRequestArea() {
 		return requestArea;
-	}
+	}*/
 	
 	/** Navigation access to actionable elements in the GUI. */
-	public JTextArea getResponseArea() {
+	/*public JTextArea getResponseArea() {
 		return responseArea;
+	}*/
+	
+	public String getPlayerName() {
+		return playerName;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public String getRoomNumber() {
+		return roomID;
 	}
 	
 	public void setPlayerName(String name) {
@@ -188,6 +237,4 @@ public class Application extends JFrame {
 	public void setRoomNumber(String id) {
 		this.roomID = id;
 	}
-	
-	
 }
