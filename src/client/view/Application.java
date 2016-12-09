@@ -56,17 +56,17 @@ public class Application extends JFrame {
         ButtonGroup passwordButtonGroup = new ButtonGroup();
 
         JPanel panel = new JPanel();
-        panel.setBounds(175, 149, 289, 69);
+        panel.setBounds(207, 160, 289, 75);
         getContentPane().add(panel);
 
         JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
         rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.TRAILING);
         panel.add(rdbtnNewRadioButton);
         passwordButtonGroup.add(rdbtnNewRadioButton);
-
-        JTextField textField = new JTextField();
-        panel.add(textField);
-        textField.setColumns(10);
+        
+                passwordField = new JTextField();
+                panel.add(passwordField);
+                passwordField.setColumns(10);
 
         JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password              ");
         panel.add(rdbtnNewRadioButton_1);
@@ -82,11 +82,11 @@ public class Application extends JFrame {
         playerNameField.setColumns(10);
 
         JLabel gameIDLable = new JLabel("Game ID:");
-        gameIDLable.setBounds(219, 243, 61, 16);
+        gameIDLable.setBounds(231, 268, 61, 16);
         contentPane.add(gameIDLable);
 
         gameIDField = new JTextField();
-        gameIDField.setBounds(304, 239, 130, 26);
+        gameIDField.setBounds(304, 263, 130, 26);
         contentPane.add(gameIDField);
         gameIDField.setColumns(10);
 
@@ -94,13 +94,13 @@ public class Application extends JFrame {
 
             public void stateChanged(ChangeEvent arg0) {
                 if (rdbtnNewRadioButton.isSelected()) {
-                    textField.setVisible(true);
-                    textField.setEditable(true);
+                    passwordField.setVisible(true);
+                    passwordField.setEditable(true);
                     panel.revalidate();
                     panel.repaint();
                 } else {
-                    textField.setVisible(false);
-                    textField.setEditable(false);
+                    passwordField.setVisible(false);
+                    passwordField.setEditable(false);
                     panel.revalidate();
                     panel.repaint();
                 }
@@ -112,8 +112,8 @@ public class Application extends JFrame {
 
             public void stateChanged(ChangeEvent arg0) {
                 if (rdbtnNewRadioButton_1.isSelected()) {
-                    textField.setVisible(false);
-                    textField.setEditable(false);
+                    passwordField.setVisible(false);
+                    passwordField.setEditable(false);
                     panel.revalidate();
                     panel.repaint();
                 }
@@ -206,15 +206,6 @@ public class Application extends JFrame {
         btnPractice = new JButton("Practice");
         btnPractice.setBounds(35, 221, 130, 38);
         getContentPane().add(btnPractice);
-
-        passwordField = new JTextField();
-        passwordField.setBounds(304, 296, 130, 26);
-        contentPane.add(passwordField);
-        passwordField.setColumns(10);
-
-        JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setBounds(219, 301, 61, 16);
-        contentPane.add(passwordLabel);
 		btnPractice.addActionListener(myReaction);
 //		        new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
