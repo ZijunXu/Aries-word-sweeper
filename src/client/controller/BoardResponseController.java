@@ -9,6 +9,7 @@ import org.w3c.dom.NodeList;
 import xml.Message;
 import client.model.Model;
 
+import java.awt.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -61,6 +62,13 @@ public class BoardResponseController extends ControllerChain{
                 bonusPosition[0] = bonusGlobalPosition[0] - globalPosition[0];
                 bonusPosition[1] = bonusGlobalPosition[1] - globalPosition[1];
                 model.getBoard().setBoard(pboard);
+                if (model.getBoard().getCouldRefresh()){
+                    PaintCellController refreshBoard = new PaintCellController(model);
+                    refreshBoard.refreshLetters();
+//                     System.out.println("haha");
+                }
+
+
                 if(bonusPosition[0] < 3 && bonusPosition[0] > -1 &&
                         bonusPosition[1] < 3 && bonusPosition[1] > -1){
                     this.model.getBoard().cells[bonusPosition[0]][bonusPosition[1]].setBonus();

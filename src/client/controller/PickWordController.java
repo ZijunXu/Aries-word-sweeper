@@ -49,15 +49,15 @@ public class PickWordController extends MouseAdapter{
                     model.getBoard().cells[i][j].disselectCell();
                 }
             }
-            PaintCellController paint = new PaintCellController(model, panel);
+            PaintCellController paint = new PaintCellController(model);
             paint.repaint();
         }
 		if (x != -2 && y != -2){
 			if (select && !model.getBoard().cells[x][y].isSelected && isAdjacentCells(x, y)) {
 				model.getBoard().cells[x][y].selectCell();
 				model.getWord().addCell(model.getBoard().cells[x][y]);
-				System.out.println(model.getWord().computeScore());
-                PaintCellController paint = new PaintCellController(model, panel);
+//				System.out.println(model.getWord().computeScore());
+                PaintCellController paint = new PaintCellController(model);
                 paint.repaint();
 			}
 		}

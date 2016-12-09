@@ -30,7 +30,6 @@ public class Model {
 		String str = "";
 		for (int i = 0; i < 4; i++) {
 			for(int j = 0; j < 4; j++){
-//				letters[i][j] = str + (char)(Math.random() * 26 + 'A');	
 				letters[i][j] = LETTER_SET[random.nextInt(26)];
 			}	
 		}
@@ -116,7 +115,7 @@ public class Model {
         for (Cell cell : getWord().ChoseCells) {
             chosenCellsString += String.format("<cell position='%s,%s' letter='%s'/>",
                     String.valueOf(cell.getPosition()[0] + getBoard().getGlobalPosition()[0]),
-                    String.valueOf(cell.getPosition()[1]), cell.getLetter() + getBoard().getGlobalPosition()[1]);
+                    String.valueOf(cell.getPosition()[1] + getBoard().getGlobalPosition()[1]), cell.getLetter());
         }
         return chosenCellsString;
     }

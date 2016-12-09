@@ -9,8 +9,10 @@ public class Board {
     protected int[] globalPosition;
 	protected int colNum = 4;
 	protected int rowNum = 4;
+	protected int timeRemained = 2;
 	public Cell[][] cells = new Cell[colNum][rowNum];
 	public ArrayList<Cell> selectedCells;
+	boolean couldRefresh = false;
 
     public Board(String letters[][]){
 		for (int i = 0; i < rowNum; i++) {
@@ -37,14 +39,22 @@ public class Board {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if(stringArr[m] == 'Q'){
-                    cells[i][j].setLetter(String.valueOf(stringArr[m]) + String.valueOf(stringArr[m+1]));
+                    cells[j][i].setLetter(String.valueOf(stringArr[m]) + String.valueOf(stringArr[m+1]));
                     m += 2;
                 }else {
-                    cells[i][j].setLetter(String.valueOf(stringArr[m]));
+                    cells[j][i].setLetter(String.valueOf(stringArr[m]));
                     m += 1;
                 }
             }
         }
+        timeRemained -= 1;
+        if (timeRemained ==0){
+            couldRefresh = true;
+        }
+    }
+
+    public boolean getCouldRefresh(){
+        return this.couldRefresh;
     }
 
     public int[] getGlobalPosition(){

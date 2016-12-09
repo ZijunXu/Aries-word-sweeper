@@ -306,4 +306,8 @@ public class Application extends JFrame {
         gameIDField.setEnabled(true);
         playerNameField.setEnabled(true);
     }
+
+    protected PlayingPanel getPlayingPanel(){
+        return this.playingPanel;
+    }
 }

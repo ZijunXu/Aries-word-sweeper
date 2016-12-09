@@ -11,11 +11,12 @@ import java.awt.Color;
  */
 public class PaintCellController {
     Model model;
-    JPanel panel;
-    public PaintCellController(Model m, JPanel a){
-        this.panel = a;
+//    JPanel panel;
+    public PaintCellController(Model m){
+//        this.panel = a;
         this.model = m;
     }
+
     public void repaint(){
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -27,6 +28,15 @@ public class PaintCellController {
                 }else {
                     model.getGrid()[i][j].setBackground(Color.white);
                 }
+            }
+        }
+    }
+
+    public void refreshLetters(){
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                String letters = model.getBoard().cells[i][j].getLetter();
+                model.getGrid()[i][j].setText(letters);
             }
         }
     }

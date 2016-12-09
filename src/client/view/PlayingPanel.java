@@ -29,6 +29,7 @@ public class PlayingPanel extends JFrame {
 	private JTextField wordScoreField;
 	private JTextField gameIDField;
 	private JTextField managerField;
+	protected JPanel Panel;
 
 	/**
 	 * Create the frame.
@@ -48,6 +49,7 @@ public class PlayingPanel extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
+		this.Panel = panel;
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(65, 94, 220, 220);
 		getContentPane().add(panel);
@@ -61,13 +63,11 @@ public class PlayingPanel extends JFrame {
 				label.setHorizontalAlignment(SwingConstants.CENTER);
 				label.setSize(gridSize, gridSize);
 				label.setLocation(i * gridSize, j * gridSize);
-//				boolean isSellected = Model.getModel().getBoard().cells[i][j].isSelected;
 				boolean isSellected = model.getBoard().cells[i][j].isSelected;
 				if(isSellected)
 					color = Color.blue;
 				label.setOpaque(true);
 				label.setBackground(color);
-//				label.setText(Model.getModel().getBoard().cells[i][j].getLetter());
 				label.setText(model.getBoard().cells[i][j].getLetter());
 				label.setFont(new Font("Arial", Font.BOLD, 17));
 				label.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -76,9 +76,7 @@ public class PlayingPanel extends JFrame {
 				grid[i][j] = label;
 			}
 		}
-//		Model.getModel().setGrid(grid);
 		model.setGrid(grid);
-
 
 		PickWordController control = new PickWordController(app, model, panel);
 		panel.addMouseListener(control);
