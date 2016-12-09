@@ -17,7 +17,7 @@ public class ResetGameController {
     }
 
     public void process(){
-        String xmlString = Message.requestHeader() + String.format("<restGameRequest gameID='%s'/></request>",
+        String xmlString = Message.requestHeader() + String.format("<resetGameRequest gameId='%s'/></request>",
                 model.getGame().getRoomID());
         Message m = new Message(xmlString);
 //        app.getRequestArea().append(m.toString());

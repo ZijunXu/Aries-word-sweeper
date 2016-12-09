@@ -172,7 +172,7 @@ public class Application extends JFrame {
 
             }
 	        else if (e.getSource() == btnJoinAGame) {
-
+	        	
             }
 	        else if (e.getSource() == btnPractice) {
                 setVisible(false);

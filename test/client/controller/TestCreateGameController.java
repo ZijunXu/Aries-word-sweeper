@@ -43,7 +43,6 @@ public class TestCreateGameController extends TestCase {
 		model = new Model();
 		client = new Application (model);
 		client.setVisible(true);
-		player = new Player();
 		
 		// Create mockServer to simulate server, and install 'obvious' handler
 		// that simply dumps to the screen the responses.

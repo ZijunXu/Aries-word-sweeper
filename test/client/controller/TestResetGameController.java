@@ -57,7 +57,7 @@ public class TestResetGameController extends TestCase {
 	 */
 	public void testResetGameProcess() {
 		
-		String roomNumber = "Number1";
+		String roomNumber = "1";
 		model.getGame().setRoomID(roomNumber);
 		new ResetGameController(client, model).process();
 		
@@ -69,7 +69,7 @@ public class TestResetGameController extends TestCase {
 		// a lock request is sent out.
 		assertEquals ("resetGameRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
-		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
+		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
 	}
 	
 

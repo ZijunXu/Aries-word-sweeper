@@ -43,7 +43,6 @@ public class TestJoinGameController extends TestCase {
 		model = new Model();
 		client = new Application (model);
 		client.setVisible(true);
-		player = new Player();
 		
 		// Create mockServer to simulate server, and install 'obvious' handler
 		// that simply dumps to the screen the responses.
@@ -61,7 +60,7 @@ public class TestJoinGameController extends TestCase {
 	public void testJoinGameProcess() {
 		
 		//****without Password
-		String roomNumber = "Number1";
+		String roomNumber = "1";
 		String playerName = "player1";
 		model.getGame().setRoomID(roomNumber);
 		model.getGame().setMyName(playerName);
@@ -76,12 +75,12 @@ public class TestJoinGameController extends TestCase {
 		// a lock request is sent out.
 		assertEquals ("joinGameRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
-		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
+		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
 
 		
 		//****with Password
-		String roomNumber_2 = "Number2";
+		String roomNumber_2 = "2";
 		String playerName_2 = "player2";
 		String password = "test";
 		model.getGame().setRoomID(roomNumber_2);
@@ -97,7 +96,7 @@ public class TestJoinGameController extends TestCase {
 		// a lock request is sent out.
 		assertEquals ("joinGameRequest", r_2.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
-		assertEquals(roomNumber_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
+		assertEquals(roomNumber_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
 		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
 		assertEquals(password, r_2.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
 
