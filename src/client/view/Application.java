@@ -64,9 +64,9 @@ public class Application extends JFrame {
         panel.add(rdbtnNewRadioButton);
         passwordButtonGroup.add(rdbtnNewRadioButton);
         
-                passwordField = new JTextField();
-                panel.add(passwordField);
-                passwordField.setColumns(10);
+        passwordField = new JTextField();
+        panel.add(passwordField);
+        passwordField.setColumns(10);
 
         JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password              ");
         panel.add(rdbtnNewRadioButton_1);
@@ -150,11 +150,14 @@ public class Application extends JFrame {
 	    public void actionPerformed(ActionEvent e){
 	        if (e.getSource() == btnCreateAGame){
                 playerName = playerNameField.getText();
-			    if (playerName.length() == 0){
+			    if (playerName.length() == 0) {
                     JOptionPane.showMessageDialog(Application.this,
-                            "PlayerName can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
+                            "Player Name can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
                     playerNameField.requestFocus();
-                } else {model.getGame().setMyName(playerName);
+                }
+			    else {
+			    	model.getGame().setMyName(playerName);
+                	password = passwordField.getText();
                     model.getGame().setPassword(passwordField.getText());
                     new CreateGameController(Application.this, model).process();
                     Application.this.disableInputs();
@@ -167,10 +170,11 @@ public class Application extends JFrame {
                     playingPanel.setVisible(true);
                 }
 
-            }else if (e.getSource() == btnJoinAGame){
+            }
+	        else if (e.getSource() == btnJoinAGame) {
 
-
-            }else if (e.getSource() == btnPractice){
+            }
+	        else if (e.getSource() == btnPractice) {
                 setVisible(false);
                 PlayingPanel frame1= new PlayingPanel(Application.this, model);
                 frame1.setVisible(true);
@@ -206,18 +210,6 @@ public class Application extends JFrame {
 	
 	public String getRoomNumber() {
 		return roomID;
-	}
-	
-	public void setPlayerName(String name) {
-		this.playerName = name;
-	}
-	
-	public void setPassword(String pass) {
-		this.password = pass;
-	}
-	
-	public void setRoomNumber(String id) {
-		this.roomID = id;
 	}
 
 	private void disableInputs(){

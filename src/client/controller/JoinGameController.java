@@ -19,16 +19,15 @@ public class JoinGameController {
 	public void process() {
 		// send the request to create the game.
         String xmlString;
-        if(this.app.getPassword() == null){
+        if(this.model.getGame().getPassword() == null){
             xmlString = Message.requestHeader() + String.format("<joinGameRequest gameId='%s' name='%s'/></request>",
-                    app.getRoomNumber(),
-                    app.getPlayerName());
+                    this.model.getGame().getRoomID(),
+                    this.model.getGame().getMyName());
 
         }else{
             xmlString = Message.requestHeader() + String.format("<joinGameRequest gameId='%s' name='%s password='%s'/></request>",
-                    app.getRoomNumber(),
-                    app.getPlayerName(),
-                    app.getPassword());
+                    this.model.getGame().getRoomID(),
+                    this.model.getGame().getMyName(), this.model.getGame().getPassword());
         }
 
 		Message m = new Message (xmlString);

@@ -18,8 +18,16 @@ public class CreateGameController {
 	/** Make the request on the server and wait for response. */
 	public void process() {
 		// send the request to create the game.
-		String xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s'/></request>",
-				this.model.getGame().getMyName());
+		String xmlString;
+		if (this.model.getGame().getPassword() != null){
+			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s' password='%s'/></request>",
+				this.model.getGame().getMyName(), this.model.getGame().getPassword());
+		}
+		else {
+			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s'/></request>",
+					this.model.getGame().getMyName());
+		}
+		
 		
 		// my version
 		/*

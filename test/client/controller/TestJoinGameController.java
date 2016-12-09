@@ -60,49 +60,46 @@ public class TestJoinGameController extends TestCase {
 	 */
 	public void testJoinGameProcess() {
 		
-		//****with Password
+		//****without Password
 		String roomNumber = "Number1";
 		String playerName = "player1";
-		String password = "test";
 		model.getGame().setRoomID(roomNumber);
-		player.setName(playerName);
-		client.setRoomNumber(roomNumber);
-		client.setPlayerName(playerName);
-		client.setPassword(password);
+		model.getGame().setMyName(playerName);
 		new JoinGameController(client, model).process();
-		
+		 
 		// validate from mockServer
+		
 		ArrayList<Message> reqs = mockServer.getAndClearMessages();
 		assertTrue (reqs.size() == 1);
 		Message r = reqs.get(0);
-		
+		 
 		// a lock request is sent out.
 		assertEquals ("joinGameRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
 		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		assertEquals(password, r.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
+
 		
-		//****without Password
+		//****with Password
 		String roomNumber_2 = "Number2";
 		String playerName_2 = "player2";
+		String password = "test";
 		model.getGame().setRoomID(roomNumber_2);
-		player.setName(playerName_2);
-		client.setRoomNumber(roomNumber_2);
-		client.setPlayerName(playerName_2);
-		new CreateGameController(client, model).process();
-		 
+		model.getGame().setMyName(playerName_2);
+		model.getGame().setPassword(password);
+		new JoinGameController(client, model).process();
+		
 		// validate from mockServer
-		 
 		ArrayList<Message> reqs_2 = mockServer.getAndClearMessages();
 		assertTrue (reqs_2.size() == 1);
 		Message r_2 = reqs_2.get(0);
-		 
+		
 		// a lock request is sent out.
 		assertEquals ("joinGameRequest", r_2.contents.getFirstChild().getLocalName());
-		System.out.println (r_2.toString());
+		System.out.println (r.toString());
 		assertEquals(roomNumber_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("gameID").getNodeValue());
 		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
+		assertEquals(password, r_2.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
 
 	}
 	

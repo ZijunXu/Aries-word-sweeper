@@ -60,42 +60,40 @@ public class TestCreateGameController extends TestCase {
 	 */
 	public void testCreateGameProcess() {
 		
-		//****with Password
+		//****without Password
 		String playerName = "player1";
-		String password = "test";
-		player.setName(playerName);
-		client.setPlayerName(playerName);
-		client.setPassword(password);
+		model.getGame().setMyName(playerName);
 		new CreateGameController(client, model).process();
-		
+		 
 		// validate from mockServer
+		 
 		ArrayList<Message> reqs = mockServer.getAndClearMessages();
 		assertTrue (reqs.size() == 1);
 		Message r = reqs.get(0);
-		
+		 
 		// a lock request is sent out.
 		assertEquals ("createGameRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		assertEquals(password, r.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
 		
-		//****without Password
+		//****with Password
 		String playerName_2 = "player2";
-		player.setName(playerName_2);
-		client.setPlayerName(playerName_2);
+		String password = "test";
+		model.getGame().setMyName(playerName_2);
+		model.getGame().setPassword(password);
 		new CreateGameController(client, model).process();
-		 
+		
 		// validate from mockServer
-		 
 		ArrayList<Message> reqs_2 = mockServer.getAndClearMessages();
 		assertTrue (reqs_2.size() == 1);
 		Message r_2 = reqs_2.get(0);
-		 
+		
 		// a lock request is sent out.
 		assertEquals ("createGameRequest", r_2.contents.getFirstChild().getLocalName());
 		System.out.println (r_2.toString());
 		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-
+		assertEquals(password, r_2.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
+		
 	}
 	
 
