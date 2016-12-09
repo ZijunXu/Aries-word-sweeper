@@ -25,13 +25,20 @@ public class PlayingPanel extends JFrame {
 	protected JPanel contentPane;
 	Application app;
 	Model model;
-	private JTextField wordField;
-	private JTextField wordScoreField;
-	private JTextField managingUserField;
+	protected String gameId;
+	protected int wordScore;
+	protected long score;
     protected JButton btnMoveRight;
     protected JButton btnMoveLeft;
     protected JButton btnMoveUp;
     protected JButton btnMoveDown;
+    protected JButton btnLockGame;
+    protected JButton btnResetGame;
+    protected JButton btnExitGame;
+    protected JLabel gameIdDisplay;
+    protected JLabel wordScoreDisplay;
+    protected JLabel managingUserDisplay;
+    protected JLabel chosenWordDisplay;
 	protected JPanel Panel;
 
 	/**
@@ -117,23 +124,13 @@ public class PlayingPanel extends JFrame {
 
         JLabel wordLable = new JLabel("Word:");
 		wordLable.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		wordLable.setBounds(65, 330, 61, 16);
+		wordLable.setBounds(65, 330, 61, 21);
 		contentPane.add(wordLable);
-		
-		wordField = new JTextField();
-		wordField.setBounds(143, 326, 130, 26);
-		contentPane.add(wordField);
-		wordField.setColumns(10);
 		
 		JLabel wordScoreLable = new JLabel("Word Score:");
 		wordScoreLable.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		wordScoreLable.setBounds(41, 360, 106, 16);
+		wordScoreLable.setBounds(41, 360, 106, 21);
 		contentPane.add(wordScoreLable);
-		
-		wordScoreField = new JTextField();
-		wordScoreField.setBounds(143, 356, 130, 26);
-		contentPane.add(wordScoreField);
-		wordScoreField.setColumns(10);
 		
 		JLabel gameIDLable = new JLabel("Game ID:");
 		gameIDLable.setFont(new Font("Lucida Grande", Font.BOLD, 15));
@@ -157,26 +154,36 @@ public class PlayingPanel extends JFrame {
 		managerLable.setBounds(543, 275, 117, 21);
 		contentPane.add(managerLable);
 		
-		managingUserField = new JTextField();
-		managingUserField.setBounds(663, 273, 130, 26);
-		contentPane.add(managingUserField);
-		managingUserField.setColumns(10);
-		
-		JButton btnLockGame = new JButton("Lock Game");
+		btnLockGame = new JButton("Lock Game");
 		btnLockGame.setBounds(506, 326, 117, 29);
-		contentPane.add(btnLockGame);
-		
-		JButton btnResetGame = new JButton("Reset Game");
+        getContentPane().add(btnLockGame);
+        btnLockGame.addActionListener(myReaction);
+
+        btnResetGame = new JButton("Reset Game");
 		btnResetGame.setBounds(622, 326, 117, 29);
-		contentPane.add(btnResetGame);
+		getContentPane().add(btnResetGame);
+		btnResetGame.addActionListener(myReaction);
 		
-		JButton btnExitGame = new JButton("Exit Game");
+		btnExitGame = new JButton("Exit Game");
 		btnExitGame.setBounds(732, 326, 117, 29);
-		contentPane.add(btnExitGame);
+        getContentPane().add(btnExitGame);
+		btnExitGame.addActionListener(myReaction);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(670, 26, 106, 26);
-		contentPane.add(lblNewLabel);
+		gameIdDisplay = new JLabel(model.getGame().getMyName());
+		gameIdDisplay.setBounds(670, 26, 106, 26);
+		contentPane.add(gameIdDisplay);
+		
+		managingUserDisplay = new JLabel(model.getGame().getManagingUser());
+		managingUserDisplay.setBounds(668, 275, 108, 21);
+		contentPane.add(managingUserDisplay);
+		
+		chosenWordDisplay = new JLabel("");
+		chosenWordDisplay.setBounds(148, 330, 106, 21);
+		contentPane.add(chosenWordDisplay);
+		
+		wordScoreDisplay = new JLabel("");
+		wordScoreDisplay.setBounds(148, 360, 106, 21);
+		contentPane.add(wordScoreDisplay);
 	}
 
 	private class ButtonAction implements ActionListener{
@@ -189,7 +196,34 @@ public class PlayingPanel extends JFrame {
                 new MoveBoardController(app, model, 0, -1).process();
             } else if (e.getSource() == btnMoveDown){
                 new MoveBoardController(app, model, 0, 1).process();
+            } else if (e.getSource() == btnLockGame){
+                new LockGameController(app, model).process();
+            } else if (e.getSource() == btnResetGame){
+                new ResetGameController(app, model).process();
+            } else if (e.getSource() == btnExitGame){
+                new ExitGameController(app, model).process();
             }
         }
+    }
+
+    public void setGameId(String gameId){
+	    this.gameIdDisplay.setText(gameId);
+    }
+
+    public void setManagingUser(String managingUser){
+        this.managingUserDisplay.setText(managingUser);
+    }
+
+    public void setWordScore(int score){
+        if(score == 0){
+            this.wordScoreDisplay.setText("");
+        } else {
+            this.wordScoreDisplay.setText(String.valueOf(score));
+        }
+
+    }
+
+    public void setChosenWord(String word){
+        this.chosenWordDisplay.setText(word);
     }
 }

@@ -16,7 +16,7 @@ public class Word {
     static Map<String, Integer> map = new HashMap<>();
 
 	protected String word;
-	protected long score;
+	protected int score;
 	protected ArrayList<Cell> ChoseCells;
 
 	public Word(){
@@ -58,7 +58,7 @@ public class Word {
 		return true;
 	}
 	
-	public long computeScore(){
+	public int computeScore(){
 	    double num = 0;
 	    int sum = 0;
 	    int multiplier = 1;
@@ -70,7 +70,7 @@ public class Word {
                 multiplier *= 10;
             sharedTimes += cell.getSharedTimes();
         }
-        score = (long)(10 * Math.pow(2, num + sharedTimes) * multiplier * sum);
+        score = (int)(10 * Math.pow(2, num + sharedTimes) * multiplier * sum);
 		return score;
 	}
 

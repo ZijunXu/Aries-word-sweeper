@@ -40,8 +40,7 @@ public class BoardResponseController extends ControllerChain{
 		String gameId = map.getNamedItem("gameId").getNodeValue();
 		String managingUser = map.getNamedItem("managingUser").getNodeValue();
 		String bonus = map.getNamedItem("bonus").getNodeValue();
-//		app.getResponseArea().append("Board Message received for game:" + gameId + "\n");
-//		app.getResponseArea().append("Players:\n");
+
 		int[] bonusGlobalPosition = extractPosition(bonus);
         this.model.getGame().clearPlayers();
 
@@ -65,9 +64,9 @@ public class BoardResponseController extends ControllerChain{
                 if (model.getBoard().getCouldRefresh()){
                     PaintCellController refreshBoard = new PaintCellController(model);
                     refreshBoard.refreshLetters();
-//                     System.out.println("haha");
+                    refreshBoard.repaint();
+                    app.getPlayingPanel().setManagingUser(managingUser);
                 }
-
 
                 if(bonusPosition[0] < 3 && bonusPosition[0] > -1 &&
                         bonusPosition[1] < 3 && bonusPosition[1] > -1){
@@ -83,12 +82,9 @@ public class BoardResponseController extends ControllerChain{
                 a.setGlobalPosition(globalPosition);
                 model.getGame().addPlayers(a);
             }
-
 		}
         model.getGame().setManagingUser(managingUser);
-		model.getGame().setRoomID(gameId);
-
-
+        model.getGame().setRoomID(gameId);
         System.out.println(response.toString());
 		return true;
 	}

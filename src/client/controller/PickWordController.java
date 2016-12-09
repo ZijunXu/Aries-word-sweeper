@@ -47,6 +47,10 @@ public class PickWordController extends MouseAdapter{
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     model.getBoard().cells[i][j].disselectCell();
+
+                    this.app.getPlayingPanel().setWordScore(model.getWord().computeScore());
+                    this.app.getPlayingPanel().setChosenWord("");
+
                 }
             }
             PaintCellController paint = new PaintCellController(model);
@@ -56,7 +60,11 @@ public class PickWordController extends MouseAdapter{
 			if (select && !model.getBoard().cells[x][y].isSelected && isAdjacentCells(x, y)) {
 				model.getBoard().cells[x][y].selectCell();
 				model.getWord().addCell(model.getBoard().cells[x][y]);
+
+				this.app.getPlayingPanel().setWordScore(model.getWord().computeScore());
+				this.app.getPlayingPanel().setChosenWord(model.getWord().selectedWord());
 //				System.out.println(model.getWord().computeScore());
+
                 PaintCellController paint = new PaintCellController(model);
                 paint.repaint();
 			}
