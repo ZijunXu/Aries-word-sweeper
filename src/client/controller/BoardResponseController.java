@@ -80,13 +80,13 @@ public class BoardResponseController extends ControllerChain{
         model.getGame().setManagingUser(managingUser);
 		model.getGame().setRoomID(gameId);
 
-		// at this point, you would normally start processing this...
-//		app.getResponseArea().append(response.toString());
-//		app.getResponseArea().append("\n");
+
+        System.out.println(response.toString());
 		return true;
 	}
 
 	public int[] extractPosition(String xmlPosition){
+
         Pattern p = Pattern.compile("\\d+");
         Matcher m =p.matcher(xmlPosition);
         int position[] = new int[2];

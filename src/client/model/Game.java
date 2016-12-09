@@ -46,6 +46,10 @@ public class Game {
         this.isLocked = true;
     }
 
+    public void setMyName(String myName){
+        this.myName = myName;
+    }
+
     public String getMyName(){
         return myName;
     }
@@ -68,5 +72,13 @@ public class Game {
 
     public void addPlayers(Player newPlayer){
         this.players.add(newPlayer);
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+    public String getPassword(){
+        return this.password;
     }
 }

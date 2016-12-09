@@ -20,7 +20,7 @@ public class ClientLauncher {
 		}
 		
 		// select dedicated server with '-server' options
-		String host = "localhost";
+		String host = "cccwork3.wpi.edu";
 		if (args.length > 0 && args[0].equals("-server")) {
 			host = serverHost;
 		}
@@ -30,13 +30,13 @@ public class ClientLauncher {
 		Application app = new Application(model);
 
 		SampleClientMessageHandler handler = new SampleClientMessageHandler(app);
-		handler.registerHandler(new JoinGameResponseController(app, model));
+        handler.registerHandler(new BoardResponseController(app, model));
+        handler.registerHandler(new FindWordResponseController(app, model));
 		handler.registerHandler(new ConnectResponseController(app, model));
-		handler.registerHandler(new FindWordResponseController(app, model));
-		handler.registerHandler(new BoardResponseController(app, model));
 		handler.registerHandler(new LockGameResponseController(app, model));
 		handler.registerHandler(new ResetGameResponseController(app, model));
 		handler.registerHandler(new ExitGameResponseController(app, model));
+        handler.registerHandler(new JoinGameResponseController(app, model));
 
 		// try to connect to the server. Once connected, messages are going to be processed by 
 		// SampleClientMessageHandler. For now we just continue on with the initialization because

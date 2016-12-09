@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 
 import client.model.*;
+import client.view.Application;
 
 /**
  *@author Zijun Xu
@@ -14,8 +15,10 @@ public class PickWordController extends MouseAdapter{
 
 	private JPanel panel;
 	Model model;
-	public PickWordController(Model model,JPanel p){
-		this.model = model;
+	Application app;
+	public PickWordController(Application app, Model model,JPanel p){
+		this.app = app;
+	    this.model = model;
 		this.panel = p;
 	} 
 	
@@ -37,17 +40,15 @@ public class PickWordController extends MouseAdapter{
 		if(x == -1 || y == -1){
 			select = false;
 		}
-//		System.out.println(e.getX());
-//		System.out.println(e.getY());
-//		System.out.println(Model.getModel().getBoard().cells[x][y].isSelected);
         if (!select && !model.getWord().selectedWord().equals("")){
+            new FindWordController(app, model).process();
+            System.out.println(model.getWord().selectedWord());
             model.getWord().resetWord();
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     model.getBoard().cells[i][j].disselectCell();
                 }
             }
-            System.out.println(model.getWord().selectedWord());
             PaintCellController paint = new PaintCellController(model, panel);
             paint.repaint();
         }

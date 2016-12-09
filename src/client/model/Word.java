@@ -32,6 +32,10 @@ public class Word {
 		return this.ChoseCells;
 	}
 
+	public ArrayList<Cell> getChoseCells(){
+	    return this.ChoseCells;
+    }
+
 	public boolean isTheFirstLetter(){
 		return this.ChoseCells.size() == 0;
 	}
@@ -79,6 +83,11 @@ public class Word {
 	}
 
 	public String getChoseCellsXMLString() {
+	    /*return the XML String of the chosen cells
+	    * however finds out that the server wants the global location of the cells
+	    * Word class doesn't know the global position of the board
+	    * so that move this function to the Model class
+	    * */
 		String chosenCellsString = "";
 		for (Cell cell : ChoseCells) {
 			chosenCellsString += String.format("<cell position='%s,%s' letter='%s'/>",

@@ -3,11 +3,11 @@ package client.controller;
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
-
+/**
+ *@author Zijun Xu
+ */
 public class FindWordController {
-    /**
-     *@Zijun Xu
-     */
+
     Application app;
     Model model;
 
@@ -17,20 +17,17 @@ public class FindWordController {
     }
 
     public void process(){
-        String chosenCellsInfoXMLString = model.getWord().getChoseCellsXMLString();
+        String chosenCellsInfoXMLString = model.getChoseCellsXMLString();
 
-        String xmlString = Message.requestHeader() + "<findWordRequest>" + chosenCellsInfoXMLString +
+        String xmlString = Message.requestHeader() +
                 String.format("<findWordRequest name='%s' word='%s' gameId='%s'>",
-                        model.getWord().selectedWord(),
                         model.getGame().getMyName(),
+                        model.getWord().selectedWord(),
                         model.getGame().getRoomID()) +
-                "</request>";
-
-        System.out.println(xmlString);
+                chosenCellsInfoXMLString + "</findWordRequest></request>";
 
         Message m = new Message (xmlString);
-        //app.getRequestArea().append(m.toString());
-        //app.getRequestArea().append("\n");
         app.getServerAccess().sendRequest(m);
+        System.out.println(m.toString());
     }
 }

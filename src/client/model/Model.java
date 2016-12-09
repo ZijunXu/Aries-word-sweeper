@@ -110,4 +110,14 @@ public class Model {
         }
         return result;
     }
+
+    public String getChoseCellsXMLString() {
+        String chosenCellsString = "";
+        for (Cell cell : getWord().ChoseCells) {
+            chosenCellsString += String.format("<cell position='%s,%s' letter='%s'/>",
+                    String.valueOf(cell.getPosition()[0] + getBoard().getGlobalPosition()[0]),
+                    String.valueOf(cell.getPosition()[1]), cell.getLetter() + getBoard().getGlobalPosition()[1]);
+        }
+        return chosenCellsString;
+    }
 }

@@ -23,20 +23,19 @@ import javax.swing.JScrollPane;
 public class PlayingPanel extends JFrame {
 
 	private JPanel contentPane;
+	Application app;
 	Model model;
 	private JTextField wordField;
 	private JTextField wordScoreField;
 	private JTextField gameIDField;
 	private JTextField managerField;
-	/**
-	 * Launch the application.
-	 */
 
 	/**
 	 * Create the frame.
 	 */
-	public PlayingPanel(Model model) {
+	public PlayingPanel(Application app, Model model) {
 		this.model = model;
+		this.app = app;
 		this.go();
 	}
 	public void go(){
@@ -81,7 +80,7 @@ public class PlayingPanel extends JFrame {
 		model.setGrid(grid);
 
 
-		PickWordController control = new PickWordController(model,panel);
+		PickWordController control = new PickWordController(app, model, panel);
 		panel.addMouseListener(control);
 		panel.addMouseMotionListener(control);
 		

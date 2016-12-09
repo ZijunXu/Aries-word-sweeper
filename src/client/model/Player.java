@@ -9,7 +9,7 @@ public class Player {
     protected int userID;
     protected long score;
     protected int[] globalPosition;
-    protected   boolean isManagingUser;
+    protected boolean isManagingUser;
 
     public void Player(){
     	this.name = "";
@@ -53,6 +53,4 @@ public class Player {
     public void clearScore(){
         this.score = 0;
     }
-
-
 }
