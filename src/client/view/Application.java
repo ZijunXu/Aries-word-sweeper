@@ -125,79 +125,14 @@ public class Application extends JFrame {
         btnJoinAGame = new JButton("Join a game");
         btnJoinAGame.setBounds(35, 163, 130, 38);
         getContentPane().add(btnJoinAGame);
-        btnJoinAGame.addActionListener(myReaction
-//		        new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				new JoinGameController(Application.this, model).process();
-//			}
-//		}
-		);
-/*		btnJoinAGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				roomID = gameIDField.getText();
-				playerName = playerNameField.getText();
-				if (playerName.length() == 0) {
-					JOptionPane.showMessageDialog(Application.this, "You should enter a user name!", "Warning",
-							JOptionPane.WARNING_MESSAGE);
-				}
-				else if (roomID.length() == 0) {
-					JOptionPane.showMessageDialog(Application.this, "You should enter a Game ID!", "Warning",
-							JOptionPane.WARNING_MESSAGE);
-				}
-				else {
-					player.setName(playerName);
-					if (password.length() == 0) {
-						password = passwordField.getText();
-						new JoinGameController(Application.this, model).process();
-					}
-					else {
-						new JoinGameController(Application.this, model).process();
-					}
-				}
-			}
-		});
-*/
+        btnJoinAGame.addActionListener(myReaction);
+
 
         btnCreateAGame = new JButton("Create a game");
         btnCreateAGame.setBounds(35, 105, 130, 38);
         getContentPane().add(btnCreateAGame);
-        btnCreateAGame.addActionListener(myReaction
-//		        new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//			    playerName = playerNameField.getText();
-//			    if(playerName.length() == 0){
-//                    JOptionPane.showMessageDialog(Application.this,
-//                            "PlayerName can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
-//                    playerNameField.requestFocus();
-//                }else
-//                    {model.getGame().setMyName(playerName);
-//                    model.getGame().setPassword(textField.getText());
-//                    new CreateGameController(Application.this, model).process();
-//                    Application.this.disableInputs();
-//                }
-//			}
-//		}
-		);
-/*		btnCreateAGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				playerName = playerNameField.getText();
-				if (playerName.length() == 0) {
-					JOptionPane.showMessageDialog(Application.this, "You should enter a user name!", "Warning",
-							JOptionPane.WARNING_MESSAGE);
-				}
-				else {
-					player.setName(playerName);
-					if (password.length() == 0) {
-						password = passwordField.getText();
-						new CreateGameController(Application.this, model).process();
-					}
-					else {
-						new CreateGameController(Application.this, model).process();
-					}
-				}
-			}
-		});
-*/
+        btnCreateAGame.addActionListener(myReaction);
+
 
         JLabel lblNewLabel = new JLabel("Word Sweeper");
         lblNewLabel.setForeground(new Color(0, 0, 0));
@@ -209,24 +144,17 @@ public class Application extends JFrame {
         btnPractice.setBounds(35, 221, 130, 38);
         getContentPane().add(btnPractice);
 		btnPractice.addActionListener(myReaction);
-//		        new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				if(e.getSource()==btnPractice){
-//
-//				}
-//			}
-//		}
 	}
 
 	private class ButtonReaction implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-	        if(e.getSource() == btnCreateAGame){
+	        if (e.getSource() == btnCreateAGame){
                 playerName = playerNameField.getText();
-			    if(playerName.length() == 0){
+			    if (playerName.length() == 0){
                     JOptionPane.showMessageDialog(Application.this,
                             "PlayerName can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
                     playerNameField.requestFocus();
-                }else {model.getGame().setMyName(playerName);
+                } else {model.getGame().setMyName(playerName);
                     model.getGame().setPassword(passwordField.getText());
                     new CreateGameController(Application.this, model).process();
                     Application.this.disableInputs();
@@ -239,9 +167,10 @@ public class Application extends JFrame {
                     playingPanel.setVisible(true);
                 }
 
-            }else if(e.getSource() == btnJoinAGame){
+            }else if (e.getSource() == btnJoinAGame){
 
-            }else if(e.getSource() == btnPractice){
+
+            }else if (e.getSource() == btnPractice){
                 setVisible(false);
                 PlayingPanel frame1= new PlayingPanel(Application.this, model);
                 frame1.setVisible(true);
@@ -277,18 +206,6 @@ public class Application extends JFrame {
 	
 	public String getRoomNumber() {
 		return roomID;
-	}
-	
-	public void setPlayerName(String name) {
-		this.playerName = name;
-	}
-	
-	public void setPassword(String pass) {
-		this.password = pass;
-	}
-	
-	public void setRoomNumber(String id) {
-		this.roomID = id;
 	}
 
 	private void disableInputs(){

@@ -22,13 +22,16 @@ import javax.swing.JScrollPane;
 
 public class PlayingPanel extends JFrame {
 
-	private JPanel contentPane;
+	protected JPanel contentPane;
 	Application app;
 	Model model;
 	private JTextField wordField;
 	private JTextField wordScoreField;
-	private JTextField gameIDField;
-	private JTextField managerField;
+	private JTextField managingUserField;
+    protected JButton btnMoveRight;
+    protected JButton btnMoveLeft;
+    protected JButton btnMoveUp;
+    protected JButton btnMoveDown;
 	protected JPanel Panel;
 
 	/**
@@ -42,7 +45,7 @@ public class PlayingPanel extends JFrame {
 	public void go(){
 		setTitle("WordSweeper");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 853, 418);
+		setBounds(100, 100, 882, 436);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -87,28 +90,32 @@ public class PlayingPanel extends JFrame {
 		label.setFont(new Font("Lucida Bright", Font.BOLD | Font.ITALIC, 40));
 		label.setBounds(6, 6, 362, 85);
 		getContentPane().add(label);
-		
-		JButton btnMoveLeft = new JButton("Move Left");
-		btnMoveLeft.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+
+        ButtonAction myReaction;
+        myReaction = new ButtonAction();
+
+        btnMoveLeft = new JButton("Move Left");
 		btnMoveLeft.setBounds(324, 127, 117, 29);
 		getContentPane().add(btnMoveLeft);
+        btnMoveLeft.addActionListener(myReaction);
 
-		JButton btnMoveRight = new JButton("Move Right");
+		btnMoveRight = new JButton("Move Right");
 		btnMoveRight.setBounds(324, 170, 117, 29);
-		contentPane.add(btnMoveRight);
-		
-		JButton btnMoveUp = new JButton("Move Up");
+		getContentPane().add(btnMoveRight);
+        btnMoveRight.addActionListener(myReaction);
+
+        btnMoveUp = new JButton("Move Up");
 		btnMoveUp.setBounds(324, 211, 117, 29);
-		contentPane.add(btnMoveUp);
-		
-		JButton btnMoveDown = new JButton("Move Down");
+		getContentPane().add(btnMoveUp);
+        btnMoveUp.addActionListener(myReaction);
+
+        btnMoveDown = new JButton("Move Down");
 		btnMoveDown.setBounds(324, 252, 117, 29);
 		contentPane.add(btnMoveDown);
-		
-		JLabel wordLable = new JLabel("Word:");
+        btnMoveDown.addActionListener(myReaction);
+
+
+        JLabel wordLable = new JLabel("Word:");
 		wordLable.setFont(new Font("Lucida Grande", Font.BOLD, 15));
 		wordLable.setBounds(65, 330, 61, 16);
 		contentPane.add(wordLable);
@@ -130,13 +137,8 @@ public class PlayingPanel extends JFrame {
 		
 		JLabel gameIDLable = new JLabel("Game ID:");
 		gameIDLable.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		gameIDLable.setBounds(583, 26, 77, 16);
+		gameIDLable.setBounds(583, 31, 77, 16);
 		contentPane.add(gameIDLable);
-		
-		gameIDField = new JTextField();
-		gameIDField.setBounds(663, 22, 130, 26);
-		contentPane.add(gameIDField);
-		gameIDField.setColumns(10);
 		
 		JLabel playerNameLable = new JLabel("Name");
 		playerNameLable.setBounds(622, 64, 61, 16);
@@ -150,15 +152,15 @@ public class PlayingPanel extends JFrame {
 		scrollPane.setBounds(594, 86, 210, 175);
 		contentPane.add(scrollPane);
 		
-		JLabel managerLable = new JLabel("Manager:");
+		JLabel managerLable = new JLabel("ManagingUser:");
 		managerLable.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		managerLable.setBounds(583, 275, 77, 21);
+		managerLable.setBounds(543, 275, 117, 21);
 		contentPane.add(managerLable);
 		
-		managerField = new JTextField();
-		managerField.setBounds(663, 273, 130, 26);
-		contentPane.add(managerField);
-		managerField.setColumns(10);
+		managingUserField = new JTextField();
+		managingUserField.setBounds(663, 273, 130, 26);
+		contentPane.add(managingUserField);
+		managingUserField.setColumns(10);
 		
 		JButton btnLockGame = new JButton("Lock Game");
 		btnLockGame.setBounds(506, 326, 117, 29);
@@ -172,8 +174,22 @@ public class PlayingPanel extends JFrame {
 		btnExitGame.setBounds(732, 326, 117, 29);
 		contentPane.add(btnExitGame);
 		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(670, 26, 106, 26);
+		contentPane.add(lblNewLabel);
 	}
-	public void refresh(){
-		contentPane.repaint();
-	}
+
+	private class ButtonAction implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            if (e.getSource() == btnMoveLeft) {
+                new MoveBoardController(app, model, -1, 0).process();
+            } else if (e.getSource() == btnMoveRight){
+                new MoveBoardController(app, model, 1, 0).process();
+            } else if (e.getSource() == btnMoveUp){
+                new MoveBoardController(app, model, 0, -1).process();
+            } else if (e.getSource() == btnMoveDown){
+                new MoveBoardController(app, model, 0, 1).process();
+            }
+        }
+    }
 }
