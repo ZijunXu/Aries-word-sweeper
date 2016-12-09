@@ -207,6 +207,18 @@ public class Application extends JFrame {
 	public String getRoomNumber() {
 		return roomID;
 	}
+	
+	public void setPlayerName(String name) {
+		this.playerName = name;
+	}
+	
+	public void setPassword(String pass) {
+		this.password = pass;
+	}
+	
+	public void setRoomNumber(String id) {
+		this.roomID = id;
+	}
 
 	private void disableInputs(){
 	    btnPractice.setEnabled(false);
