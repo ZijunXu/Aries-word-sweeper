@@ -197,7 +197,7 @@ public class Application extends JFrame {
                     } catch (InterruptedException e1) {
                         e1.printStackTrace();
                     }
-                    playingPanel = new PlayingPanel(model);
+                    playingPanel = new PlayingPanel(Application.this, model);
                     playingPanel.setVisible(true);
                 }
 
@@ -205,7 +205,7 @@ public class Application extends JFrame {
 
             }else if(e.getSource() == btnPractice){
                 setVisible(false);
-                PlayingPanel frame1= new PlayingPanel(model);
+                PlayingPanel frame1= new PlayingPanel(Application.this, model);
                 frame1.setVisible(true);
             }
         }

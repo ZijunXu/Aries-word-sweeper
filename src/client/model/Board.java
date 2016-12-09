@@ -31,6 +31,7 @@ public class Board {
     }
 
     public void setBoard(String letters){
+        letters = letters.replaceAll(",", "");
         char [] stringArr = letters.toCharArray();
         int m = 0;
         for (int i = 0; i < 4; i++) {
