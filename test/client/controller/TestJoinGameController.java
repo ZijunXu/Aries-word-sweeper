@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import client.MockServerAccess;
 import client.model.Model;
-import client.model.Player;
 import client.view.Application;
 import xml.Message;
 import junit.framework.TestCase;
@@ -29,9 +28,7 @@ public class TestJoinGameController extends TestCase {
 	
 	// model being maintained by client.
 	Model model;
-	
-	// Player
-	Player player;
+
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
