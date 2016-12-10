@@ -68,16 +68,16 @@ public class PlayingPanel extends JFrame {
 		JLabel[][] grid = new JLabel[4][4];
 		for(int i = 0; i < 4; i++){
 			for(int j = 0; j < 4; j++){
-				Color color = Color.white;
 				JLabel label = new JLabel();
 				label.setHorizontalAlignment(SwingConstants.CENTER);
 				label.setSize(gridSize, gridSize);
 				label.setLocation(i * gridSize, j * gridSize);
-				boolean isSellected = model.getBoard().cells[i][j].isSelected;
-				if(isSellected)
-					color = Color.blue;
 				label.setOpaque(true);
-				label.setBackground(color);
+				if(model.getBoard().cells[i][j].getBonus() == 10){
+				    label.setBackground(Color.yellow);
+                }else {
+                    label.setBackground(Color.white);
+                }
 				label.setText(model.getBoard().cells[i][j].getLetter());
 				label.setFont(new Font("Arial", Font.BOLD, 17));
 				label.setBorder(BorderFactory.createLineBorder(Color.black));

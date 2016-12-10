@@ -26,30 +26,13 @@ public class FindWordResponseController extends ControllerChain{
         }
         if (response.contents.getAttributes().getNamedItem("success").getNodeValue().equals("false")){
             model.getWord().resetWord();
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 4; j++) {
-                    model.getBoard().cells[i][j].disselectCell();
-                    model.getGrid()[i][j].setBackground(Color.white);
-                }
-            }
+            PaintCellController paint = new PaintCellController(model);
+            paint.repaint();
             return false;
         }
-//        Node boardResponse = response.contents.getFirstChild();
-//        NamedNodeMap map = boardResponse.getAttributes();
-//
-//        String gameId = map.getNamedItem("gameId").getNodeValue();
-//        String score = map.getNamedItem("score").getNodeValue();
-//        String pname = map.getNamedItem("name").getNodeValue();
-//
-//        app.getResponseArea().append("Board Message received for game:" + boardResponse.toString() + "\n");
-//        model.getGame().setScore(Integer.valueOf(score));
-        model.getWord().resetWord();
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                model.getBoard().cells[i][j].disselectCell();
-                model.getGrid()[i][j].setBackground(Color.white);
-            }
-        }
+
+        PaintCellController paint = new PaintCellController(model);
+        paint.repaint();
         return true;
     }
 }
