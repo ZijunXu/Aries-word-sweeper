@@ -1,10 +1,12 @@
 package client.controller;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
 import client.MockServerAccess;
+import client.controller.LockGameResponseController;
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
@@ -13,7 +15,7 @@ import junit.framework.TestCase;
 /**
  *@author Zhanfeng Huang
  */
-public class TestConnectResponseController extends TestCase {
+public class TestLockGameResponseController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -23,7 +25,7 @@ public class TestConnectResponseController extends TestCase {
 	
 	// model being maintained by client.
 	Model model;
-	
+
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -33,6 +35,8 @@ public class TestConnectResponseController extends TestCase {
 		
 		// prepare client and connect to server.
 		model = new Model();
+		
+		
 		client = new Application (model);
 		client.setVisible(true);
 		
@@ -46,18 +50,19 @@ public class TestConnectResponseController extends TestCase {
 	}
 	
 	/**
-	 * It is for the test case of ConnectResponseController
+	 * It is for the test case of LockGameResponseController
 	 * 
 	 */
-	public void testConnectResponseProcess() {
-
+	public void testLockGameResponseProcess() {
+		
 		String roomNumber = "1";
 		
-		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<connectResponse id = \"%s\">" + "</connectResponse></response>", roomNumber);
+		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<lockGameResponse gameId = \"%s\">" + "</lockGameResponse></response>", roomNumber);
 		
 		Message m = new Message(xmlString);
 		
-		assertTrue (new ConnectResponseController(client, model).process(m));
+		assertTrue (new LockGameResponseController(client, model).process(m));
+		assertEquals (true, model.getGame().isLocked());
+		
 	}
-
 }

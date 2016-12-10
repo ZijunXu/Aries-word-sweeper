@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
+import client.controller.BoardResponseController;
 import client.MockServerAccess;
 import client.model.Model;
 import client.view.Application;
@@ -13,7 +14,7 @@ import junit.framework.TestCase;
 /**
  *@author Zhanfeng Huang
  */
-public class TestConnectResponseController extends TestCase {
+public class TestResetGameResponseController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -46,18 +47,17 @@ public class TestConnectResponseController extends TestCase {
 	}
 	
 	/**
-	 * It is for the test case of ConnectResponseController
+	 * It is for the test case of ResetGameResponseController
 	 * 
 	 */
-	public void testConnectResponseProcess() {
+	public void testResetGameResponseProcess() {
 
 		String roomNumber = "1";
 		
-		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<connectResponse id = \"%s\">" + "</connectResponse></response>", roomNumber);
+		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<resetGameResponse gameId = \"%s\">" + "</resetGameResponse></response>", roomNumber);
 		
 		Message m = new Message(xmlString);
 		
-		assertTrue (new ConnectResponseController(client, model).process(m));
+		assertTrue (new ResetGameResponseController(client, model).process(m));
 	}
-
 }
