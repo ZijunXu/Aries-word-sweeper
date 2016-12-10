@@ -22,8 +22,6 @@ public class ExitGameController {
                 model.getGame().getRoomID());
 
         Message m = new Message (xmlString);
-        //app.getRequestArea().append(m.toString());
-        //app.getRequestArea().append("\n");
         System.out.println(m.toString());
         app.getServerAccess().sendRequest(m);
     }

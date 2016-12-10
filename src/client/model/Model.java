@@ -50,10 +50,16 @@ public class Model {
 	public Board getBoard() {
 		return board;
 	}
+	
+	//for test case use @author Zhanfeng
+	public void setWord(Word word){
+		this.word = word;
+	}
 
 	public Word getWord(){
         return word;
     }
+	
 
 	public void setBoard(Board board) {
 		this.board = board;

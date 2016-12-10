@@ -58,7 +58,6 @@ public class ClientLauncher {
 		String xmlString = Message.requestHeader() + "<connectRequest/></request>";
 		Message m = new Message (xmlString);
 		sa.sendRequest(m);
-		//app.getRequestArea().append(m.toString() + "\n");
 		// at this point, we need to make app visible, otherwise we would terminate application
 		app.setVisible(true);
 	}

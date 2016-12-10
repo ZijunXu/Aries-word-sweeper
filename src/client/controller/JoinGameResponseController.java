@@ -34,7 +34,6 @@ public class JoinGameResponseController extends ControllerChain{
         Node boardResponse = response.contents.getFirstChild();
         NamedNodeMap map = boardResponse.getAttributes();
         String gameId = map.getNamedItem("gameId").getNodeValue();
-//        app.getResponseArea().append(response.toString() + "\n");
         model.getGame().setRoomID(gameId);
         return true;
     }
