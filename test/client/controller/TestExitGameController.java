@@ -18,7 +18,7 @@ import junit.framework.TestCase;
  * 
  * @author heineman
  */
-public class TestCreateGameController extends TestCase {
+public class TestExitGameController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -54,42 +54,26 @@ public class TestCreateGameController extends TestCase {
 	 * The real test case whose purpose is to validate that selecting the Locked button
 	 * sends a GrabLock request to the server.
 	 */
-	public void testCreateGameProcess() {
+	public void testExitGameProcess() {
 		
-		//****without Password
+		String roomNumber = "1";
 		String playerName = "player1";
+		model.getGame().setRoomID(roomNumber);
 		model.getGame().setMyName(playerName);
-		new CreateGameController(client, model).process();
+		new ExitGameController(client, model).process();
 		 
 		// validate from mockServer
-		 
+		
 		ArrayList<Message> reqs = mockServer.getAndClearMessages();
 		assertTrue (reqs.size() == 1);
 		Message r = reqs.get(0);
 		 
 		// a lock request is sent out.
-		assertEquals ("createGameRequest", r.contents.getFirstChild().getLocalName());
+		assertEquals ("exitGameRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
+		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		
-		//****with Password
-		String playerName_2 = "player2";
-		String password = "test";
-		model.getGame().setMyName(playerName_2);
-		model.getGame().setPassword(password);
-		new CreateGameController(client, model).process();
-		
-		// validate from mockServer
-		ArrayList<Message> reqs_2 = mockServer.getAndClearMessages();
-		assertTrue (reqs_2.size() == 1);
-		Message r_2 = reqs_2.get(0);
-		
-		// a lock request is sent out.
-		assertEquals ("createGameRequest", r_2.contents.getFirstChild().getLocalName());
-		System.out.println (r_2.toString());
-		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		assertEquals(password, r_2.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
-		
+
 	}
 	
 

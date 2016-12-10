@@ -12,10 +12,10 @@ public class ListGamesController {
     protected Application app;
     protected Model model;
 
-    public void ListGamesController(Application a, Model m){
-        this.app = a;
+    public ListGamesController(Application a, Model m) {
+    	this.app = a;
         this.model = m;
-    }
+	}
 
     public void process(){
         String xmlString = Message.requestHeader() + "<listGamesRequest /></request>";

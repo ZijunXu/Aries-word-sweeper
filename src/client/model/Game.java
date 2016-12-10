@@ -61,6 +61,10 @@ public class Game {
     public void setScore(long score){
         this.score = score;
     }
+    
+    public long getScore(){
+    	return this.score;
+    }
 
     public ArrayList<Player> getPlayers(){
         return this.players;
