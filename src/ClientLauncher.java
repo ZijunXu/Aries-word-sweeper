@@ -21,6 +21,7 @@ public class ClientLauncher {
 		
 		// select dedicated server with '-server' options
 		String host = "cccwork3.wpi.edu";
+		//String host = "rambo.wpi.edu";
 		if (args.length > 0 && args[0].equals("-server")) {
 			host = serverHost;
 		}
@@ -57,7 +58,6 @@ public class ClientLauncher {
 		String xmlString = Message.requestHeader() + "<connectRequest/></request>";
 		Message m = new Message (xmlString);
 		sa.sendRequest(m);
-		//app.getRequestArea().append(m.toString() + "\n");
 		// at this point, we need to make app visible, otherwise we would terminate application
 		app.setVisible(true);
 	}

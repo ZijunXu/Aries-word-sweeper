@@ -20,8 +20,6 @@ public class ResetGameController {
         String xmlString = Message.requestHeader() + String.format("<resetGameRequest gameId='%s'/></request>",
                 model.getGame().getRoomID());
         Message m = new Message(xmlString);
-//        app.getRequestArea().append(m.toString());
-//        app.getRequestArea().append("\n");
         System.out.println(m.toString());
         app.getServerAccess().sendRequest(m);
     }

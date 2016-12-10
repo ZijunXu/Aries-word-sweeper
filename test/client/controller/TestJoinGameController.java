@@ -11,12 +11,7 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- * This test case is needed when the job of a controller is to send a Request to the server.
- * <P> 
- * To make this work we need to create a "mock" Server whose only purpose is to WAIT for requests to come
- * from the client being pressed into service here in this test case. 
- * 
- * @author heineman
+ *@author Zhanfeng Huang
  */
 public class TestJoinGameController extends TestCase {
 	
@@ -51,8 +46,8 @@ public class TestJoinGameController extends TestCase {
 	}
 	
 	/**
-	 * The real test case whose purpose is to validate that selecting the Locked button
-	 * sends a GrabLock request to the server.
+	 * It is for the test case of JoinGameController
+	 * 
 	 */
 	public void testJoinGameProcess() {
 		
@@ -98,10 +93,4 @@ public class TestJoinGameController extends TestCase {
 		assertEquals(password, r_2.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
 
 	}
-	
-
-	/**
-	 * The real test case whose purpose is to validate that selecting the Locked button
-	 * sends a GrabLock request to the server.
-	 */
 }

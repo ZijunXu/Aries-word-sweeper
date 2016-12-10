@@ -1,5 +1,7 @@
 package client.controller;
-
+/**
+ *@author Zhanfeng Huang
+ */
 
 import client.view.Application;
 import xml.Message;
@@ -29,7 +31,7 @@ public class CreateGameController {
 		}
 		
 		
-		// my version
+		// alternative version
 		/*
 		String xmlString;
 		if (this.app.getPassword() != null){
@@ -40,8 +42,6 @@ public class CreateGameController {
 		}*/
 
 		Message m = new Message (xmlString);
-//		app.getRequestArea().append(m.toString());
-//		app.getRequestArea().append("\n");
         System.out.println(m.toString());
 		app.getServerAccess().sendRequest(m);
 	}

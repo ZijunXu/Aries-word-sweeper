@@ -4,8 +4,13 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
+import client.controller.BoardResponseController;
 import client.MockServerAccess;
 import client.model.Model;
+import client.model.Board;
+import client.model.Cell;
+import client.model.Game;
+import client.model.Player;
 import client.view.Application;
 import xml.Message;
 import junit.framework.TestCase;
@@ -13,7 +18,7 @@ import junit.framework.TestCase;
 /**
  *@author Zhanfeng Huang
  */
-public class TestExitGameController extends TestCase {
+public class TestConnectResponseController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -24,6 +29,7 @@ public class TestExitGameController extends TestCase {
 	// model being maintained by client.
 	Model model;
 	
+	Player player;
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -33,6 +39,7 @@ public class TestExitGameController extends TestCase {
 		
 		// prepare client and connect to server.
 		model = new Model();
+		player = new Player();
 		client = new Application (model);
 		client.setVisible(true);
 		
@@ -46,28 +53,18 @@ public class TestExitGameController extends TestCase {
 	}
 	
 	/**
-	 * It is for the test case of ExitGameController
+	 * It is for the test case of ConnectResponseController
 	 * 
 	 */
-	public void testExitGameProcess() {
-		
-		String roomNumber = "1";
-		String playerName = "player1";
-		model.getGame().setRoomID(roomNumber);
-		model.getGame().setMyName(playerName);
-		new ExitGameController(client, model).process();
-		 
-		// validate from mockServer
-		
-		ArrayList<Message> reqs = mockServer.getAndClearMessages();
-		assertTrue (reqs.size() == 1);
-		Message r = reqs.get(0);
-		 
-		// a lock request is sent out.
-		assertEquals ("exitGameRequest", r.contents.getFirstChild().getLocalName());
-		System.out.println (r.toString());
-		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
-		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
+	public void testConnectResponseProcess() {
 
+		String roomNumber = "1";
+		
+		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<connectResponse id = \"%s\">" + "</connectResponse></response>", roomNumber);
+		
+		Message m = new Message(xmlString);
+		
+		assertTrue (new ConnectResponseController(client, model).process(m));
 	}
+
 }

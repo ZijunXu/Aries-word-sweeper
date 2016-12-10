@@ -1,5 +1,7 @@
 package client.controller;
-
+/**
+ *@author Zhanfeng Huang
+ */
 
 import client.view.Application;
 import client.model.Model;
@@ -31,8 +33,6 @@ public class JoinGameController {
         }
 
 		Message m = new Message (xmlString);
-		//app.getRequestArea().append(m.toString());
-		//app.getRequestArea().append("\n");
 		app.getServerAccess().sendRequest(m);
 	}
 }
