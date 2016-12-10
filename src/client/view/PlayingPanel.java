@@ -196,12 +196,12 @@ public class PlayingPanel extends JFrame {
                 new MoveBoardController(app, model, 0, -1).process();
             } else if (e.getSource() == btnMoveDown){
                 new MoveBoardController(app, model, 0, 1).process();
+            } else if(e.getSource() == btnExitGame){
+                new ExitGameController(app, model).process();
             } else if (e.getSource() == btnLockGame){
                 new LockGameController(app, model).process();
             } else if (e.getSource() == btnResetGame){
                 new ResetGameController(app, model).process();
-            } else if (e.getSource() == btnExitGame){
-                new ExitGameController(app, model).process();
             }
         }
     }
@@ -220,7 +220,6 @@ public class PlayingPanel extends JFrame {
         } else {
             this.wordScoreDisplay.setText(String.valueOf(score));
         }
-
     }
 
     public void setChosenWord(String word){

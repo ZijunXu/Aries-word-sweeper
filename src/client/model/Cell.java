@@ -49,6 +49,10 @@ public class Cell {
         this.bonus = 10;
     }
 
+    public void resetBonus(){
+        this.bonus = 0;
+    }
+
     public void setSharedTimes(int times){
         this.sharedTimes = times;
     }

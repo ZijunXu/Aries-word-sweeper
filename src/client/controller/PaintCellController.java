@@ -20,11 +20,12 @@ public class PaintCellController {
     public void repaint(){
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (!(model.getBoard().cells[i][j].getBonus() == 0)){
-                    model.getGrid()[i][j].setBackground(Color.orange);
-                }
+                String letters = model.getBoard().cells[i][j].getLetter();
+                model.getGrid()[i][j].setText(letters);
                 if (model.getBoard().cells[i][j].isSelected){
                     model.getGrid()[i][j].setBackground(Color.blue);
+                }else if (model.getBoard().cells[i][j].getBonus() == 10){
+                    model.getGrid()[i][j].setBackground(Color.yellow);
                 }else {
                     model.getGrid()[i][j].setBackground(Color.white);
                 }

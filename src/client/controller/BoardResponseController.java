@@ -61,16 +61,14 @@ public class BoardResponseController extends ControllerChain{
                 bonusPosition[0] = bonusGlobalPosition[0] - globalPosition[0];
                 bonusPosition[1] = bonusGlobalPosition[1] - globalPosition[1];
                 model.getBoard().setBoard(pboard);
+                if(bonusPosition[0] < 4 && bonusPosition[0] > -1 &&
+                        bonusPosition[1] < 4 && bonusPosition[1] > -1){
+                    this.model.getBoard().cells[bonusPosition[0]][bonusPosition[1]].setBonus();
+                }
                 if (model.getBoard().getCouldRefresh()){
                     PaintCellController refreshBoard = new PaintCellController(model);
-                    refreshBoard.refreshLetters();
                     refreshBoard.repaint();
                     app.getPlayingPanel().setManagingUser(managingUser);
-                }
-
-                if(bonusPosition[0] < 3 && bonusPosition[0] > -1 &&
-                        bonusPosition[1] < 3 && bonusPosition[1] > -1){
-                    this.model.getBoard().cells[bonusPosition[0]][bonusPosition[1]].setBonus();
                 }
             }else {
                 Player a = new Player();
