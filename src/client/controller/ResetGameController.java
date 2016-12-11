@@ -6,6 +6,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for sending a reset game request to server
+ *
+ */
 public class ResetGameController {
 
     protected Application app;

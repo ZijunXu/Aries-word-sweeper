@@ -28,6 +28,7 @@ public class SampleClientMessageHandler implements IMessageHandler {
 		this.app = app;
 	}
 
+	/** use chain repository */
 	@Override
 	public void process(Message response) {
 		chain.process(response);

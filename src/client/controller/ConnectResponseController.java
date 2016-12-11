@@ -4,6 +4,11 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 
+/**
+ * 
+ * Connect Response after receiving the corresponding message from server
+ * 
+ */
 public class ConnectResponseController extends ControllerChain {
 	public Application app;
 	public Model model;
@@ -14,6 +19,9 @@ public class ConnectResponseController extends ControllerChain {
 		this.model = m;
 	}
 
+	/**
+	 * included in Chain Repository
+	 */
 	@Override
 	public boolean process(Message response) {
 		String type = response.contents.getFirstChild().getLocalName();

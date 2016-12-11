@@ -6,6 +6,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for handling the lock game response from server
+ *
+ */
 public class LockGameResponseController extends ControllerChain{
 
     protected Application app;
@@ -17,6 +22,7 @@ public class LockGameResponseController extends ControllerChain{
         this.model = m;
     }
 
+    /** when receiving the response from server, lock the game and set lockgame button grey */
     @Override
     public boolean process(Message response){
         String type = response.contents.getFirstChild().getLocalName();

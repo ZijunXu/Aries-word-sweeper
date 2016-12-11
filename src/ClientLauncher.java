@@ -4,6 +4,7 @@ import client_src.ServerAccess;
 import client.model.Model;
 import xml.Message;
 
+/** Launch command-line Client to show minimal access needs. */
 public class ClientLauncher {
 	// If requested by ClientLauncher (pass in '-server' as argument).
 	public static final String serverHost = "72.249.186.243";
@@ -30,6 +31,7 @@ public class ClientLauncher {
 		Model model = new Model();
 		Application app = new Application(model);
 
+		/** Chain Repository */
 		SampleClientMessageHandler handler = new SampleClientMessageHandler(app);
         handler.registerHandler(new BoardResponseController(app, model));
         handler.registerHandler(new FindWordResponseController(app, model));

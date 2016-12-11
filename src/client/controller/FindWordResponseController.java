@@ -8,6 +8,11 @@ import java.awt.*;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for the handling of findword response from server
+ *
+ */
 public class FindWordResponseController extends ControllerChain{
 
     public Application app;
@@ -19,6 +24,7 @@ public class FindWordResponseController extends ControllerChain{
         this.model = m;
     }
 
+    /** after getting response from server, let those selected cells repaint */
     public boolean process(Message response){
         String type = response.contents.getFirstChild().getLocalName();
         if (!type.equals("findWordResponse")) {

@@ -9,6 +9,15 @@ import java.awt.Color;
 /**
  * @author Zijun Xu
  */
+/**
+ * 
+ * responsible for painting cells according to the cell's status.
+ * if the cell is selected, paint it blue
+ * if the cell is a bonus cell, paint it yellow
+ * if the cell is a shared cell, paint it gray
+ * other cells paint them white
+ *
+ */
 public class PaintCellController {
     Model model;
     public PaintCellController(Model m){

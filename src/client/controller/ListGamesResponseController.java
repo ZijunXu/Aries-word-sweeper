@@ -8,6 +8,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for handling listGamesResponse from server
+ *
+ */
 public class ListGamesResponseController extends ControllerChain{
 
     public Application app;
@@ -19,6 +24,7 @@ public class ListGamesResponseController extends ControllerChain{
         this.model = m;
     }
 
+    /** add game to game list with decomposing the response string */
     @Override
     public boolean process(Message response){
         String type = response.contents.getFirstChild().getLocalName();

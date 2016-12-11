@@ -6,7 +6,11 @@ package client.controller;
 import client.view.Application;
 import xml.Message;
 import client.model.Model;
-
+/**
+ * 
+ * the Controller of making a request of Create Game
+ *
+ */
 public class CreateGameController {
 
 	Application app;
@@ -17,7 +21,11 @@ public class CreateGameController {
 		this.model = model;
 	}
 
-	/** Make the request on the server and wait for response. */
+	/** 
+	 * Make the request on the server and wait for response. 
+	 * included with a judgment statement of whether included with password or not
+	 * support with or without password to create a game
+	 */
 	public void process() {
 		// send the request to create the game.
 		String xmlString;
@@ -29,17 +37,6 @@ public class CreateGameController {
 			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s'/></request>",
 					this.model.getGame().getMyName());
 		}
-		
-		
-		// alternative version
-		/*
-		String xmlString;
-		if (this.app.getPassword() != null){
-			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s' password='%s'/></request>", this.app.getPlayerName(), this.app.getPassword());
-		}
-		else {
-			xmlString = Message.requestHeader() + String.format("<createGameRequest name='%s'/></request>", this.app.getPlayerName());
-		}*/
 
 		Message m = new Message (xmlString);
         System.out.println(m.toString());

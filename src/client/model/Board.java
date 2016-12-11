@@ -13,7 +13,8 @@ public class Board {
 	public Cell[][] cells = new Cell[colNum][rowNum];
 	public ArrayList<Cell> selectedCells;
 	boolean couldRefresh = false;
-
+	
+	/** set each cell's letter */
     public Board(String letters[][]){
 		for (int i = 0; i < rowNum; i++) {
 			for (int j = 0; j < colNum; j++) {
@@ -24,6 +25,7 @@ public class Board {
 		}
     }
 
+    /** refresh every cell's letter */
     public void refreshBoard(String letters[][]){
     	for (int i = 0; i < rowNum; i++){
     		for(int j = 0; j < colNum; j++){
@@ -32,6 +34,7 @@ public class Board {
     	}
     }
 
+    /** initial board with the inputting string */
     public void setBoard(String letters){
         letters = letters.replaceAll(",", "");
         char [] stringArr = letters.toCharArray();
@@ -55,14 +58,17 @@ public class Board {
         }
     }
 
+    /** check if the board could be refresh */
     public boolean getCouldRefresh(){
         return this.couldRefresh;
     }
 
+    /** get the current board's global position */
     public int[] getGlobalPosition(){
         return this.globalPosition;
     }
 
+    /** set the current board's global position */
 	public void setGlobalPosition(int[] globalPosition) {
 		this.globalPosition = globalPosition;
 	}
