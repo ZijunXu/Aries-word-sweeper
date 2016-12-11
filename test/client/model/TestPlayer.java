@@ -26,6 +26,10 @@ public class TestPlayer extends TestCase {
 	 * It is for the test case of Player
 	 * 
 	 */
+	public void testSetupProcess(){
+		player.Player();
+	}
+	
 	public void testPlayerGetNameProcess() {
 		player.setName("setPlayer");
 		assertEquals ("setPlayer", player.getName());
