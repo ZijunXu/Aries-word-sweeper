@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import client.MockServerAccess;
 import client.controller.LockGameResponseController;
 import client.model.Model;
+import client.view.PlayingPanel;
 import client.view.Application;
 import xml.Message;
 import junit.framework.TestCase;
@@ -26,6 +27,7 @@ public class TestLockGameResponseController extends TestCase {
 	// model being maintained by client.
 	Model model;
 
+	PlayingPanel playingpanel;
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -35,10 +37,12 @@ public class TestLockGameResponseController extends TestCase {
 		
 		// prepare client and connect to server.
 		model = new Model();
-		
-		
 		client = new Application (model);
 		client.setVisible(true);
+		playingpanel = new PlayingPanel(client, model);
+		playingpanel.setVisible(true);
+		
+		
 		
 		// Create mockServer to simulate server, and install 'obvious' handler
 		// that simply dumps to the screen the responses.
@@ -57,12 +61,15 @@ public class TestLockGameResponseController extends TestCase {
 		
 		String roomNumber = "1";
 		
+		client.setRoomID(roomNumber);
+		client.setPlayingPanel();
+		
 		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<lockGameResponse gameId = \"%s\">" + "</lockGameResponse></response>", roomNumber);
 		
 		Message m = new Message(xmlString);
 		
 		assertTrue (new LockGameResponseController(client, model).process(m));
-		assertEquals (true, model.getGame().isLocked());
+		assertEquals (true, client.getPlayingPanel().returnLockStatus());
 		
 	}
 }

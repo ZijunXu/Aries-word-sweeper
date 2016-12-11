@@ -54,7 +54,7 @@ public class TestJoinGameController extends TestCase {
 		//****without Password
 		String roomNumber = "1";
 		String playerName = "player1";
-		model.getGame().setRoomID(roomNumber);
+		client.setRoomID(roomNumber);
 		model.getGame().setMyName(playerName);
 		new JoinGameController(client, model).process();
 		 
@@ -75,9 +75,10 @@ public class TestJoinGameController extends TestCase {
 		String roomNumber_2 = "2";
 		String playerName_2 = "player2";
 		String password = "test";
-		model.getGame().setRoomID(roomNumber_2);
+		client.setRoomID(roomNumber_2);
 		model.getGame().setMyName(playerName_2);
-		model.getGame().setPassword(password);
+		client.setPassword(password);
+		
 		new JoinGameController(client, model).process();
 		
 		// validate from mockServer

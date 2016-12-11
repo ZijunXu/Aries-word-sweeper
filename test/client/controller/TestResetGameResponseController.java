@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
-import client.controller.BoardResponseController;
+import client.controller.ResetGameResponseController;
 import client.MockServerAccess;
 import client.model.Model;
 import client.view.Application;

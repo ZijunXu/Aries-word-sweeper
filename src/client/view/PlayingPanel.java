@@ -246,4 +246,9 @@ public class PlayingPanel extends JFrame {
         this.isLocked = true;
         btnLockGame.setEnabled(false);
     }
+    
+    // for test case use @author Zhanfeng
+    public boolean returnLockStatus(){
+    	return isLocked;
+    }
 }
