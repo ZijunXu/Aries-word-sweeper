@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a93d02c6-16cd-4806-9333-39de0bee9034" name="Default" comment="fix the bonus cell display error when picking word">
+    <list default="true" id="a93d02c6-16cd-4806-9333-39de0bee9034" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/BoardResponseController.java" afterPath="$PROJECT_DIR$/src/client/controller/BoardResponseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/CreateGameController.java" afterPath="$PROJECT_DIR$/src/client/controller/CreateGameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/JoinGameController.java" afterPath="$PROJECT_DIR$/src/client/controller/JoinGameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/JoinGameResponseController.java" afterPath="$PROJECT_DIR$/src/client/controller/JoinGameResponseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/LockGameResponseController.java" afterPath="$PROJECT_DIR$/src/client/controller/LockGameResponseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/PaintCellController.java" afterPath="$PROJECT_DIR$/src/client/controller/PaintCellController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Board.java" afterPath="$PROJECT_DIR$/src/client/model/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Model.java" afterPath="$PROJECT_DIR$/src/client/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Position.java" afterPath="$PROJECT_DIR$/src/client/model/Position.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/model/Word.java" afterPath="$PROJECT_DIR$/src/client/model/Word.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/view/Application.java" afterPath="$PROJECT_DIR$/src/client/view/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/view/PlayingPanel.java" afterPath="$PROJECT_DIR$/src/client/view/PlayingPanel.java" />
     </list>
     <ignored path="Word_Sweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/controller/LockGameController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/controller/ResetGameController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -105,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="695">
-              <caret line="132" column="5" lean-forward="true" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+              <caret line="132" column="5" lean-forward="false" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
               <folding>
                 <element signature="e#3440#3441#0" expanded="true" />
                 <element signature="e#3480#3481#0" expanded="true" />
@@ -421,22 +409,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ClientLauncher.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/CreateGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/ExitGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/JoinGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/JoinGameResponseController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/ListGamesController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/LockGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/controller/ResetGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/model/Model.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestBoardResponseController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestConnectResponseController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestCreateGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestExitGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestJoinGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestListGamesController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestLockGameController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestResetGameController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestExitGameResponseController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestFindWordController.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -444,9 +421,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestConnectResponseController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestExitGameResponseController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestFindWordController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestJoinGameResponseController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestListGamesResponseController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestLockGameResponseController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestMoveBoardController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/controller/TestResetGameResponseController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/client/model/TestPlayer.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1119,7 +1099,7 @@
       <workItem from="1481262267367" duration="2227000" />
       <workItem from="1481264504411" duration="27262000" />
       <workItem from="1481333585664" duration="9976000" />
-      <workItem from="1481375482595" duration="18154000" />
+      <workItem from="1481375482595" duration="18317000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore">
       <created>1479271174302</created>
@@ -1226,11 +1206,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481341677028</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Be able to join the existed game and show the shared cells with grey color">
+      <created>1481418346754</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1481418346754</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292843000" />
+    <option name="totallyTimeSpent" value="293006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1243,7 +1230,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="147" y="39" width="1632" height="1012" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1254,8 +1241,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23937824" sideWeight="0.5033557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29877368" sideWeight="0.37672412" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19469929" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6098105" sideWeight="0.37672412" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3322185" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14984709" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1357,7 +1344,8 @@
     <MESSAGE value="show the chosen word and its score during the picking word process" />
     <MESSAGE value="show the bonus cell with yellow color" />
     <MESSAGE value="fix the bonus cell display error when picking word" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the bonus cell display error when picking word" />
+    <MESSAGE value="Be able to join the existed game and show the shared cells with grey color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Be able to join the existed game and show the shared cells with grey color" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1689,7 +1677,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/controller/LockGameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1729,7 +1717,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/controller/ResetGameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1784,7 +1772,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
-          <caret line="132" column="5" lean-forward="true" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+          <caret line="132" column="5" lean-forward="false" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
           <folding>
             <element signature="e#3440#3441#0" expanded="true" />
             <element signature="e#3480#3481#0" expanded="true" />
