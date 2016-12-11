@@ -194,7 +194,8 @@ public class PlayingPanel extends JFrame {
         wordScoreDisplay.setBounds(148, 360, 106, 21);
         contentPane.add(wordScoreDisplay);
 
-        playersListArea = new JTextArea("");
+        playersListArea = new JTextArea(String.format("  1\t %s\t %s\n",
+                model.getGame().getMyName(), model.getGame().getScore()) + model.getGame().getPlayerList());
         playersListArea.setForeground(Color.BLACK);
         playersListArea.setColumns(20);
         playersListArea.setRows(10);
