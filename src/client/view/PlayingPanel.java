@@ -280,6 +280,11 @@ public class PlayingPanel extends JFrame {
         this.isLocked = true;
         btnLockGame.setEnabled(false);
     }
+    
+ // for test case use @author Zhanfeng
+    public boolean returnLockStatus() {
+    	return this.isLocked;
+    }
 
     public void setPlayersListArea(String playersList) {
         this.playersListArea.setText(playersList);

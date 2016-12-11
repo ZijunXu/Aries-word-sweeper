@@ -231,6 +231,11 @@ public class Application extends JFrame {
 	public String getPassword() {
 		return password;
 	}
+	
+	//for test case use @author Zhanfeng
+	public void setPassword(String psw) {
+		password = psw;
+	}
 
 	public String getRoomNumber() {
 		return roomID;
@@ -253,9 +258,20 @@ public class Application extends JFrame {
     public PlayingPanel getPlayingPanel(){
         return this.playingPanel;
     }
+    
+ // for test case use @author Zhanfeng
+    public void setPlayingPanel(){
+    	playingPanel = new PlayingPanel(Application.this, model);
+        playingPanel.setVisible(true);
+    }
 
     public String getRoomID(){
         return this.roomID;
+    }
+    
+ // for test case use @author Zhanfeng
+    public void setRoomID(String roomID){
+    	this.roomID = roomID;
     }
 
     public void setErrorMessege(String message){
