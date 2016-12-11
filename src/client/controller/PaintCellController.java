@@ -24,7 +24,10 @@ public class PaintCellController {
                     model.getGrid()[i][j].setBackground(Color.blue);
                 }else {
                     if(model.getBoard().cells[i][j].getSharedTimes() > 0){
-                        model.getGrid()[i][j].setBackground(Color.gray);
+                        model.getGrid()[i][j].setBackground(new Color(
+                                255 - model.getBoard().cells[i][j].getSharedTimes() * 30,
+                                255 - model.getBoard().cells[i][j].getSharedTimes() * 30,
+                                255 - model.getBoard().cells[i][j].getSharedTimes() * 30));
                     }else {
                         model.getGrid()[i][j].setBackground(Color.white);
                     }
