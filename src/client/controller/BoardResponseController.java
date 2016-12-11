@@ -82,11 +82,15 @@ public class BoardResponseController extends ControllerChain{
 		model.setSharedCells();
         model.getGame().setManagingUser(managingUser);
         model.getGame().setRoomID(gameId);
+
         if (model.getBoard().getCouldRefresh()){
             PaintCellController refreshBoard = new PaintCellController(model);
             refreshBoard.repaint();
             app.getPlayingPanel().setManagingUser(managingUser, model.getGame().getMyName().equals(managingUser));
             app.getPlayingPanel().setGameId(gameId);
+            app.getPlayingPanel().setPlayersListArea(String.format("  1\t %s\t %s\n",
+                    model.getGame().getMyName(), model.getGame().getScore()) + model.getGame().getPlayerList());
+            app.getPlayingPanel().setMyScoreDisplay(String.valueOf(model.getGame().getScore()));
         }
 
         System.out.println(response.toString());

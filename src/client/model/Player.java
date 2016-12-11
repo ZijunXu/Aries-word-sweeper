@@ -27,7 +27,7 @@ public class Player {
     }
 
     public long getScore(){
-        return score;
+        return this.score;
     }
 
     public void setScore(long score){

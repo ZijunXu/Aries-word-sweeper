@@ -54,8 +54,14 @@ public class Game {
         return myName;
     }
 
-    public void updateBoard(Player[] playInfo,Board board){
-    	   
+    public String getPlayerList(){
+        String playersList = "";
+        int i = 1;
+        for(Player eachPlayer : players){
+            playersList += String.format("  %d\t %s\t %s\n", i + 1, eachPlayer.getName(), eachPlayer.getScore());
+            i += 1;
+        }
+        return playersList;
     }
 
     public void setScore(long score){

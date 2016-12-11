@@ -28,7 +28,7 @@ public class Application extends JFrame {
     protected Model model;
     protected Player player;
 	ServerAccess serverAccess;
-	
+
 	JTextArea requestArea;
 	JTextArea responseArea;
 	private JTextField playerNameField;
@@ -58,15 +58,11 @@ public class Application extends JFrame {
 
         ButtonGroup passwordButtonGroup = new ButtonGroup();
 
-        JPanel panel = new JPanel();
-        panel.setBounds(207, 160, 289, 75);
-        getContentPane().add(panel);
-
 //        JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
 //        rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.TRAILING);
 //        panel.add(rdbtnNewRadioButton);
 //        passwordButtonGroup.add(rdbtnNewRadioButton);
-        
+
 //        passwordField = new JTextField();
 //        panel.add(passwordField);
 //        passwordField.setColumns(10);
@@ -75,21 +71,21 @@ public class Application extends JFrame {
 //        panel.add(rdbtnNewRadioButton_1);
 //        passwordButtonGroup.add(rdbtnNewRadioButton_1);
 
-        JLabel playerNameLable = new JLabel("User Name:");
-        playerNameLable.setBounds(219, 111, 87, 16);
+        JLabel playerNameLable = new JLabel("Your Name:");
+        playerNameLable.setBounds(202, 111, 104, 26);
         contentPane.add(playerNameLable);
 
         playerNameField = new JTextField();
-        playerNameField.setBounds(304, 106, 130, 26);
+        playerNameField.setBounds(311, 112, 130, 26);
         contentPane.add(playerNameField);
         playerNameField.setColumns(10);
 
         JLabel gameIDLable = new JLabel("Game ID:");
-        gameIDLable.setBounds(231, 268, 61, 16);
+        gameIDLable.setBounds(202, 185, 61, 16);
         contentPane.add(gameIDLable);
 
         gameIDField = new JTextField();
-        gameIDField.setBounds(304, 263, 130, 26);
+        gameIDField.setBounds(311, 181, 130, 26);
         contentPane.add(gameIDField);
         gameIDField.setColumns(10);
 
@@ -126,13 +122,13 @@ public class Application extends JFrame {
         ButtonReaction myReaction = new ButtonReaction();
 
         btnJoinAGame = new JButton("Join a game");
-        btnJoinAGame.setBounds(35, 163, 130, 38);
+        btnJoinAGame.setBounds(35, 217, 130, 38);
         getContentPane().add(btnJoinAGame);
         btnJoinAGame.addActionListener(myReaction);
 
 
         btnCreateAGame = new JButton("Create a game");
-        btnCreateAGame.setBounds(35, 105, 130, 38);
+        btnCreateAGame.setBounds(35, 132, 130, 38);
         getContentPane().add(btnCreateAGame);
         btnCreateAGame.addActionListener(myReaction);
 
@@ -144,12 +140,12 @@ public class Application extends JFrame {
         getContentPane().add(lblNewLabel);
 
         passwordField = new JTextField();
-        passwordField.setBounds(304, 296, 130, 26);
+        passwordField.setBounds(311, 259, 130, 26);
         contentPane.add(passwordField);
         passwordField.setColumns(10);
 
         JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setBounds(219, 301, 61, 16);
+        passwordLabel.setBounds(202, 263, 61, 16);
         contentPane.add(passwordLabel);
 	}
 
@@ -209,38 +205,33 @@ public class Application extends JFrame {
             }
         }
     }
-	
+
 	public void setServerAccess(ServerAccess access) {
 		this.serverAccess = access;
 	}
-	
+
 	public ServerAccess getServerAccess() {
 		return serverAccess;
 	}
-	
+
 	/** Navigation access to actionable elements in the GUI. */
 /*	public JTextArea getRequestArea() {
 		return requestArea;
 	}
-*/	
+*/
 	/** Navigation access to actionable elements in the GUI. */
 /*	public JTextArea getResponseArea() {
 		return responseArea;
 	}
-*/	
+*/
 	public String getPlayerName() {
 		return playerName;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
-	//for test case use @author Zhanfeng
-	public void setPassword(String psw) {
-		password = psw;
-	}
-	
+
 	public String getRoomNumber() {
 		return roomID;
 	}
@@ -262,22 +253,11 @@ public class Application extends JFrame {
     public PlayingPanel getPlayingPanel(){
         return this.playingPanel;
     }
-    
-    // for test case use @author Zhanfeng
-    public void setPlayingPanel(){
-    	playingPanel = new PlayingPanel(Application.this, model);
-        playingPanel.setVisible(true);
-    }
 
     public String getRoomID(){
         return this.roomID;
     }
 
-    // for test case use @author Zhanfeng
-    public void setRoomID(String roomID){
-    	this.roomID = roomID;
-    }
-    
     public void setErrorMessege(String message){
         this.errorMessage = message;
     }
