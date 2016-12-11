@@ -7,6 +7,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * make a request to the server for exit game
+ *
+ */
 public class ExitGameController {
 
     Application app;

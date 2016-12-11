@@ -7,6 +7,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for the handling for exitgame response from server
+ *
+ */
 public class ExitGameResponseController extends ControllerChain{
 
     protected Application app;

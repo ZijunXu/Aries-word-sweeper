@@ -6,6 +6,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * send a request to server to move the board
+ *
+ */
 public class MoveBoardController {
     int columnChange;
     int rowChange;
@@ -18,7 +23,7 @@ public class MoveBoardController {
         this.columnChange = columnChange;
         this.rowChange = rowChange;
     }
-
+    /** according to which button(left, right, up or down) pressed, send a corresponding request */
     public void process(){
         String xmlString = Message.requestHeader() + String.format("<repositionBoardRequest name='%s' gameId='%s' " +
                         "rowChange='%d' colChange='%d'/></request>", model.getGame().getMyName(),

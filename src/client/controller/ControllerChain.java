@@ -1,7 +1,11 @@
 package client.controller;
 
 import xml.Message;
-
+/**
+ * 
+ * Chain Repository
+ *
+ */
 public abstract class ControllerChain implements IClientController{
 
     /** Next one in the chain. Once null is reached, done. */

@@ -7,6 +7,12 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+
+/**
+ * 
+ * responsible for making a request of listing current games in server
+ *
+ */
 public class ListGamesController {
 
     protected Application app;

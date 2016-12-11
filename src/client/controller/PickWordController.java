@@ -11,6 +11,11 @@ import client.view.Application;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for picking word
+ *
+ */
 public class PickWordController extends MouseAdapter{
 
 	private JPanel panel;
@@ -71,14 +76,14 @@ public class PickWordController extends MouseAdapter{
 
 	protected int positionInBoard(int position){
 		int inBoardPosition = -2;
-		/*
+		/**
 		* the mouse is in the gap of cells
-		* */
+		*/
 		if (position < 0 || position > 220){
 			inBoardPosition = -1;
-			/*
+			/**
 			* the mouse goes out of the panel
-			* */
+			*/
 		}else if (position < 50 && position > 0){
 			inBoardPosition = 0;
 		}else if (position < 105 && position > 60){
@@ -90,7 +95,8 @@ public class PickWordController extends MouseAdapter{
 		}
 		return inBoardPosition;
 	}
-
+	
+	/** add a rule that cannot select cells which are not adjacent */
 	protected boolean isAdjacentCells(int x, int y){
 		if (model.getWord().isTheFirstLetter()){
 			return true;

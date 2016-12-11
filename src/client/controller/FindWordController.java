@@ -6,6 +6,12 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+
+/**
+ * 
+ * make a request to server of what word was selected
+ *
+ */
 public class FindWordController {
 
     Application app;
@@ -15,7 +21,8 @@ public class FindWordController {
         this.app = app;
         this.model = model;
     }
-
+    
+    /** chosenCellsInfoXMLString is the set of cells which were selected */
     public void process(){
         String chosenCellsInfoXMLString = model.getChoseCellsXMLString();
 

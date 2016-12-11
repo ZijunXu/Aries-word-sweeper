@@ -6,6 +6,11 @@ import xml.Message;
 /**
  *@author Zijun Xu
  */
+/**
+ * 
+ * responsible for making a lock game request to server
+ *
+ */
 public class LockGameController{
 
     protected Application app;

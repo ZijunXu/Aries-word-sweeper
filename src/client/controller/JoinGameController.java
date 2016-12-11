@@ -7,6 +7,11 @@ import client.view.Application;
 import client.model.Model;
 import xml.Message;
 
+/**
+ * 
+ * responsible for make a join game request to the server
+ *
+ */
 public class JoinGameController {
 
 	Application app;
@@ -18,6 +23,7 @@ public class JoinGameController {
 	}
 
 	/** Make the request on the server and wait for response. */
+	/** also, like the create game controller, included with a judgment statement of whether included with password or not */
 	public void process() {
 		// send the request to create the game.
         String xmlString;

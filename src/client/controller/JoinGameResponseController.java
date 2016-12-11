@@ -9,6 +9,12 @@ import xml.Message;
 /**
  *@Zijun Xu
  */
+
+/**
+ * 
+ * responsible for handling the response of join game response from server
+ *
+ */
 public class JoinGameResponseController extends ControllerChain{
 
     public Application app;
@@ -19,7 +25,8 @@ public class JoinGameResponseController extends ControllerChain{
         this.app = a;
         this.model = m;
     }
-
+    
+    /** set gameId, and join the game */
     @Override
     public boolean process(Message response) {
         String type = response.contents.getFirstChild().getLocalName();
