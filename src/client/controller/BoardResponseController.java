@@ -29,6 +29,12 @@ public class BoardResponseController extends ControllerChain{
 		this.model = m;
 	}
 
+	/** 
+	 * 
+	 * Board Response when receiving the corresponding message from Server
+	 * @param response the message from server
+	 * 
+	 */
 	public boolean process(Message response) {
 		String type = response.contents.getFirstChild().getLocalName();
 		if (!type.equals ("boardResponse")) {
@@ -97,6 +103,12 @@ public class BoardResponseController extends ControllerChain{
 		return true;
 	}
 
+	/**
+	 * 
+	 * calculate the position into int[]
+	 * @param xmlPosition the position response
+	 * @return position of the type of int[]
+	 */
 	public int[] extractPosition(String xmlPosition){
 
         Pattern p = Pattern.compile("\\d+");
