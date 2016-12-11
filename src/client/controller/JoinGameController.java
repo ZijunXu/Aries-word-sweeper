@@ -27,7 +27,7 @@ public class JoinGameController {
                     model.getGame().getMyName());
 
         }else{
-            xmlString = Message.requestHeader() + String.format("<joinGameRequest gameId='%s' name='%s password='%s'/></request>",
+            xmlString = Message.requestHeader() + String.format("<joinGameRequest gameId='%s' name='%s' password='%s'/></request>",
                     app.getRoomID(),
                     model.getGame().getMyName(), app.getPassword());
         }

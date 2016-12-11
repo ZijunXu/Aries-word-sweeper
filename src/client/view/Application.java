@@ -178,7 +178,7 @@ public class Application extends JFrame {
             }
 	        else if (e.getSource() == btnJoinAGame) {
                 roomID = gameIDField.getText();
-
+                password = passwordField.getText();
                 if (playerName.length() == 0) {
                     JOptionPane.showMessageDialog(Application.this,
                             "Player Name can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
