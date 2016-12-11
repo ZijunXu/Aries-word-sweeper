@@ -1,10 +1,12 @@
 package client.controller;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
 import client.MockServerAccess;
+import client.controller.ListGamesController;
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
@@ -13,7 +15,7 @@ import junit.framework.TestCase;
 /**
  *@author Zhanfeng Huang
  */
-public class TestConnectResponseController extends TestCase {
+public class TestListGamesResponseController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -23,7 +25,7 @@ public class TestConnectResponseController extends TestCase {
 	
 	// model being maintained by client.
 	Model model;
-	
+
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -33,6 +35,8 @@ public class TestConnectResponseController extends TestCase {
 		
 		// prepare client and connect to server.
 		model = new Model();
+		
+		
 		client = new Application (model);
 		client.setVisible(true);
 		
@@ -46,18 +50,32 @@ public class TestConnectResponseController extends TestCase {
 	}
 	
 	/**
-	 * It is for the test case of ConnectResponseController
+	 * It is for the test case of ListGamesResponseController
 	 * 
 	 */
-	public void testConnectResponseProcess() {
-
+	public void testListGamesResponseProcess() {
+		
 		String roomNumber = "1";
+		String players = "3";
+		String gameBrief = new String("");
+		gameBrief = gameBrief + "<gameBrief gameId='" + roomNumber + "' players='" + players +"'/>";
 		
-		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<connectResponse id = \"%s\">" + "</connectResponse></response>", roomNumber);
-		
+		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + "<listGamesResponse>" + gameBrief + "</listGamesResponse>" + "</response>";
 		Message m = new Message(xmlString);
 		
-		assertTrue (new ConnectResponseController(client, model).process(m));
+		new ListGamesResponseController(client, model).process(m);
+		
+		String gameIdSet = model.getGameList().keySet().toString();
+		gameIdSet = gameIdSet.replace("[", "");
+		gameIdSet = gameIdSet.replace("]", "");
+		
+		String playersSet = model.getGameList().values().toString();
+		playersSet = playersSet.replace("[", "");
+		playersSet = playersSet.replace("]", "");
+		
+		assertEquals(roomNumber, gameIdSet);
+		assertEquals(players, playersSet);
+		
+		
 	}
-
 }

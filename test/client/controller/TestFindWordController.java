@@ -96,6 +96,6 @@ public class TestFindWordController extends TestCase {
 		System.out.println (r.toString());
 		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		assertEquals(cell.getLetter(),r.contents.getFirstChild().getAttributes().getNamedItem("word").getNodeValue());
+		assertEquals(cell.getLetter(), r.contents.getFirstChild().getAttributes().getNamedItem("word").getNodeValue());
 	}
 }

@@ -8,9 +8,7 @@ import client.controller.BoardResponseController;
 import client.MockServerAccess;
 import client.model.Model;
 import client.model.Board;
-import client.model.Cell;
 import client.model.Game;
-import client.model.Player;
 import client.view.Application;
 import xml.Message;
 import junit.framework.TestCase;
@@ -29,7 +27,7 @@ public class TestBoardResponseController extends TestCase {
 	// model being maintained by client.
 	Model model;
 	
-	Player player;
+
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -39,7 +37,6 @@ public class TestBoardResponseController extends TestCase {
 		
 		// prepare client and connect to server.
 		model = new Model();
-		player = new Player();
 		client = new Application (model);
 		client.setVisible(true);
 		

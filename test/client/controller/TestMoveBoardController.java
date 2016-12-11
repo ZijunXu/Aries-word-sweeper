@@ -5,7 +5,9 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
 import client.MockServerAccess;
+import client.controller.MoveBoardController;
 import client.model.Model;
+
 import client.view.Application;
 import xml.Message;
 import junit.framework.TestCase;
@@ -13,7 +15,7 @@ import junit.framework.TestCase;
 /**
  *@author Zhanfeng Huang
  */
-public class TestCreateGameController extends TestCase {
+public class TestMoveBoardController extends TestCase {
 	
 	// Mock server object that extends (and overrides) ServerAccess for its purposes
 	MockServerAccess mockServer;
@@ -23,7 +25,6 @@ public class TestCreateGameController extends TestCase {
 	
 	// model being maintained by client.
 	Model model;
-	
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -46,44 +47,36 @@ public class TestCreateGameController extends TestCase {
 	}
 	
 	/**
-	 * It is for the test case of CreateGameController
+	 * It is for the test case of MoveBoardController
 	 * 
 	 */
-	public void testCreateGameProcess() {
+	public void testMoveBoardProcess() {
 		
-		//****without Password
+		String roomNumber = "1";
 		String playerName = "player1";
+		
+		// move left
+		// column change
+		int column = -1;
+		// row change
+		int row = 0;
+		
+		model.getGame().setRoomID(roomNumber);
 		model.getGame().setMyName(playerName);
-		new CreateGameController(client, model).process();
+		
+		new MoveBoardController(client, model, column, row).process();
 		
 		// validate from mockServer
-		 
 		ArrayList<Message> reqs = mockServer.getAndClearMessages();
 		assertTrue (reqs.size() == 1);
 		Message r = reqs.get(0);
-		 
+		
 		// a lock request is sent out.
-		assertEquals ("createGameRequest", r.contents.getFirstChild().getLocalName());
+		assertEquals ("repositionBoardRequest", r.contents.getFirstChild().getLocalName());
 		System.out.println (r.toString());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		
-		//****with Password
-		String playerName_2 = "player2";
-		String password = "test";
-		model.getGame().setMyName(playerName_2);
-		model.getGame().setPassword(password);
-		new CreateGameController(client, model).process();
-		
-		// validate from mockServer
-		ArrayList<Message> reqs_2 = mockServer.getAndClearMessages();
-		assertTrue (reqs_2.size() == 1);
-		Message r_2 = reqs_2.get(0);
-		
-		// a lock request is sent out.
-		assertEquals ("createGameRequest", r_2.contents.getFirstChild().getLocalName());
-		System.out.println (r_2.toString());
-		assertEquals(playerName_2, r_2.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
-		assertEquals(password, r_2.contents.getFirstChild().getAttributes().getNamedItem("password").getNodeValue());
-		
+		assertEquals(roomNumber, r.contents.getFirstChild().getAttributes().getNamedItem("gameId").getNodeValue());
+		assertEquals(Integer.toString(row), r.contents.getFirstChild().getAttributes().getNamedItem("rowChange").getNodeValue());
+		assertEquals(Integer.toString(column), r.contents.getFirstChild().getAttributes().getNamedItem("colChange").getNodeValue());
 	}
 }
