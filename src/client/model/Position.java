@@ -9,5 +9,4 @@ public class Position {
 		this.column = column;
 		this.row = row;
 	}
-	
 }

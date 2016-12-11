@@ -6,8 +6,6 @@ import java.util.Random;
 
 import javax.swing.JLabel;
 
-import client.model.*;
-import client.view.PlayingPanel;
 /**
  *@author Zijun Xu
  */
@@ -18,7 +16,7 @@ public class Model {
     private Player player;
     private Word word;
 	private JLabel[][] grid;
-	public boolean existedGame;
+	protected boolean isExistedGame;
     protected Map<String, Integer> gameList = new HashMap<>();
 	private static final String[] LETTER_SET={"A",
             "B","C","D","E","F","G","H","I","J","K",
@@ -124,5 +122,13 @@ public class Model {
                     String.valueOf(cell.getPosition()[1] + getBoard().getGlobalPosition()[1]), cell.getLetter());
         }
         return chosenCellsString;
+    }
+
+    public void setIsExistedGame(boolean isExisted){
+    	this.isExistedGame = isExisted;
+	}
+
+	public boolean getIsExitedGame(){
+        return this.isExistedGame;
     }
 }

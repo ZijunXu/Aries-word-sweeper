@@ -23,10 +23,13 @@ public class PaintCellController {
                 if (model.getBoard().cells[i][j].isSelected){
                     model.getGrid()[i][j].setBackground(Color.blue);
                 }else {
-                    if (model.getBoard().cells[i][j].getBonus() == 10){
-                        model.getGrid()[i][j].setBackground(Color.yellow);
+                    if(model.getBoard().cells[i][j].getSharedTimes() > 0){
+                        model.getGrid()[i][j].setBackground(Color.gray);
                     }else {
                         model.getGrid()[i][j].setBackground(Color.white);
+                    }
+                    if (model.getBoard().cells[i][j].getBonus() == 10){
+                        model.getGrid()[i][j].setBackground(Color.yellow);
                     }
                 }
             }

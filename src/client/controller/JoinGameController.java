@@ -1,6 +1,6 @@
 package client.controller;
 /**
- *@author Zhanfeng Huang
+ *@author Zijun Xu
  */
 
 import client.view.Application;
@@ -21,18 +21,19 @@ public class JoinGameController {
 	public void process() {
 		// send the request to create the game.
         String xmlString;
-        if(this.model.getGame().getPassword() == null){
+        if(app.getPassword() == null){
             xmlString = Message.requestHeader() + String.format("<joinGameRequest gameId='%s' name='%s'/></request>",
-                    this.model.getGame().getRoomID(),
-                    this.model.getGame().getMyName());
+                    app.getRoomID(),
+                    model.getGame().getMyName());
 
         }else{
             xmlString = Message.requestHeader() + String.format("<joinGameRequest gameId='%s' name='%s password='%s'/></request>",
-                    this.model.getGame().getRoomID(),
-                    this.model.getGame().getMyName(), this.model.getGame().getPassword());
+                    app.getRoomID(),
+                    model.getGame().getMyName(), app.getPassword());
         }
 
 		Message m = new Message (xmlString);
+        System.out.println(m.toString());
 		app.getServerAccess().sendRequest(m);
 	}
 }

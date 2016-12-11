@@ -1,6 +1,6 @@
 package client.controller;
 /**
- *@author Zhanfeng Huang
+ *@author Zijun Xu
  */
 
 import client.view.Application;

@@ -16,6 +16,8 @@ import java.util.regex.Pattern;
 /**
  * Tells the client whether the model is locked or not BY SOME OTHER CLIENT. This will never be returned to a client
  * to tell him that HE has the model locked (that is job of LockResponse).
+ *
+ * @author Zijun Xu
  */
 public class BoardResponseController extends ControllerChain{
 
@@ -32,7 +34,7 @@ public class BoardResponseController extends ControllerChain{
 		if (!type.equals ("boardResponse")) {
 			return next.process(response);
 		}
-
+        model.setIsExistedGame(true);
 		// this refers to the outer node of the Message DOM (in this case, updateResponse).
 		Node boardResponse = response.contents.getFirstChild();
 		NamedNodeMap map = boardResponse.getAttributes();
@@ -61,14 +63,10 @@ public class BoardResponseController extends ControllerChain{
                 bonusPosition[0] = bonusGlobalPosition[0] - globalPosition[0];
                 bonusPosition[1] = bonusGlobalPosition[1] - globalPosition[1];
                 model.getBoard().setBoard(pboard);
+
                 if(bonusPosition[0] < 4 && bonusPosition[0] > -1 &&
                         bonusPosition[1] < 4 && bonusPosition[1] > -1){
                     this.model.getBoard().cells[bonusPosition[0]][bonusPosition[1]].setBonus();
-                }
-                if (model.getBoard().getCouldRefresh()){
-                    PaintCellController refreshBoard = new PaintCellController(model);
-                    refreshBoard.repaint();
-                    app.getPlayingPanel().setManagingUser(managingUser);
                 }
             }else {
                 Player a = new Player();
@@ -81,8 +79,16 @@ public class BoardResponseController extends ControllerChain{
                 model.getGame().addPlayers(a);
             }
 		}
+		model.setSharedCells();
         model.getGame().setManagingUser(managingUser);
         model.getGame().setRoomID(gameId);
+        if (model.getBoard().getCouldRefresh()){
+            PaintCellController refreshBoard = new PaintCellController(model);
+            refreshBoard.repaint();
+            app.getPlayingPanel().setManagingUser(managingUser, model.getGame().getMyName().equals(managingUser));
+            app.getPlayingPanel().setGameId(gameId);
+        }
+
         System.out.println(response.toString());
 		return true;
 	}

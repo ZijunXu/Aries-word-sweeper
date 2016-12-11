@@ -28,6 +28,7 @@ public class PlayingPanel extends JFrame {
 	protected String gameId;
 	protected int wordScore;
 	protected long score;
+	protected boolean isLocked;
     protected JButton btnMoveRight;
     protected JButton btnMoveLeft;
     protected JButton btnMoveUp;
@@ -87,6 +88,9 @@ public class PlayingPanel extends JFrame {
 			}
 		}
 		model.setGrid(grid);
+
+        PaintCellController repaint = new PaintCellController(model);
+        repaint.repaint();
 
 		PickWordController control = new PickWordController(app, model, panel);
 		panel.addMouseListener(control);
@@ -169,7 +173,7 @@ public class PlayingPanel extends JFrame {
         getContentPane().add(btnExitGame);
 		btnExitGame.addActionListener(myReaction);
 		
-		gameIdDisplay = new JLabel(model.getGame().getMyName());
+		gameIdDisplay = new JLabel(model.getGame().getRoomID());
 		gameIdDisplay.setBounds(670, 26, 106, 26);
 		contentPane.add(gameIdDisplay);
 		
@@ -210,8 +214,20 @@ public class PlayingPanel extends JFrame {
 	    this.gameIdDisplay.setText(gameId);
     }
 
-    public void setManagingUser(String managingUser){
+    public void setManagingUser(String managingUser, boolean isManagingUser){
         this.managingUserDisplay.setText(managingUser);
+        if(!isManagingUser){
+            btnResetGame.setEnabled(false);
+            btnLockGame.setEnabled(false);
+        } else {
+            if(isLocked){
+                btnLockGame.setEnabled(false);
+                btnResetGame.setEnabled(true);
+            } else {
+                btnLockGame.setEnabled(true);
+                btnResetGame.setEnabled(true);
+            }
+        }
     }
 
     public void setWordScore(int score){
@@ -224,5 +240,10 @@ public class PlayingPanel extends JFrame {
 
     public void setChosenWord(String word){
         this.chosenWordDisplay.setText(word);
+    }
+
+    public void lockGame(){
+        this.isLocked = true;
+        btnLockGame.setEnabled(false);
     }
 }

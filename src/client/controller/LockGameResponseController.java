@@ -24,6 +24,7 @@ public class LockGameResponseController extends ControllerChain{
             return next.process(response);
         }
         model.getGame().lockGame();
+        app.getPlayingPanel().lockGame();
         return true;
     }
 }

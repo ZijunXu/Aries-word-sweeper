@@ -65,12 +65,12 @@ public class Word {
 	    int sharedTimes = 0;
 		for (Cell cell : ChoseCells){
 		    num +=1;
-		    sum = map.get(cell.getLetter());
+		    sum += map.get(cell.getLetter());
             if (cell.getBonus() == 10)
                 multiplier *= 10;
             sharedTimes += cell.getSharedTimes();
         }
-        score = (int)(10 * Math.pow(2, num + sharedTimes) * multiplier * sum);
+        score = (int)(2 * Math.pow(2, num + sharedTimes) * multiplier * sum);
 		return score;
 	}
 

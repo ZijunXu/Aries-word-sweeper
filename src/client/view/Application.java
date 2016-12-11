@@ -15,7 +15,9 @@ import client.model.Model;
 import client.model.Player;
 import client.controller.CreateGameController;
 import client.controller.JoinGameController;
-
+/**
+ *@author Zijun Xu
+ */
 public class Application extends JFrame {
 
 	protected JPanel contentPane;
@@ -36,6 +38,7 @@ public class Application extends JFrame {
     String roomID;
 	String playerName;
 	String password;
+	String errorMessage;
 
     protected PlayingPanel playingPanel;
 
@@ -59,18 +62,18 @@ public class Application extends JFrame {
         panel.setBounds(207, 160, 289, 75);
         getContentPane().add(panel);
 
-        JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
-        rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.TRAILING);
-        panel.add(rdbtnNewRadioButton);
-        passwordButtonGroup.add(rdbtnNewRadioButton);
+//        JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
+//        rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.TRAILING);
+//        panel.add(rdbtnNewRadioButton);
+//        passwordButtonGroup.add(rdbtnNewRadioButton);
         
-        passwordField = new JTextField();
-        panel.add(passwordField);
-        passwordField.setColumns(10);
+//        passwordField = new JTextField();
+//        panel.add(passwordField);
+//        passwordField.setColumns(10);
 
-        JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password              ");
-        panel.add(rdbtnNewRadioButton_1);
-        passwordButtonGroup.add(rdbtnNewRadioButton_1);
+//        JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password              ");
+//        panel.add(rdbtnNewRadioButton_1);
+//        passwordButtonGroup.add(rdbtnNewRadioButton_1);
 
         JLabel playerNameLable = new JLabel("User Name:");
         playerNameLable.setBounds(219, 111, 87, 16);
@@ -90,35 +93,35 @@ public class Application extends JFrame {
         contentPane.add(gameIDField);
         gameIDField.setColumns(10);
 
-        rdbtnNewRadioButton.addChangeListener(new ChangeListener() {
-
-            public void stateChanged(ChangeEvent arg0) {
-                if (rdbtnNewRadioButton.isSelected()) {
-                    passwordField.setVisible(true);
-                    passwordField.setEditable(true);
-                    panel.revalidate();
-                    panel.repaint();
-                } else {
-                    passwordField.setVisible(false);
-                    passwordField.setEditable(false);
-                    panel.revalidate();
-                    panel.repaint();
-                }
-
-            }
-
-        });
-        rdbtnNewRadioButton_1.addChangeListener(new ChangeListener() {
-
-            public void stateChanged(ChangeEvent arg0) {
-                if (rdbtnNewRadioButton_1.isSelected()) {
-                    passwordField.setVisible(false);
-                    passwordField.setEditable(false);
-                    panel.revalidate();
-                    panel.repaint();
-                }
-            }
-        });
+//        rdbtnNewRadioButton.addChangeListener(new ChangeListener() {
+//
+//            public void stateChanged(ChangeEvent arg0) {
+//                if (rdbtnNewRadioButton.isSelected()) {
+//                    passwordField.setVisible(true);
+//                    passwordField.setEditable(true);
+//                    panel.revalidate();
+//                    panel.repaint();
+//                } else {
+//                    passwordField.setVisible(false);
+//                    passwordField.setEditable(false);
+//                    panel.revalidate();
+//                    panel.repaint();
+//                }
+//
+//            }
+//
+//        });
+//        rdbtnNewRadioButton_1.addChangeListener(new ChangeListener() {
+//
+//            public void stateChanged(ChangeEvent arg0) {
+//                if (rdbtnNewRadioButton_1.isSelected()) {
+//                    passwordField.setVisible(false);
+//                    passwordField.setEditable(false);
+//                    panel.revalidate();
+//                    panel.repaint();
+//                }
+//            }
+//        });
 
         ButtonReaction myReaction = new ButtonReaction();
 
@@ -140,44 +143,69 @@ public class Application extends JFrame {
         lblNewLabel.setBounds(10, 10, 362, 85);
         getContentPane().add(lblNewLabel);
 
-        btnPractice = new JButton("Practice");
-        btnPractice.setBounds(35, 221, 130, 38);
-        getContentPane().add(btnPractice);
-		btnPractice.addActionListener(myReaction);
+        passwordField = new JTextField();
+        passwordField.setBounds(304, 296, 130, 26);
+        contentPane.add(passwordField);
+        passwordField.setColumns(10);
+
+        JLabel passwordLabel = new JLabel("Password:");
+        passwordLabel.setBounds(219, 301, 61, 16);
+        contentPane.add(passwordLabel);
 	}
 
 	private class ButtonReaction implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-	        if (e.getSource() == btnCreateAGame){
-                playerName = playerNameField.getText();
-			    if (playerName.length() == 0) {
+            playerName = playerNameField.getText();
+            if (e.getSource() == btnCreateAGame){
+                if (playerName.length() == 0) {
                     JOptionPane.showMessageDialog(Application.this,
                             "Player Name can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
                     playerNameField.requestFocus();
-                }
-			    else {
-			    	model.getGame().setMyName(playerName);
-                	password = passwordField.getText();
+                }else {
+                    roomID = gameIDField.getText();
+                    model.getGame().setMyName(playerName);
+                    password = passwordField.getText();
                     model.getGame().setPassword(passwordField.getText());
                     new CreateGameController(Application.this, model).process();
                     Application.this.disableInputs();
-                    try {
-                        Thread.sleep(500);
+                    try {Thread.sleep(500);
                     } catch (InterruptedException e1) {
                         e1.printStackTrace();
                     }
                     playingPanel = new PlayingPanel(Application.this, model);
                     playingPanel.setVisible(true);
                 }
-
             }
 	        else if (e.getSource() == btnJoinAGame) {
-	        	
-            }
-	        else if (e.getSource() == btnPractice) {
-                setVisible(false);
-                PlayingPanel frame1= new PlayingPanel(Application.this, model);
-                frame1.setVisible(true);
+                roomID = gameIDField.getText();
+
+                if (playerName.length() == 0) {
+                    JOptionPane.showMessageDialog(Application.this,
+                            "Player Name can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
+                    playerNameField.requestFocus();
+                }else if (roomID.length() == 0){
+                    JOptionPane.showMessageDialog(Application.this,
+                            "GameID can not be empty", "Warning", JOptionPane.WARNING_MESSAGE);
+                    gameIDField.requestFocus();
+                } else {
+                    playerName = playerNameField.getText();
+                    model.getGame().setMyName(playerName);
+                    new JoinGameController(Application.this, model).process();
+                    Application.this.disableInputs();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+                    if (!model.getIsExitedGame()){
+                        JOptionPane.showMessageDialog(Application.this, errorMessage, "ERROR",
+                                JOptionPane.WARNING_MESSAGE);
+                        Application.this.enableInput();
+                        return;
+                    }
+                    playingPanel = new PlayingPanel(Application.this, model);
+                    playingPanel.setVisible(true);
+                }
             }
         }
     }
@@ -213,7 +241,6 @@ public class Application extends JFrame {
 	}
 
 	private void disableInputs(){
-	    btnPractice.setEnabled(false);
 	    btnCreateAGame.setEnabled(false);
 	    btnJoinAGame.setEnabled(false);
 	    gameIDField.setEnabled(false);
@@ -221,7 +248,6 @@ public class Application extends JFrame {
     }
 
     private void enableInput(){
-        btnPractice.setEnabled(true);
         btnCreateAGame.setEnabled(true);
         btnJoinAGame.setEnabled(true);
         gameIDField.setEnabled(true);
@@ -230,5 +256,13 @@ public class Application extends JFrame {
 
     public PlayingPanel getPlayingPanel(){
         return this.playingPanel;
+    }
+
+    public String getRoomID(){
+        return this.roomID;
+    }
+
+    public void setErrorMessege(String message){
+        this.errorMessage = message;
     }
 }
