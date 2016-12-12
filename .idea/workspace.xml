@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a93d02c6-16cd-4806-9333-39de0bee9034" name="Default" comment="fix the error that the playerlist only shows in the second time that client receives board response">
+    <list default="true" id="a93d02c6-16cd-4806-9333-39de0bee9034" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/ExitGameResponseController.java" afterPath="$PROJECT_DIR$/src/client/controller/ExitGameResponseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/PaintCellController.java" afterPath="$PROJECT_DIR$/src/client/controller/PaintCellController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/PickWordController.java" afterPath="$PROJECT_DIR$/src/client/controller/PickWordController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/controller/ResetGameController.java" afterPath="$PROJECT_DIR$/src/client/controller/ResetGameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/view/Application.java" afterPath="$PROJECT_DIR$/src/client/view/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/view/PlayingPanel.java" afterPath="$PROJECT_DIR$/src/client/view/PlayingPanel.java" />
     </list>
     <ignored path="Word_Sweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,12 +42,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
               <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1481559194678" expanded="true" signature="2237:3118" ph="{...}" />
+                <marker date="1481559194678" expanded="true" signature="3175:3441" ph="{...}" />
+                <marker date="1481559194678" expanded="true" signature="3486:3921" ph="{...}" />
+                <marker date="1481559194678" expanded="false" signature="3974:3981" ph=" { " />
+                <marker date="1481559194678" expanded="false" signature="4012:4015" ph=" }" />
+                <marker date="1481559194678" expanded="false" signature="4050:4060" ph=" { " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExitGameResponseController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExitGameResponseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/controller/ExitGameResponseController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
@@ -63,10 +64,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/model/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding>
+                <element signature="e#1408#1409#0" expanded="true" />
+                <element signature="e#1437#1438#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/view/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4536">
+            <state relative-caret-position="436">
               <caret line="203" column="28" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding />
             </state>
@@ -339,6 +353,120 @@
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/cs509Libra/WordSweeper_Libra" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/model/Game.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/model/Model.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/model/Player.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/model/Position.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/model/Word.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.ClientLauncher">
     <configuration default="false" name="ServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -933,7 +1061,7 @@
       <workItem from="1481498504413" duration="496000" />
       <workItem from="1481558261062" duration="323000" />
       <workItem from="1481558604432" duration="228000" />
-      <workItem from="1481558930987" duration="139000" />
+      <workItem from="1481558930987" duration="315000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore">
       <created>1479271174302</created>
@@ -1082,11 +1210,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481498649018</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="terminate the program when receive the exit game response">
+      <created>1481559150287</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1481559150288</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="305107000" />
+    <option name="totallyTimeSpent" value="305283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1110,8 +1245,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23937824" sideWeight="0.5033557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16004078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3598369" sideWeight="0.37672412" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25891948" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.559633" sideWeight="0.37672412" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14984709" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1219,7 +1354,8 @@
     <MESSAGE value="show the playerList in the GUI and show my name and score on the GUI" />
     <MESSAGE value="the cell turns more grey with more players sharing it" />
     <MESSAGE value="fix the error that the playerlist only shows in the second time that client receives board response" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the error that the playerlist only shows in the second time that client receives board response" />
+    <MESSAGE value="terminate the program when receive the exit game response" />
+    <option name="LAST_COMMIT_MESSAGE" value="terminate the program when receive the exit game response" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1380,6 +1516,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="670" column="21" lean-forward="false" selection-start-line="670" selection-start-column="21" selection-end-line="670" selection-end-column="21" />
+          <folding>
+            <element signature="e#23469#23470#0" expanded="false" />
+            <element signature="e#23522#23523#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1415,6 +1555,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1502,13 +1643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="60" column="111" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -1535,6 +1669,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1542,6 +1677,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1488">
           <caret line="97" column="110" lean-forward="false" selection-start-line="97" selection-start-column="110" selection-end-line="97" selection-end-column="110" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1557,15 +1693,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/view/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4536">
-          <caret line="203" column="28" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1481559194678" expanded="true" signature="2237:3118" ph="{...}" />
+            <marker date="1481559194678" expanded="true" signature="3175:3441" ph="{...}" />
+            <marker date="1481559194678" expanded="true" signature="3486:3921" ph="{...}" />
+            <marker date="1481559194678" expanded="false" signature="3974:3981" ph=" { " />
+            <marker date="1481559194678" expanded="false" signature="4012:4015" ph=" }" />
+            <marker date="1481559194678" expanded="false" signature="4050:4060" ph=" { " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1573,6 +1708,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/model/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1437#1438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/view/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="203" column="28" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
           <folding />
         </state>
       </provider>
