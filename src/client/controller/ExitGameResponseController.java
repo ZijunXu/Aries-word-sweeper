@@ -27,6 +27,7 @@ public class ExitGameResponseController extends ControllerChain{
         }
         this.app.getPlayingPanel().dispose();
         this.app.dispose();
+        /** if running test case, must delete the following System.exit(0), or the test case will stop running */
         System.exit(0);
         return true;
     }

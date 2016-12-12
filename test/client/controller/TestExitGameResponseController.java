@@ -8,6 +8,7 @@ import client.controller.ExitGameResponseController;
 import client.MockServerAccess;
 import client.model.Model;
 import client.view.Application;
+import client.view.PlayingPanel;
 import xml.Message;
 import junit.framework.TestCase;
 
@@ -25,6 +26,8 @@ public class TestExitGameResponseController extends TestCase {
 	// model being maintained by client.
 	Model model;
 	
+	PlayingPanel playingpanel;
+	
 	
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
@@ -36,6 +39,8 @@ public class TestExitGameResponseController extends TestCase {
 		model = new Model();
 		client = new Application (model);
 		client.setVisible(true);
+		playingpanel = new PlayingPanel (client, model);
+		playingpanel.setVisible(true);
 		
 		// Create mockServer to simulate server, and install 'obvious' handler
 		// that simply dumps to the screen the responses.
@@ -53,6 +58,9 @@ public class TestExitGameResponseController extends TestCase {
 	public void testExitGameResponseProcess() {
 
 		String roomNumber = "1";
+		
+		client.setRoomID(roomNumber);
+		client.setPlayingPanel();
 		
 		String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response id=\"RandomUUID\" success=\"true\">" + String.format("<exitGameResponse gameId = \"%s\">" + "</exitGameResponse></response>", roomNumber);
 		

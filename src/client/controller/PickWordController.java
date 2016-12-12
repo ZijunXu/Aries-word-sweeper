@@ -36,7 +36,7 @@ public class PickWordController extends MouseAdapter{
 		mouseGen(me, false);
 	}
 	
-	private void mouseGen(MouseEvent e, boolean select) {
+	protected void mouseGen(MouseEvent e, boolean select) {
 		int x = positionInBoard(e.getX());
 		int y = positionInBoard(e.getY());
 		if(x == -1 || y == -1){

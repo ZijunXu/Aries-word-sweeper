@@ -263,7 +263,7 @@ public class Application extends JFrame {
     
  // for test case use @author Zhanfeng
     public void setPlayingPanel(){
-    	playingPanel = new PlayingPanel(Application.this, model);
+    	playingPanel = new PlayingPanel(Application.this, this.model);
         playingPanel.setVisible(true);
     }
 
