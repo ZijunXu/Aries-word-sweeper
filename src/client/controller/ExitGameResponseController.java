@@ -5,12 +5,10 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 /**
- *@author Zijun Xu
- */
-/**
  * 
- * responsible for the handling for exitgame response from server
+ *responsible for the handling for exitgame response from server
  *
+ *@author Zijun Xu
  */
 public class ExitGameResponseController extends ControllerChain{
 
@@ -27,8 +25,9 @@ public class ExitGameResponseController extends ControllerChain{
         if (!type.equals("exitGameResponse")) {
             return next.process(response);
         }
-
+        this.app.getPlayingPanel().dispose();
+        this.app.dispose();
+        System.exit(0);
         return true;
     }
-
 }

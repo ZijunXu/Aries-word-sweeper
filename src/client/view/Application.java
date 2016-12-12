@@ -169,6 +169,7 @@ public class Application extends JFrame {
                         e1.printStackTrace();
                     }
                     playingPanel = new PlayingPanel(Application.this, model);
+                    Application.this.setVisible(false);
                     playingPanel.setVisible(true);
                 }
             }
@@ -200,6 +201,7 @@ public class Application extends JFrame {
                         return;
                     }
                     playingPanel = new PlayingPanel(Application.this, model);
+                    Application.this.setVisible(false);
                     playingPanel.setVisible(true);
                 }
             }

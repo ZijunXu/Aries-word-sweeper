@@ -9,13 +9,10 @@ import client.model.*;
 import client.view.Application;
 
 /**
+ * responsible for picking word
  *@author Zijun Xu
  */
-/**
- * 
- * responsible for picking word
- *
- */
+
 public class PickWordController extends MouseAdapter{
 
 	private JPanel panel;

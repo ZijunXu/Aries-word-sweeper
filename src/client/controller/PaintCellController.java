@@ -7,16 +7,12 @@ import javax.swing.*;
 import java.awt.Color;
 
 /**
- * @author Zijun Xu
- */
-/**
- * 
  * responsible for painting cells according to the cell's status.
  * if the cell is selected, paint it blue
  * if the cell is a bonus cell, paint it yellow
  * if the cell is a shared cell, paint it gray
  * other cells paint them white
- *
+ *  @author Zijun Xu
  */
 public class PaintCellController {
     Model model;

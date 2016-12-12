@@ -3,14 +3,11 @@ package client.controller;
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
-/**
+
+/**responsible for sending a reset game request to server
  *@author Zijun Xu
  */
-/**
- * 
- * responsible for sending a reset game request to server
- *
- */
+
 public class ResetGameController {
 
     protected Application app;

@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+
 public class PlayingPanel extends JFrame {
 
     protected JPanel contentPane;
