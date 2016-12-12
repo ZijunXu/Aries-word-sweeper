@@ -37,52 +37,66 @@ public class Model {
         this.word = new Word();
 	}
 
+	/** @return a game entity */
 	public Game getGame(){
         return game;
     }
 
+	/** set a game entity, initialize */
     public void setGame(Game game){
         this.game = game;
     }
 
+    /** @return a board entity */
 	public Board getBoard() {
 		return board;
 	}
 	
-	//for test case use @author Zhanfeng
+	/** 
+	 * @author Zhanfeng Huang
+	 * for test case use
+	 * set a word entity
+	 */
 	public void setWord(Word word){
 		this.word = word;
 	}
 
+	/** @return a word entity */
 	public Word getWord(){
         return word;
     }
 	
-
+	/** set a board entity */
 	public void setBoard(Board board) {
 		this.board = board;
 	}
 
+	/** @return get grid labels of the cells */
 	public JLabel[][] getGrid() {
 		return grid;
 	}
 
+	/** set grid labels of the cells */
 	public void setGrid(JLabel[][] grid) {
 		this.grid = grid;
 	}
 
+	/** @return all games as a Map */
 	public Map<String, Integer> getGameList(){
 	    return this.gameList;
     }
 
+	/** add a new game to the Game List, where stores all games */
     public void addGameToGameList(String gameID, int playerNumber){
 	    gameList.put(gameID, playerNumber);
     }
 
-	public  void resetGame(){
+    /** reset a game */
+	public void resetGame(){
 
     }
 
+	/** by calculating players position and others' positions, get the cell is shared or not, and how many times does it shared */
     public void setSharedCells(){
 	    int[][] sharedTimes;
 	    sharedTimes = new int[4][4];
