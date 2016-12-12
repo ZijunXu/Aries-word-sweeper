@@ -243,14 +243,14 @@ public class Application extends JFrame {
 		return roomID;
 	}
 
-	private void disableInputs(){
+	protected void disableInputs(){
 	    btnCreateAGame.setEnabled(false);
 	    btnJoinAGame.setEnabled(false);
 	    gameIDField.setEnabled(false);
 	    playerNameField.setEnabled(false);
     }
 
-    private void enableInput(){
+    protected void enableInput(){
         btnCreateAGame.setEnabled(true);
         btnJoinAGame.setEnabled(true);
         gameIDField.setEnabled(true);
