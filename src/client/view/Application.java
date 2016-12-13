@@ -166,24 +166,16 @@ public class Application extends JFrame {
         }
     }
 
+	/** setup ServerAccess */
 	public void setServerAccess(ServerAccess access) {
 		this.serverAccess = access;
 	}
 
+	/** @return ServerAccess */
 	public ServerAccess getServerAccess() {
 		return serverAccess;
 	}
 
-	/** Navigation access to actionable elements in the GUI. */
-/*	public JTextArea getRequestArea() {
-		return requestArea;
-	}
-*/
-	/** Navigation access to actionable elements in the GUI. */
-/*	public JTextArea getResponseArea() {
-		return responseArea;
-	}
-*/
 	/** @return get user's input name */
 	public String getPlayerName() {
 		return playerName;

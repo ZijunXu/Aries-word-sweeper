@@ -98,11 +98,11 @@ public class Word {
 
 	/** @return all the chosen cells' information, including cells' position and letter */
 	public String getChoseCellsXMLString() {
-	    /*return the XML String of the chosen cells
+	    /** return the XML String of the chosen cells
 	    * however finds out that the server wants the global location of the cells
 	    * Word class doesn't know the global position of the board
 	    * so that move this function to the Model class
-	    * */
+	    */
 		String chosenCellsString = "";
 		for (Cell cell : ChoseCells) {
 			chosenCellsString += String.format("<cell position='%s,%s' letter='%s'/>",
