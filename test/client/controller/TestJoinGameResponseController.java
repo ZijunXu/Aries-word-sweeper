@@ -13,7 +13,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing join game response controller
  */
 public class TestJoinGameResponseController extends TestCase {
 	
@@ -51,7 +52,8 @@ public class TestJoinGameResponseController extends TestCase {
 	
 	/**
 	 * It is for the test case of JoinGameResponseController
-	 * 
+	 * initialize a room number to generate the simulating xmlString response
+	 * check if the game's ID is set correctly
 	 */
 	public void testJoinGameResponseProcess() {
 		

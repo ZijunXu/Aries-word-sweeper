@@ -11,7 +11,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * this test case is responsible for testing exit game controller
+ * @author Zhanfeng Huang
  */
 public class TestExitGameController extends TestCase {
 	
@@ -47,7 +48,7 @@ public class TestExitGameController extends TestCase {
 	
 	/**
 	 * It is for the test case of ExitGameController
-	 * 
+	 * Initialize room a room number and a player name to generate the exit game request xmlString
 	 */
 	public void testExitGameProcess() {
 		

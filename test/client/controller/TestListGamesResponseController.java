@@ -13,7 +13,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the list game response controller
  */
 public class TestListGamesResponseController extends TestCase {
 	
@@ -51,7 +52,8 @@ public class TestListGamesResponseController extends TestCase {
 	
 	/**
 	 * It is for the test case of ListGamesResponseController
-	 * 
+	 * initialize a gameBrief (including room number and players), to generate the simulating xmlString response
+	 * check if the controller added the game list information to the game list correctly
 	 */
 	public void testListGamesResponseProcess() {
 		

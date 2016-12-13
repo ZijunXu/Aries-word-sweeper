@@ -11,7 +11,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the list games controller
  */
 public class TestListGamesController extends TestCase {
 	

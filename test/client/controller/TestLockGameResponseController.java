@@ -14,7 +14,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the lock game response controller
  */
 public class TestLockGameResponseController extends TestCase {
 	
@@ -29,6 +30,7 @@ public class TestLockGameResponseController extends TestCase {
 
 	PlayingPanel playingpanel;
 	
+	/** should initialize a playing panel */
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
 		if (!Message.configure("wordsweeper.xsd")) {
@@ -55,7 +57,8 @@ public class TestLockGameResponseController extends TestCase {
 	
 	/**
 	 * It is for the test case of LockGameResponseController
-	 * 
+	 * generate the simulating xmlString response
+	 * check if the controller lock the corresponding game correctly
 	 */
 	public void testLockGameResponseProcess() {
 		
