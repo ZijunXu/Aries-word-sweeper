@@ -229,6 +229,7 @@ public class PlayingPanel extends JFrame {
         contentPane.add(myScoreDisplay);
     }
 
+    /** use ActionListener to listen button click events and perform corresponding actions */
     private class ButtonAction implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == btnMoveLeft) {
@@ -249,10 +250,12 @@ public class PlayingPanel extends JFrame {
         }
     }
 
+    /** set the label of gameID display in the panel */
     public void setGameId(String gameId) {
         this.gameIdDisplay.setText(gameId);
     }
 
+    /** set manager of the game and perform corresponding action on the lock and reset buttons */
     public void setManagingUser(String managingUser, boolean isManagingUser) {
         this.managingUserDisplay.setText(managingUser);
         if (!isManagingUser) {
@@ -269,6 +272,7 @@ public class PlayingPanel extends JFrame {
         }
     }
 
+    /** set the label of score display in the panel */
     public void setWordScore(int score) {
         if (score == 0) {
             this.wordScoreDisplay.setText("");
@@ -277,24 +281,33 @@ public class PlayingPanel extends JFrame {
         }
     }
 
+    /** set the label of chosen word display in the panel */
     public void setChosenWord(String word) {
         this.chosenWordDisplay.setText(word);
     }
 
+    /** lock the game and disable the lock game button */
     public void lockGame() {
         this.isLocked = true;
         btnLockGame.setEnabled(false);
     }
     
- // for test case use @author Zhanfeng
+    /**
+     * @author Zhanfeng Huang
+     * for test case use
+     * @return check whether the game is locked
+     * to test if the lock game method worked
+     */
     public boolean returnLockStatus() {
     	return this.isLocked;
     }
 
+    /** set the player list display in the panel */
     public void setPlayersListArea(String playersList) {
         this.playersListArea.setText(playersList);
     }
 
+    /** set the score display in the panel */
     public void setMyScoreDisplay(String score) {
         myNameDisplay.setText(score);
     }

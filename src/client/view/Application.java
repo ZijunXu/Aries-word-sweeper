@@ -106,6 +106,7 @@ public class Application extends JFrame {
         contentPane.add(passwordLabel);
 	}
 
+	/** use ActionListener to listen button clicks events and perform corresponding actions */
 	private class ButtonReaction implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
             playerName = playerNameField.getText();
@@ -183,23 +184,31 @@ public class Application extends JFrame {
 		return responseArea;
 	}
 */
+	/** @return get user's input name */
 	public String getPlayerName() {
 		return playerName;
 	}
 
+	/** @return get user's input password */
 	public String getPassword() {
 		return password;
 	}
 	
-	//for test case use @author Zhanfeng
+	/**
+	 * @author Zhanfeng Huang
+	 * for test case use
+	 * @param psw input a password string, for test case's Quicktest
+	 */
 	public void setPassword(String psw) {
 		password = psw;
 	}
 
+	/** @return get user's input game ID */
 	public String getRoomNumber() {
 		return roomID;
 	}
 
+	/** after starting a game, disable the buttons and text fields */
 	protected void disableInputs(){
 	    btnCreateAGame.setEnabled(false);
 	    btnJoinAGame.setEnabled(false);
@@ -207,6 +216,7 @@ public class Application extends JFrame {
 	    playerNameField.setEnabled(false);
     }
 
+	/** after quiting a game, enable the disabled buttons and text fields */
     protected void enableInput(){
         btnCreateAGame.setEnabled(true);
         btnJoinAGame.setEnabled(true);
@@ -214,25 +224,36 @@ public class Application extends JFrame {
         playerNameField.setEnabled(true);
     }
 
+    /** @return the playing board panel */
     public PlayingPanel getPlayingPanel(){
         return this.playingPanel;
     }
     
- // for test case use @author Zhanfeng
+    /**
+     * @author Zhanfeng Huang
+     * for test case use
+     * test case's initialize a playing panel quickly
+     */
     public void setPlayingPanel(){
     	playingPanel = new PlayingPanel(Application.this, this.model);
         playingPanel.setVisible(true);
     }
 
+    /** @return gameID */
     public String getRoomID(){
         return this.roomID;
     }
     
- // for test case use @author Zhanfeng
+    /**
+     * @author Zhanfeng Huang
+     * for test case use
+     * @param roomID set a roomID for test case quick test
+     */
     public void setRoomID(String roomID){
     	this.roomID = roomID;
     }
 
+    /** set error messages for warning */
     public void setErrorMessege(String message){
         this.errorMessage = message;
     }
