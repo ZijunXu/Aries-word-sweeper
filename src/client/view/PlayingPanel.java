@@ -296,6 +296,10 @@ public class PlayingPanel extends JFrame {
     }
 
     public void setMyScoreDisplay(String score) {
-        myNameDisplay.setText(score);
+        myScoreDisplay.setText(score);
+    }
+
+    public void setMyNameDisplay(String myName){
+        myNameDisplay.setText(myName);
     }
 }

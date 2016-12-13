@@ -21,7 +21,6 @@ import client.controller.JoinGameController;
 public class Application extends JFrame {
 
 	protected JPanel contentPane;
-	protected JButton btnPractice;
 	protected JButton btnCreateAGame;
 	protected JButton btnJoinAGame;
 
@@ -29,8 +28,6 @@ public class Application extends JFrame {
     protected Player player;
 	ServerAccess serverAccess;
 
-	JTextArea requestArea;
-	JTextArea responseArea;
 	private JTextField playerNameField;
 	private JTextField gameIDField;
     private JTextField passwordField;
