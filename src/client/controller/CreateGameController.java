@@ -1,15 +1,13 @@
 package client.controller;
-/**
- *@author Zijun Xu
- */
 
 import client.view.Application;
 import xml.Message;
 import client.model.Model;
 /**
- * 
- * the Controller of making a request of Create Game
- *
+ * Controllers to handle interaction When the player request to create a game, a createGameRequest will be sent to the server
+ * </p>
+ * the {@link #process()} makes a createGameRequest in XML format, and send it to the server
+ * @author Zijun Xu
  */
 public class CreateGameController {
 

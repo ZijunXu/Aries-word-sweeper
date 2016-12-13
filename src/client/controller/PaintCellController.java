@@ -12,6 +12,9 @@ import java.awt.Color;
  * if the cell is a bonus cell, paint it yellow
  * if the cell is a shared cell, paint it gray
  * other cells paint them white
+ *
+ * the {@link #repaint()}repaint all the cells according to the status stored in the cell entities
+ *
  *  @author Zijun Xu
  */
 public class PaintCellController {

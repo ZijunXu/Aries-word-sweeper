@@ -3,15 +3,10 @@ package client.controller;
 import client.view.Application;
 import client.model.Model;
 import xml.Message;
-
-import java.awt.*;
 /**
- *@author Zijun Xu
- */
-/**
- * 
- * responsible for the handling of findword response from server
+ * responsible to handle the findWord response from server
  *
+ *@author Zijun Xu
  */
 public class FindWordResponseController extends ControllerChain{
 

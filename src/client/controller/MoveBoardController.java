@@ -3,13 +3,12 @@ package client.controller;
 import client.model.Model;
 import client.view.Application;
 import xml.Message;
+
 /**
- *@author Zijun Xu
- */
-/**
- * 
- * send a request to server to move the board
+ * controller that is responsible to send a moveBoard request to server
  *
+ * the{@link #process()}send the repositionRequest to server according to which button(left, right, up or down) pressed
+ *@author Zijun Xu
  */
 public class MoveBoardController {
     int columnChange;

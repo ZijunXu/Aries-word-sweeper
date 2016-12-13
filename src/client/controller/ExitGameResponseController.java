@@ -5,8 +5,10 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 /**
- * 
- *responsible for the handling for exitgame response from server
+ * Controllers to handle the received ExitGameResponse, set Playing panel invisible and exit the java program
+ * </p>
+ * the {@link #process(Message)} handle the received XML ExitGameResponse,
+ * set Playing panel invisible and exit the java program
  *
  *@author Zijun Xu
  */

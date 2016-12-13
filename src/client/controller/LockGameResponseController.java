@@ -4,12 +4,10 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 /**
- *@author Zijun Xu
- */
-/**
- * 
- * responsible for handling the lock game response from server
+ *responsible for handling the lockGameResponse from server, lock the game when receive the lockGameResponse
  *
+ *the {@link #process(Message)}handle the LockGameResponse, lock the game and set lockGame button grey
+ *@author Zijun Xu
  */
 public class LockGameResponseController extends ControllerChain{
 
@@ -22,7 +20,7 @@ public class LockGameResponseController extends ControllerChain{
         this.model = m;
     }
 
-    /** when receiving the response from server, lock the game and set lockgame button grey */
+    /** when receiving the response from server, lock the game and set lockGame button grey */
     @Override
     public boolean process(Message response){
         String type = response.contents.getFirstChild().getLocalName();

@@ -7,6 +7,11 @@ import java.util.Random;
 import javax.swing.JLabel;
 
 /**
+ * The model which contains all entity objects.
+ *
+ * Often there is a need for a single class that becomes the container of all model
+ * elements. This is such a class.
+ *
  *@author Zijun Xu
  */
 public class Model {

@@ -58,19 +58,6 @@ public class Application extends JFrame {
 
         ButtonGroup passwordButtonGroup = new ButtonGroup();
 
-//        JRadioButton rdbtnNewRadioButton = new JRadioButton("With a password");
-//        rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.TRAILING);
-//        panel.add(rdbtnNewRadioButton);
-//        passwordButtonGroup.add(rdbtnNewRadioButton);
-
-//        passwordField = new JTextField();
-//        panel.add(passwordField);
-//        passwordField.setColumns(10);
-
-//        JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Without a password              ");
-//        panel.add(rdbtnNewRadioButton_1);
-//        passwordButtonGroup.add(rdbtnNewRadioButton_1);
-
         JLabel playerNameLable = new JLabel("Your Name:");
         playerNameLable.setBounds(202, 111, 104, 26);
         contentPane.add(playerNameLable);
@@ -88,36 +75,6 @@ public class Application extends JFrame {
         gameIDField.setBounds(311, 181, 130, 26);
         contentPane.add(gameIDField);
         gameIDField.setColumns(10);
-
-//        rdbtnNewRadioButton.addChangeListener(new ChangeListener() {
-//
-//            public void stateChanged(ChangeEvent arg0) {
-//                if (rdbtnNewRadioButton.isSelected()) {
-//                    passwordField.setVisible(true);
-//                    passwordField.setEditable(true);
-//                    panel.revalidate();
-//                    panel.repaint();
-//                } else {
-//                    passwordField.setVisible(false);
-//                    passwordField.setEditable(false);
-//                    panel.revalidate();
-//                    panel.repaint();
-//                }
-//
-//            }
-//
-//        });
-//        rdbtnNewRadioButton_1.addChangeListener(new ChangeListener() {
-//
-//            public void stateChanged(ChangeEvent arg0) {
-//                if (rdbtnNewRadioButton_1.isSelected()) {
-//                    passwordField.setVisible(false);
-//                    passwordField.setEditable(false);
-//                    panel.revalidate();
-//                    panel.repaint();
-//                }
-//            }
-//        });
 
         ButtonReaction myReaction = new ButtonReaction();
 

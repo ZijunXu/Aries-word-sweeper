@@ -4,13 +4,10 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 /**
- *@author Zijun Xu
- */
-
-/**
- * 
- * make a request to server of what word was selected
+ * responsible for send the findWordRequest, send the fond words' XML to server
  *
+ * the {@link #process()}send the fond words in XML format and sent to the server
+ *@author Zijun Xu
  */
 public class FindWordController {
 

@@ -20,7 +20,10 @@ import client.model.Model;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-
+/**
+ *
+ *
+* */
 
 public class PlayingPanel extends JFrame {
 

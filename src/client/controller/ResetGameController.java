@@ -4,10 +4,11 @@ import client.model.Model;
 import client.view.Application;
 import xml.Message;
 
-/**responsible for sending a reset game request to server
+/**responsible to send a reset game request to server
+ *
+ * the{@link #process()}send the resetGameRequest to the server
  *@author Zijun Xu
  */
-
 public class ResetGameController {
 
     protected Application app;

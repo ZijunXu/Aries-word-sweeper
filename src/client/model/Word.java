@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /**
+ *Word entities class, contains the chosen word and some necessary method
+ *
  *@author Zijun Xu
  */
 public class Word {
