@@ -19,7 +19,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the findWord Response Controller
  */
 public class TestFindWordResponseController extends TestCase {
 	
@@ -54,7 +55,7 @@ public class TestFindWordResponseController extends TestCase {
 	
 	/**
 	 * It is for the test case of FindWordResponseController
-	 * 
+	 * should initialize a JLabel to simulate the 16 cells in the board
 	 */
 	public void testFindWordResponseProcess() {
 

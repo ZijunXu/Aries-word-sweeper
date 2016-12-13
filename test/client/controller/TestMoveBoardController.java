@@ -13,7 +13,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the move board controller
  */
 public class TestMoveBoardController extends TestCase {
 	
@@ -48,17 +49,18 @@ public class TestMoveBoardController extends TestCase {
 	
 	/**
 	 * It is for the test case of MoveBoardController
-	 * 
+	 * simulate clicked the move left button
+	 * check if the controller make a correct request
 	 */
 	public void testMoveBoardProcess() {
 		
 		String roomNumber = "1";
 		String playerName = "player1";
 		
-		// move left
-		// column change
+		/** simulating move the board left */
+		/** column change */
 		int column = -1;
-		// row change
+		/** row change */
 		int row = 0;
 		
 		model.getGame().setRoomID(roomNumber);

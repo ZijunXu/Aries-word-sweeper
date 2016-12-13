@@ -13,7 +13,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the lock game controller
  */
 public class TestLockGameController extends TestCase {
 	
@@ -48,7 +49,8 @@ public class TestLockGameController extends TestCase {
 	
 	/**
 	 * It is for the test case of LockGameController
-	 * 
+	 * initialize a room number for generating the request
+	 * check if the request is correct
 	 */
 	public void testLockGameProcess() {
 		

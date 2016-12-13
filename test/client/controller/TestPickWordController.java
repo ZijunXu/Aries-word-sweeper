@@ -18,7 +18,9 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing pick word controller
+ * should initialize application, playingpanel views and model, word, cell, board entities and mock mouseEvents
  */
 public class TestPickWordController extends TestCase {
 	
@@ -114,6 +116,7 @@ public class TestPickWordController extends TestCase {
 		pw.mouseGen(me, false);
 	}
 	
+	/** check if the mouse released, the process is correct or not */
 	public void testMouseReleasedProcess() {
 		
 		PickWordController pw;
@@ -122,6 +125,7 @@ public class TestPickWordController extends TestCase {
 		
 	}
 	
+	/** check if the mouse pressed, the process is correct or not */
 	public void testMousePressedProcess() {
 	
 	PickWordController pw;
@@ -130,6 +134,7 @@ public class TestPickWordController extends TestCase {
 	
 	}
 
+	/** check if the mouse dragged, the process is correct or not */
 	public void testMouseDraggedProcess() {
 	
 	PickWordController pw;
@@ -138,6 +143,7 @@ public class TestPickWordController extends TestCase {
 	
 	}
 	
+	/** test if the adjacent checking worked correctly */
 	public void testISAdjacentCells() {
 		
 		PickWordController pw;

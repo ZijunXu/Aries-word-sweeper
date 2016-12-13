@@ -14,7 +14,9 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * this test case is responsible for testing the board response controller
+ * @author Zhanfeng Huang
+ * 
  */
 public class TestBoardResponseController extends TestCase {
 	
@@ -55,7 +57,7 @@ public class TestBoardResponseController extends TestCase {
 	 */
 	public void testBoardResponseProcess() {
 		
-		//gameId, managingUser, bonus, name, position, board, score
+		/** Initialize gameId, managingUser, bonus, name, position, board, score to generate a mock xmlString response */
 
 		String roomNumber = "1";
 		String playerName = "player1";
@@ -88,7 +90,7 @@ public class TestBoardResponseController extends TestCase {
 		assertEquals (gameResult.getMyName(), playerName);
 		assertEquals (gameResult.getRoomID(), roomNumber);
 		
-		// board verification
+		/** board verification */
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
 				char [] cellLetter = boardResult.cells[j][i].getLetter().toCharArray();
@@ -97,18 +99,16 @@ public class TestBoardResponseController extends TestCase {
 			}
 		}
 		
-		// - 48 means the char number convert to int according to the ASCII code
-		// global position verification
+		/** - 48 means the char number convert to int according to the ASCII code */
+		/** for global position verification */
 		int positionn_x = positionLettersArray[0] - 48;
 		int positionn_y = positionLettersArray[1] - 48;
 		int [] p = boardResult.getGlobalPosition();
 		assertEquals (p[0], positionn_x);
 		assertEquals (p[1], positionn_y);
 		
-		// score
+		/** score verification */
 		assertEquals (Long.toString(gameResult.getScore()), score);
-		
-		//assertEquals (boardResult.cells[3][2].getBonus(), 10);
 		
 	}
 }

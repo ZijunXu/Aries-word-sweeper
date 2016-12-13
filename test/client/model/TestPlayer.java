@@ -8,14 +8,15 @@ import static org.junit.Assert.assertTrue;
 import client.model.Player;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the player entity
  */
 
 public class TestPlayer extends TestCase {
 
 	Player player;
 	
-	
+	/** initialization */
 	protected void setUp() {
 		
 		player = new Player();
@@ -30,29 +31,34 @@ public class TestPlayer extends TestCase {
 		player.Player();
 	}
 	
+	/** test getting the player's name */
 	public void testPlayerGetNameProcess() {
 		player.setName("setPlayer");
 		assertEquals ("setPlayer", player.getName());
 	}
 	
+	/** test setting the player's name */
 	public void testPlayerSetNameProcess() {
 		
 		player.setName("setPlayer");
 		assertEquals ("setPlayer", player.getName());
 	}
 	
+	/** test getting player's score */
 	public void testPlayerGetScoreProcess() {
 		
 		player.setScore(100);
 		assertEquals (100, player.getScore());
 	}
 	
+	/** test setting the player's score */
 	public void testPlayerSetScoreProcess() {
 		
 		player.setScore(100);
 		assertEquals (100, player.getScore());
 	}
 	
+	/** check if the return of managing user status correct */
 	public void testPlayerIsManagingUserProcess() {
 		
 		player.setAsManagingUser();
@@ -60,12 +66,14 @@ public class TestPlayer extends TestCase {
 		assertTrue (a);
 	}
 	
+	/** test seting the player as a manager user */
 	public void testPlayerSetAsManagingUserProcess() {
 		
 		player.setAsManagingUser();
 		assertTrue (player.isManagingUser);
 	}
 	
+	/** test setting the player's board's global position */
 	public void testPlayerSetGlobalPositionProcess() {
 		
 		int [] position = {2,1};
@@ -73,6 +81,7 @@ public class TestPlayer extends TestCase {
 		assertEquals (position, player.getGlobalPosition());
 	}
 	
+	/** test getting the player's board's global position */
 	public void testPlayerGetGlobalPositionProcess() {
 		
 		int [] position = {2,1};
@@ -80,6 +89,7 @@ public class TestPlayer extends TestCase {
 		assertEquals (position, player.getGlobalPosition());
 	}
 	
+	/** test clearing the player's score */
 	public void testPlayerClearScoreProcess() {
 		
 		player.clearScore();

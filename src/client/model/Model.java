@@ -133,6 +133,7 @@ public class Model {
         return result;
     }
 
+    /** @return the chosen cells list as a string */
     public String getChoseCellsXMLString() {
         String chosenCellsString = "";
         for (Cell cell : getWord().ChoseCells) {
@@ -143,10 +144,12 @@ public class Model {
         return chosenCellsString;
     }
 
+    /** set the game is existed */
     public void setIsExistedGame(boolean isExisted){
     	this.isExistedGame = isExisted;
 	}
 
+    /** @return check if the game is existed */
 	public boolean getIsExitedGame(){
         return this.isExistedGame;
     }

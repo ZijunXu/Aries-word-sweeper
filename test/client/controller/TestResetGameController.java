@@ -13,7 +13,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the reset game controller
  */
 public class TestResetGameController extends TestCase {
 	
@@ -48,7 +49,8 @@ public class TestResetGameController extends TestCase {
 	
 	/**
 	 * It is for the test case of ResetGameController
-	 * 
+	 * initialize a room number to generate the request
+	 * check if the request is generated correctly
 	 */
 	public void testResetGameProcess() {
 		

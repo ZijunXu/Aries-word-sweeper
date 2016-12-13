@@ -13,7 +13,9 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the exit game response
+ * should delete the System.exit(0) in the ExitGameResponseController, or all the following test cases will be terminate
  */
 public class TestExitGameResponseController extends TestCase {
 	
@@ -28,7 +30,7 @@ public class TestExitGameResponseController extends TestCase {
 	
 	PlayingPanel playingpanel;
 	
-	
+	/** initialize model, application view and playingpanel view entities */
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
 		if (!Message.configure("wordsweeper.xsd")) {
@@ -53,7 +55,8 @@ public class TestExitGameResponseController extends TestCase {
 	
 	/**
 	 * It is for the test case of ExitGameResponseController
-	 * 
+	 * initialize a room number to generate the mock xmlString response
+	 * initialize a playing panel to check if the response controller dispose it correctly
 	 */
 	public void testExitGameResponseProcess() {
 

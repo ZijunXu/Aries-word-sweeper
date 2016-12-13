@@ -11,7 +11,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing the join game controller
  */
 public class TestJoinGameController extends TestCase {
 	
@@ -47,7 +48,8 @@ public class TestJoinGameController extends TestCase {
 	
 	/**
 	 * It is for the test case of JoinGameController
-	 * 
+	 * there are two scenarios, with password or without password
+	 * tested two times to check if the controller send the corresponding request correctly with or without the password
 	 */
 	public void testJoinGameProcess() {
 		

@@ -11,7 +11,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * this test case is responsible for testing connect response controller
+ * @author Zhanfeng Huang
  */
 public class TestConnectResponseController extends TestCase {
 	
@@ -47,6 +48,8 @@ public class TestConnectResponseController extends TestCase {
 	
 	/**
 	 * It is for the test case of ConnectResponseController
+	 * 
+	 * initialize a roomNumber, for generating the mock xmlString response, then check if the connectResponseController worked correctly
 	 * 
 	 */
 	public void testConnectResponseProcess() {

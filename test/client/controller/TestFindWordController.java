@@ -17,7 +17,8 @@ import client.model.Cell;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * @author Zhanfeng Huang
+ * this test case is responsible for testing findWord Controller
  */
 public class TestFindWordController extends TestCase {
 	
@@ -39,7 +40,7 @@ public class TestFindWordController extends TestCase {
 	int column = 0;
 	int row = 0;
 
-	
+	/** initialize model, word, cell entities and application view */
 	protected void setUp() {
 		// FIRST thing to do is register the protocol being used.
 		if (!Message.configure("wordsweeper.xsd")) {
@@ -69,7 +70,8 @@ public class TestFindWordController extends TestCase {
 	
 	/**
 	 * It is for the test case of FindWordController
-	 * 
+	 * should initialize a word and board entity to generate the find word request
+	 * simulate that they were the chosen word
 	 */
 	public void testFindWordProcess() {
 		

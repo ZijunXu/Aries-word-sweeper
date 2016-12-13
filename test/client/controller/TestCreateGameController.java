@@ -11,7 +11,8 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- *@author Zhanfeng Huang
+ * this test case is responsible for testing create game controller, which sends a request to the server
+ * @author Zhanfeng Huang
  */
 public class TestCreateGameController extends TestCase {
 	
@@ -48,10 +49,13 @@ public class TestCreateGameController extends TestCase {
 	/**
 	 * It is for the test case of CreateGameController
 	 * 
+	 * There are two scenarios, with password or without password
+	 * generate two conditions to check if the request is send corretly
+	 * 
 	 */
 	public void testCreateGameProcess() {
 		
-		//****without Password
+		/**without Password*/
 		String playerName = "player1";
 		model.getGame().setMyName(playerName);
 		new CreateGameController(client, model).process();
@@ -67,7 +71,7 @@ public class TestCreateGameController extends TestCase {
 		System.out.println (r.toString());
 		assertEquals(playerName, r.contents.getFirstChild().getAttributes().getNamedItem("name").getNodeValue());
 		
-		//****with Password
+		/**with Password*/
 		String playerName_2 = "player2";
 		String password = "test";
 		model.getGame().setMyName(playerName_2);
