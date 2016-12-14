@@ -8,8 +8,9 @@ import static org.junit.Assert.assertTrue;
 import client.model.Position;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing the Position entity
+ * @author Zhanfeng Huang
+ * 
  */
 
 public class TestPosition extends TestCase {

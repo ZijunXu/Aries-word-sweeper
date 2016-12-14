@@ -9,8 +9,9 @@ import client.model.Game;
 import client.model.Player;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing the game entitiy
+ * @author Zhanfeng Huang
+ * 
  */
 
 public class TestGame extends TestCase {

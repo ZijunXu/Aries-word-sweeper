@@ -9,8 +9,9 @@ import client.model.Word;
 import client.model.Cell;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing the word entity
+ * @author Zhanfeng Huang
+ * 
  */
 
 public class TestWord extends TestCase {

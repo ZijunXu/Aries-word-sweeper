@@ -8,8 +8,9 @@ import static org.junit.Assert.assertTrue;
 import client.model.Cell;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing cell entity
+ * @author Zhanfeng Huang
+ * 
  */
 
 public class TestCell extends TestCase {

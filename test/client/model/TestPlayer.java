@@ -8,8 +8,9 @@ import static org.junit.Assert.assertTrue;
 import client.model.Player;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing the player entity
+ * @author Zhanfeng Huang
+ * 
  */
 
 public class TestPlayer extends TestCase {
