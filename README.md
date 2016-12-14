@@ -3,13 +3,13 @@
 ### <br>
 ### <bold>CAUTION
 #### <br>
-#### If running the test case, please go to /src/client/controller/ExitGameResponseController.java, delete the "System.exit(0)", then run the test case.
+#### This version have redundant files, but other than that, is exactly the same as the one we submitted as a .zip file.
 #### <br>
-#### Or the test case will stop running, when it goes to the System.exit(0), the rest of the test cases will not run.
+#### This version is a backup in case if the other version do not work.
 #### <br>
-#### The "System.exit(0)" in ExitGameResponseController.java is responsible for terminating the game completetly.
+#### This version have redundant files, so the test case coverage is wrong.
 #### <br>
-#### The coverage of the test cases is up to 78.1%
+#### The coverage of the test cases is up to 75.5% in the other version, after deleted all the redundant files.
 #### <br>
 ### <bold>How to Play
 #### <br>
