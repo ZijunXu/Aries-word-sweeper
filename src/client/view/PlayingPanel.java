@@ -21,9 +21,10 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 /**
+ * 
+ * responsible for the playing GUI
  *
- *
-* */
+ */
 
 public class PlayingPanel extends JFrame {
 

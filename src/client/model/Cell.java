@@ -1,8 +1,9 @@
 package client.model;
+/**
+ * responsible for the cell entity
+ *  @author Zijun Xu
+ */
 public class Cell {
-    /**
-     *@Zijun Xu
-     */
 	protected int row;
 	protected int column;
     protected String letter;

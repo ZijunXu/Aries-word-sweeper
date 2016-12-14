@@ -3,6 +3,7 @@ package client.model;
 import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
 /**
+ * responsible for the game entity
  *@author Zijun Xu
  */
 public class Game {

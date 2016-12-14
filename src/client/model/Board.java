@@ -2,6 +2,7 @@ package client.model;
 
 import java.util.ArrayList;
 /**
+ * responsible for the board entity
  *@author Zijun Xu
  */
 public class Board {

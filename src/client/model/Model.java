@@ -121,6 +121,7 @@ public class Model {
         }
     }
 
+    /** @return the starting and the ending index shared range */
     protected int[] sharedCellIndex(int others, int me){
         int[] result = new int[2];
         if (others >= me){

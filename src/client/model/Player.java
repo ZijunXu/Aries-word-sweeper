@@ -1,6 +1,7 @@
 package client.model;
 import client.model.Position;
 /**
+ * responsible for the player entity
  *@author Zijun Xu
  */
 public class Player {

@@ -24,18 +24,22 @@ public class PickWordController extends MouseAdapter{
 		this.panel = p;
 	} 
 	
+	/** input a true to mouseGen() when pressed the mouse */
 	public void mousePressed(MouseEvent me){
 		mouseGen(me, true);
 	}
 	
+	/** input a true to mouseGen() when dragged the mouse */
 	public void mouseDragged(MouseEvent me) {
 		mouseGen(me, true);
 	}
 	
+	/** input a false to mouseGen() when dragged the mouse */
 	public void mouseReleased(MouseEvent me) {
 		mouseGen(me, false);
 	}
 	
+	/** responsible for selecting the word */
 	protected void mouseGen(MouseEvent e, boolean select) {
 		int x = positionInBoard(e.getX());
 		int y = positionInBoard(e.getY());
@@ -71,6 +75,7 @@ public class PickWordController extends MouseAdapter{
 		}
 	}
 
+	/** @return the position of the mouse in the board */
 	protected int positionInBoard(int position){
 		int inBoardPosition = -2;
 		/**

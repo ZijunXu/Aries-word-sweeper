@@ -16,6 +16,7 @@ import client.model.Player;
 import client.controller.CreateGameController;
 import client.controller.JoinGameController;
 /**
+ * responsible for the game login GUI
  *@author Zijun Xu
  */
 public class Application extends JFrame {

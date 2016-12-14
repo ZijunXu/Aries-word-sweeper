@@ -13,8 +13,9 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing the reset game controller
+ * @author Zhanfeng Huang
+ * 
  */
 public class TestResetGameController extends TestCase {
 	

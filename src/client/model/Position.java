@@ -1,5 +1,9 @@
 package client.model;
-
+/**
+ * 
+ * responsible for the position entity
+ *
+ */
 public class Position {
 	public int row;
 	public int column;

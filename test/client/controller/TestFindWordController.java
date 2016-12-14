@@ -17,8 +17,9 @@ import client.model.Cell;
 import junit.framework.TestCase;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing findWord Controller
+ * @author Zhanfeng Huang
+ * 
  */
 public class TestFindWordController extends TestCase {
 	

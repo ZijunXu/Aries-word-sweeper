@@ -19,8 +19,9 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing the findWord Response Controller
+ * @author Zhanfeng Huang
+ * 
  */
 public class TestFindWordResponseController extends TestCase {
 	

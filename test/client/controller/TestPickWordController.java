@@ -18,9 +18,10 @@ import xml.Message;
 import junit.framework.TestCase;
 
 /**
- * @author Zhanfeng Huang
  * this test case is responsible for testing pick word controller
  * should initialize application, playingpanel views and model, word, cell, board entities and mock mouseEvents
+ * @author Zhanfeng Huang
+ * 
  */
 public class TestPickWordController extends TestCase {
 	
